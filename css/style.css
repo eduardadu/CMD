@@ -6,7 +6,7 @@ body{
 a{
   text-decoration: none;
   color: var(--text-color);
-  cursor:pointer;
+
 }
 
 
@@ -16,11 +16,12 @@ a{
   position: fixed;
   top: 0;
   left: 0;
-  mix-blend-mode: difference;
+  /*mix-blend-mode: difference; */
   z-index: 1000;
 }
 .circle {
   fill: #f7f8fa;
+  stroke: var(--text-color);
 }
 
 
@@ -187,7 +188,7 @@ rect {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  cursor:pointer;
+
 }
 
 .infoS:hover .titleNumber{
