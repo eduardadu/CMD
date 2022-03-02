@@ -2,12 +2,6 @@ class PageConnect{
   constructor(){
     this.loadSeparator();
     this.loadNavbar();
-    this.manageTabs(runView);
-
-
-    function runView(){
-      view= new View();
-    }
   }
 
   manageTabs(e){
@@ -63,7 +57,15 @@ class PageConnect{
     divAux.id="topbar";
     document.body.appendChild(divAux);
     $('#topbar').load("content/navbar.html", function(){
+      function runView(){
+        view= new View();
+      }
       t.addHyps();
+      t.manageTabs(runView);
+
+      document.querySelector("#content").style.opacity = 0;
+      document.querySelector("#topbar").style.opacity = 0;
+      enterAnimation();
 
     });
   }

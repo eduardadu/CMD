@@ -16,7 +16,7 @@ var INCREMENT = 0.02;
 
 
 
-var ENTER= false;
+var enterAnim= false;
 
 var MX=0;
 var MY=0;
@@ -251,8 +251,8 @@ function initBackground(){
 
 
   function updateData(data) {
-    if(ENTER==false){
-
+    if(enterAnim==false){
+      console.log("enternaimation");
     }else{
       data.forEach(function(datum) {
         //datum.x += datum.speed
@@ -279,13 +279,15 @@ function initBackground(){
 function enterAnimation(){
     var time = 4000;
     var logo = setTimeout(function(){
-      document.querySelector("#content").style.display="flex";
     }, 0);
 
+    var enterThings = setTimeout(function(){
+      document.querySelector("#content").style.opacity = 1 ;
+      document.querySelector("#topbar").style.opacity = 1;
+    }, 6000);
+
     var backgroundEnter = setTimeout(function(){
-      ENTER=true;
+      enterAnim=true;
     }, 2000);
 
 }
-
-enterAnimation();
