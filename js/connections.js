@@ -58,13 +58,13 @@ class PageConnect{
     });
   }
   loadNavbar(){
-    console.log("...");
     var t=this;
     var divAux = document.createElement("div");
     divAux.id="topbar";
     document.body.appendChild(divAux);
     $('#topbar').load("content/navbar.html", function(){
       t.addHyps();
+
     });
   }
 

@@ -43,12 +43,12 @@ class View{
 
 
     if(x>y){
-      $( "svg " ).attr("viewBox", marginX + " " + marginY + " "+ (x)+ " " + (y*1));
+      $( "#cmd " ).attr("viewBox", marginX + " " + marginY + " "+ (x)+ " " + (y*1));
     }else{
-      $( "svg " ).attr("viewBox", marginX + " " + marginY + " "+ (x)+ " " + (y*1));
+      $( "#cmd " ).attr("viewBox", marginX + " " + marginY + " "+ (x)+ " " + (y*1));
     }
-    $( "svg " ).attr("width",  x);
-    $( "svg " ).attr("height", y);
+    $( "#cmd " ).attr("width",  x);
+    $( "#cmd " ).attr("height", y);
   }
 
 

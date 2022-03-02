@@ -86,7 +86,7 @@ class Spot{
 //------------------------------------------------------------------------------
 
 
-$( "svg > rect" ).css( "border", "3px double red" );
+$( "#cmd > rect" ).css( "border", "3px double red" );
 let lastKnownScrollPosition = 0;
 let ticking = false;
 let cellList = [];
@@ -108,7 +108,7 @@ class Cell{
 
 
 function initSVG(){
- $( "svg > g >rect" ).each(function(e){
+ $( "#cmd > g >rect" ).each(function(e){
    let g= $( this);
    cellList.push(new Cell(g));
  });

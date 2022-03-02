@@ -13,14 +13,15 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="libraries/jquery-3.6.0.min.js"></script>
 
+
+
   <script src="libraries/p5.min.js"></script>
   <script src="libraries/d3.min.js"></script>
 
 
-
-
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/regl/1.3.11/regl.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/regl/1.3.11/regl.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+  <script src="js/cursor.js"></script>
 
   <link rel="icon" href="assets/favicon.png" type="image/x-icon">
 
@@ -235,6 +236,20 @@
   <div id="backgroundCanvas"></div>
 
 
+
+  <div class="cursor">
+    <div class="cursor ball cursor ball big ">
+      <svg height="30" width="30">
+        <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+      </svg>
+    </div>
+
+    <div class="cursor ball cursor ball small">
+      <svg height="10" width="10">
+        <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+      </svg>
+    </div>
+  </div>
 
   <script src="js/script2.js"></script>
   <script src="js/model.js"></script>
