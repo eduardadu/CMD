@@ -64,7 +64,7 @@ class PageConnect{
       t.manageTabs(runView);
 
       document.querySelector("#content").style.opacity = 0;
-      document.querySelector("#topbar").style.opacity = 0;
+      //document.querySelector("#topbar").style.opacity = 0;
       enterAnimation();
 
     });

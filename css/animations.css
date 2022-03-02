@@ -1,0 +1,16 @@
+@keyframes svgEnter{
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+@keyframes topbarDown{
+  0%{
+    top:-3rem;
+  }
+  100%{
+    top:10;
+  }
+}

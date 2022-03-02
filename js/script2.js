@@ -1,12 +1,16 @@
 var points;
 
+
+var enterAnim= false;
+var enterBubbles;
+
 var canvasAux = document.createElement('canvas');
 var context = canvasAux.getContext('2d');
 
 // Some constants to use
 var MAX_WIDTH = document.body.clientWidth;
 var MAX_HEIGHT = $(window).height();
-var MAX_SPEED = 10;
+var MAX_SPEED = 20;
 var POINT_SIZE = 14;
 var POINT_COUNT = 10000;
 
@@ -16,7 +20,7 @@ var INCREMENT = 0.02;
 
 
 
-var enterAnim= false;
+
 
 var MX=0;
 var MY=0;
@@ -48,12 +52,13 @@ function initBackground(){
 
       var xoff=0;
 
-      for(var h=0; h< parseInt(y/POINT_SIZE)+1+OFFY;h++){
+
+      for(var h=0; h< parseInt(y/POINT_SIZE)+1+OFFY; h++){
 
         xoff+= INCREMENT;
         var yoff=0;
 
-        for(var w=0; w< parseInt(x/POINT_SIZE)+1+OFFX;w++){
+        for(var w=0; w< parseInt(x/POINT_SIZE)+1+OFFX; w++){
           yoff+= INCREMENT;
 
           var alpha= imgData.data[((h * (imgData.width * 4)) + (w * 4)) + 2];;
@@ -68,17 +73,41 @@ function initBackground(){
           var noisePosX= noise(xoff, yoff) *20;  //10
           var noisePosY= noise(xoff, yoff) *160; //80
 
+          var randomX= Math.random();
+
+          var starterX;
+          var starterY;
+          if(randomX<0.25){
+            starterX= x + POINT_SIZE+ Math.random()*1000;
+            starterY= Math.random()*y;
+          }else if(randomX>=0.25 && randomX<0.5){
+            starterY= y + POINT_SIZE + Math.random()*1000;
+            starterX= Math.random()*x;
+          }else if(randomX>=0.5 && randomX<0.75){
+            starterX= -POINT_SIZE - Math.random()*1000;
+            starterY= Math.random()*y;
+          }else{
+            starterY= -POINT_SIZE - Math.random()*1000;
+            starterX= Math.random()*x;
+          }
+
+          //starterY= y + POINT_SIZE + Math.random()*1000;
+
           var datum = {
             id: (w*h)+h,
             ogy: h * POINT_SIZE + noisePosY - OFFY,  //+ randomX,
             ogx: w * POINT_SIZE + noisePosX -OFFX, // + randomY,
-            y: h * POINT_SIZE + noisePosY - OFFY,  //+ randomX,
-            x: w * POINT_SIZE + noisePosX - OFFX, // + randomY,
+            y: starterY,//h * POINT_SIZE + noisePosY - OFFY,  //+ randomX,
+            x: starterX,//w * POINT_SIZE + noisePosX - OFFX, //starterX,//// + randomY,
+
             size: POINT_SIZE,
             speed: randomFromInterval(1, MAX_SPEED),
             color: [0.396, 0.756, 0.8, alpha],
+            alpha: alpha,
             noiseX: xoff,
             noiseY: xoff,
+            stepX: ((w * POINT_SIZE + noisePosX -OFFX)  - starterX)/40,
+            stepY: ((h * POINT_SIZE + noisePosY - OFFY)  - starterY)/40,
           };
           data.push(datum);
         }
@@ -251,9 +280,25 @@ function initBackground(){
 
 
   function updateData(data) {
-    if(enterAnim==false){
-    }else{
-      data.forEach(function(datum) {
+    var steps=40;
+    data.forEach(function(datum) {
+      if(enterAnim==false && enterBubbles==true){
+          var diffy = (datum.ogy - datum.y);
+          var diffx = (datum.ogx - datum.x);
+          var stepx= datum.stepX ;
+          var stepy= datum.stepY;
+
+          if(diffx<=stepx && diffx> (-stepx)){
+            datum.x = datum.ogx;
+          }else{
+              datum.x = datum.x + stepx;
+          }
+          if(diffy<=stepy && diffy> (-stepy)){
+            datum.y = datum.ogy;
+          }else{
+            datum.y = datum.y + stepy;
+          }
+      }else if(enterAnim==true){
         //datum.x += datum.speed
         datum.noiseX = datum.noiseX+ (INCREMENT/2);
         datum.noiseY = datum.noiseY+ (INCREMENT/2);
@@ -267,8 +312,9 @@ function initBackground(){
         var noisePosY= noise(xoff, yoff) *160; //80
         datum.y = datum.ogy - OFFY + noisePosY;
         datum.x = datum.ogx - OFFX + noisePosX;
-      });
-    }
+      }
+    });
+
   }
 }
 
@@ -280,13 +326,18 @@ function enterAnimation(){
     var logo = setTimeout(function(){
     }, 0);
 
+    var bubbles = setTimeout(function(){
+      enterBubbles=true;
+      svgReduce();
+    }, 2000);
+
     var enterThings = setTimeout(function(){
       document.querySelector("#content").style.opacity = 1 ;
-      document.querySelector("#topbar").style.opacity = 1;
+      document.querySelector("#topbar").style.display ="flex";
     }, 6000);
 
     var backgroundEnter = setTimeout(function(){
       enterAnim=true;
-    }, 2000);
 
+    }, 35000);
 }

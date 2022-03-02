@@ -38,7 +38,6 @@ class Drawer{
 //------------------------------------------------------------------------------
 
 
-$( "#cmd > rect" ).css( "border", "3px double red" );
 let lastKnownScrollPosition = 0;
 let ticking = false;
 let cellList = [];
@@ -46,6 +45,7 @@ let cellList = [];
 class Cell{
   constructor(e){
     this.ref=e;
+    this.scale=this.ref.attr("width");
     this.addX= parseFloat((Math.random()*3)-1.5);
     this.addY= parseFloat((Math.random()*3)-1.5);
   }
@@ -55,9 +55,22 @@ class Cell{
     var b= this.addY * e;
     this.ref.attr("transform","translate("+ a +", " + b + ")");
   }
+
+  reduce(){
+    this.scale = 0;
+    this.ref.attr("width", this.scale);
+    this.ref.attr("height", this.scale);
+  }
+
 }
 
-
+function svgReduce(){
+  cellList.forEach(function(element){
+    element.reduce();
+    element.update(1000);
+    }
+  );
+}
 
 function initSVG(){
  $( "#cmd > g >rect" ).each(function(e){
@@ -67,7 +80,7 @@ function initSVG(){
 }
 initSVG();
 
-
+/*
 document.addEventListener('scroll', function(e) {
   lastKnownScrollPosition = window.scrollY;
   if (!ticking) {
@@ -75,6 +88,7 @@ document.addEventListener('scroll', function(e) {
       //doSomething(lastKnownScrollPosition);
       cellList.forEach(function(element){
         element.update(lastKnownScrollPosition);
+        element.reduce(lastKnownScrollPosition);
         }
       );
 
@@ -82,4 +96,4 @@ document.addEventListener('scroll', function(e) {
     });
     ticking = true;
   }
-});
+}); */

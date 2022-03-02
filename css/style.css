@@ -10,6 +10,16 @@ a{
   cursor: none;
 }
 
+::-moz-selection { /* Code for Firefox */
+  color: var(--text-color);
+  background: var(--highlight-color);
+}
+
+::selection {
+  color: var(--text-color);
+  background: var(--highlight-color);
+}
+
 /* --------------------------------------------------------------------------    CURSOR*/
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
@@ -21,10 +31,12 @@ a{
   left: 0;
   /*mix-blend-mode: difference; */
   z-index: 1000;
+  mix-blend-mode: multiply;
 }
 .circle {
   fill: #f7f8fa;
   stroke: var(--text-color);
+
 }
 
 
@@ -36,14 +48,6 @@ a{
 }
 
 
-@keyframes svgEnter{
-  0%{
-    opacity:0;
-  }
-  100%{
-    opacity:1;
-  }
-}
 
 
 
@@ -52,6 +56,9 @@ rect {
   filter: url(#blur);
   opacity:0.8;
   fill: var(--circle-color);
+  mix-blend-mode: multiply;
+
+  transition: width 10s, height 10s, transform 10s ease;
 }
 
 
@@ -83,7 +90,6 @@ rect {
   width:100%;
   color: var(--text-color);
   background-color:  var(--main-bg-color);
-  opacity:0;
   height: 2rem;
 
   text-align: center;
@@ -92,20 +98,28 @@ rect {
 
   text-transform: uppercase;
   letter-spacing: .1rem;
-  word-spacing: 0.5rem;
+  word-spacing: 0.35rem;
   z-index:2;
 
   border-bottom: 1px solid var(--text-color);
 
-  display:flex;
+  display:none;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
 
   transition: opacity 1s;
+  animation: topbarDown 1s;
 }
 
+.topItem{
+  margin-left:0.8rem;
+  height:1.2rem;
+}
+.topItem:hover{
+  background-color: var(--highlight-color);
+}
 #myCanvas{
   z-index:-50;
   position:fixed;
