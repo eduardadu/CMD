@@ -7,7 +7,7 @@ var context = canvasAux.getContext('2d');
 var MAX_WIDTH = document.body.clientWidth;
 var MAX_HEIGHT = $(window).height();
 var MAX_SPEED = 10;
-var POINT_SIZE = 6;
+var POINT_SIZE = 14;
 var POINT_COUNT = 10000;
 
 var IMG_WIDTH = document.body.clientWidth;
@@ -252,7 +252,6 @@ function initBackground(){
 
   function updateData(data) {
     if(enterAnim==false){
-      console.log("enternaimation");
     }else{
       data.forEach(function(datum) {
         //datum.x += datum.speed
