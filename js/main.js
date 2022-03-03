@@ -12,7 +12,7 @@ colorCircles = color(134, 200, 205);
  connector= new PageConnect();
  //drawer= new Drawer();
 
- initBackground();
+ //initBackground();
 }
 
 function draw(){
