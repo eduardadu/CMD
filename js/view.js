@@ -1,10 +1,10 @@
 class View{
   constructor(){
-
+    this.mobileCursor();
     this.initSVG();
     this.expandInfo();
     this.expandMenu();
-    this.mobileCursor();
+
   }
 
 
