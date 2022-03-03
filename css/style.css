@@ -110,7 +110,7 @@ g{
   left:0px;
 }
 
-/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- INFO HOMEPAGE */
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 #content{
@@ -156,7 +156,7 @@ g{
 .desc{
   margin:2rem;
   max-width:680px;
-  text-align: center;
+  text-align: left;
   font-size:1.2rem;
   line-height:1.6rem;
 }
@@ -270,7 +270,10 @@ g{
   .title{
     max-width:15rem;
   }
-
+  .desc{
+    font-size:0.9rem;
+    line-height:1.2rem;
+  }
 }
 
 @media (min-width:320px)  {
@@ -278,31 +281,55 @@ g{
   .title{
     max-width:15rem;
   }
+  .desc{
+    font-size:0.9rem;
+    line-height:1.2rem;
+  }
 }
 @media screen and(min-width:480px)  {
 /* smartphones, Android phones, landscape iPhone */
   .title{
     max-width:25rem;
   }
+  .desc{
+    font-size:1rem;
+    line-height:1.2rem;
+  }
 }
 @media screen and (min-width:600px)  {/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
   .title{
     max-width:30rem;
+  }
+  .desc{
+    font-size:1rem;
+    line-height:1.2rem;
   }
 }
 @media screen and (min-width:801px)  {
   .title{
     max-width:40rem;
   }
+  .desc{
+    font-size:1rem;
+    line-height:1.2rem;
+  }
 /* tablet, landscape iPad, lo-res laptops ands desktops */ }
 @media screen and (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
   .title{
     max-width:40rem;
   }
+  .desc{
+    font-size:1rem;
+    line-height:1.2rem;
+  }
 }
 @media screen and (min-width:1281px) {
   .title{
     max-width:40rem;
+  }
+  .desc{
+    font-size:1.2rem;
+    line-height:1.4rem;
   }
  /* hi-res laptops and desktops */
  }
