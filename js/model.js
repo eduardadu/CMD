@@ -62,7 +62,7 @@ class Cell{
     this.ref.attr("transform","translate("+ a +", " + b + ")");
   }
   reduce(){
-    this.scale = 0;
+    this.scale = 0.5;
     this.ref.attr("width", this.scale);
     this.ref.attr("height", this.scale);
   }
@@ -95,7 +95,7 @@ function initSVG(){
 
 initSVG();
 
-/*
+
 document.addEventListener('scroll', function(e) {
   lastKnownScrollPosition = window.scrollY;
   if (!ticking) {
@@ -111,4 +111,4 @@ document.addEventListener('scroll', function(e) {
     });
     ticking = true;
   }
-}); */
+});
