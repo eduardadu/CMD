@@ -23,7 +23,7 @@
   justify-content: space-between;
   align-items: center;
 
-  transition: opacity 1s, max-height 2s;
+  transition: opacity 1s, max-height 1s;
   animation: topbarDown 1s;
   z-index:500;
 }
