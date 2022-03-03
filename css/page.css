@@ -40,11 +40,12 @@
 
 .buttonMain{
   height:1.6rem;
+  line-height:1.5rem;
   border-radius: 1.2rem;
   border: 2px solid var(--text-color);
   padding:0.2rem;
-  padding-left:0.6rem;
-  padding-right:0.6rem;
+  padding-left:0.8rem;
+  padding-right:0.8rem;
   background-color: white;
   font-family: "MainFont";
 }
