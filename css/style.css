@@ -5,7 +5,7 @@ body{
   background-color: #2D7CA8;
 /*  background-image:    url(../assets/sky3.png);
   background-size:     cover; */
-  min-height:200vh;
+  min-height:100vh;
 }
 a{
   text-decoration: none;

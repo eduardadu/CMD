@@ -1,19 +1,42 @@
 .page{
   background-color: white;
   border-top: 1px solid var(--text-color);
-  position:absolute;
+  position:fixed;
   bottom:0px;
-  height:80vh;
+  height:70vh;
   width:100%;
   max-height:auto;
   animation: pageUp 0.5s ease;
-  padding-top:4rem;
+  padding-top:6rem;
+
+  overflow-y: scroll;
 }
+
 
 .pagetitle{
   font-family: "MainFont";
   font-size:2rem;
+  margin-bottom:4rem;
 }
+
+
+.pageContent{
+  display:flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: flex-start;
+  padding-left:10%;
+}
+
+.infoPTitle{
+  font-family: "MainFont";
+  margin-bottom:1.4rem;
+
+}
+.infoPTitle:hover{
+  text-decoration:underline;
+}
+
 
 .buttonMain{
   height:1.6rem;
