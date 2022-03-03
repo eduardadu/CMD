@@ -62,7 +62,9 @@ function initBackground(){
           yoff+= INCREMENT;
 
           var alpha= imgData.data[((h * (imgData.width * 4)) + (w * 4)) + 2];;
+          //alpha= (alpha - 0)*(0-1)/(255-0) + 1;
           alpha= (alpha - 0)*(0-1)/(255-0) + 1;
+
 
           var randomX=0;
           var randomY=0;
@@ -102,7 +104,7 @@ function initBackground(){
 
             size: POINT_SIZE,
             speed: randomFromInterval(1, MAX_SPEED),
-            color: [0.396, 0.756, 0.8, alpha],
+            color: [196/255, 228/255, 252/255, alpha],//[13/255, 182/255, 255/255, alpha],//[0.396, 0.756, 0.8, alpha],
             alpha: alpha,
             noiseX: xoff,
             noiseY: xoff,
@@ -300,8 +302,8 @@ function initBackground(){
           }
       }else if(enterAnim==true){
         //datum.x += datum.speed
-        datum.noiseX = datum.noiseX+ (INCREMENT/2);
-        datum.noiseY = datum.noiseY+ (INCREMENT/2);
+        datum.noiseX = datum.noiseX+ (INCREMENT/4);
+        datum.noiseY = datum.noiseY+ (INCREMENT/4);
         // reset x if its gone past max width
         //datum.x = datum.x > MAX_WIDTH ? 0 : datum.x;
         var mouseX = MX/200;
@@ -326,18 +328,21 @@ function enterAnimation(){
     var logo = setTimeout(function(){
     }, 0);
 
-    var bubbles = setTimeout(function(){
-      enterBubbles=true;
+    var reduce = setTimeout(function(){
+
       svgReduce();
     }, 2000);
+    var bubbles = setTimeout(function(){
+      enterBubbles=true;
+    }, 3000);
 
     var enterThings = setTimeout(function(){
       document.querySelector("#content").style.opacity = 1 ;
       document.querySelector("#topbar").style.display ="flex";
-    }, 6000);
+    }, 3000);
 
     var backgroundEnter = setTimeout(function(){
       enterAnim=true;
 
-    }, 35000);
+    }, 6000);
 }
