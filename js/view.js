@@ -3,6 +3,7 @@ class View{
 
     this.initSVG();
     this.expandInfo();
+    this.expandMenu();
   }
 
 
@@ -73,10 +74,11 @@ class View{
   expandMenu(){
     document.querySelector("#burger").addEventListener("click",function(){
       var exp= document.querySelector("#mobileExtend");
-      if(exp.style.maxHeight == "0px" || exp.style.maxHeight ==""){
+      console.log("festa");
+      if(exp.style.maxHeight == "3rem" || exp.style.maxHeight ==""){
         exp.style.maxHeight= "100vh";
       }else{
-        exp.style.maxHeight= "0px";
+        exp.style.maxHeight= "3rem";
       }
     });
   }
