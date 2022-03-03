@@ -4,6 +4,7 @@ class View{
     this.initSVG();
     this.expandInfo();
     this.expandMenu();
+    this.mobileCursor();
   }
 
 
@@ -53,7 +54,9 @@ class View{
   }
 
 
+  mobileCursor(){
 
+  }
 
 
   expandInfo(){
@@ -80,6 +83,14 @@ class View{
         exp.style.maxHeight= "3rem";
       }
     });
+  }
+
+  closeMenu(){
+    var exp= document.querySelector("#mobileExtend");
+    if(exp.style.maxHeight == "100vh"){
+
+      exp.style.maxHeight= "3rem";
+    }
   }
 
 }

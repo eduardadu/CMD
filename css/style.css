@@ -27,7 +27,9 @@ a{
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 .cursor {
-  pointer-events: none;}
+  pointer-events: none;
+
+}
 .ball {
   position: fixed;
   top: 0;
@@ -220,7 +222,6 @@ g{
   background-color:  var(--main-bg-color);
   color:black;
 
-  width:100%;
   margin-top: 2rem;
 
   max-height:0px;
@@ -243,8 +244,7 @@ g{
   overflow-y: hidden;
   font-family: 'MainFont';
   line-height: 1.3rem;
-  border-bottom: 1px solid var(--text-color);
-  border-top: 1px solid var(--text-color);
+  border: 1px solid var(--text-color);
   box-sizing: border-box;
   display:flex;
   justify-content: center;
@@ -257,7 +257,7 @@ g{
 }
 
 
-/* -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------  MEDIA QUERIES */
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 
@@ -284,6 +284,9 @@ g{
   .titleNumber{
     font-size: 1rem;
   }
+  body{
+    cursor:none;
+  }
 }
 
 @media (min-width:320px)  {
@@ -307,6 +310,7 @@ g{
   .titleNumber{
     font-size: 1.2rem;
   }
+
 }
 @media screen and(min-width:480px)  {
 /* smartphones, Android phones, landscape iPhone */
@@ -329,6 +333,7 @@ g{
   .titleNumber{
     font-size: 1.2rem;
   }
+
 }
 @media screen and (min-width:600px)  {/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
   .title{

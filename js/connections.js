@@ -21,7 +21,13 @@ class PageConnect{
         });
         break;
       case "Contacts":
-        $('#content').load("content/info.html", function(){
+        $('#content').load("content/contacts.html", function(){
+          t.outSeparator();
+            view= new View();
+        });
+        break;
+      case "Applications":
+        $('#content').load("content/application.html", function(){
           t.outSeparator();
             view= new View();
         });
@@ -87,9 +93,11 @@ class PageConnect{
       var aboutHyp= document.querySelectorAll(".infoHyp");
       var homeHyp= document.querySelectorAll(".homeHyp");
       var contactHyp= document.querySelectorAll(".contactHyp");
+      var admissionHyp= document.querySelectorAll(".admissionHyp");
       this.addHyper(homeHyp, 2, 'CMD', '/home.html', '/content/home.html');
       this.addHyper(aboutHyp, 3, 'Info', '/info.html', '/content/info.html');
       this.addHyper(contactHyp, 5, 'Contacts', '/contacts.html', '/content/contacts.html');
+      this.addHyper(admissionHyp, 5, 'Applications', '/application.html', '/content/application.html');
   }
 
 
@@ -100,7 +108,9 @@ class PageConnect{
       if (element.getAttribute('listener') !== 'true') {
 
         element.addEventListener("click", function(){
+
           //closemenu
+          view.closeMenu();
           window.history.pushState('page' + pageNumber, pageName, pageURL);
           //window.history.replaceState('page' + pageNumber, pageName, pageURL);
           var vala= getBaseUrl();

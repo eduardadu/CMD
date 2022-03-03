@@ -1,0 +1,31 @@
+.page{
+  background-color: white;
+  border-top: 1px solid var(--text-color);
+  position:absolute;
+  bottom:0px;
+  height:80vh;
+  width:100%;
+  max-height:auto;
+  animation: pageUp 0.5s ease;
+  padding-top:4rem;
+}
+
+.pagetitle{
+  font-family: "MainFont";
+  font-size:2rem;
+}
+
+.buttonMain{
+  height:1.6rem;
+  border-radius: 1.2rem;
+  border: 2px solid var(--text-color);
+  padding:0.2rem;
+  padding-left:0.6rem;
+  padding-right:0.6rem;
+  background-color: white;
+  font-family: "MainFont";
+}
+
+.buttonMain:hover{
+  background-color: var(--highlight-color);
+}
