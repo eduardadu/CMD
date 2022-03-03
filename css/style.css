@@ -173,7 +173,6 @@ g{
 .number{
   color: white;
   font-family: "MainFont";
-
   text-align: center;
   font-size: 2rem;
   border: 2px solid white;
@@ -188,7 +187,6 @@ g{
 .titleNumber{
   color: white;
   font-family: "MainFont";
-
   text-align: center;
   font-size: 2rem;
   max-width: 350px;
@@ -274,6 +272,18 @@ g{
     font-size:0.9rem;
     line-height:1.2rem;
   }
+  .infoCont{
+    margin-bottom:2.6rem;
+  }
+  .number{
+    font-size: 1rem;
+    width:1rem;
+    height:1rem;
+    line-height: 1rem;
+  }
+  .titleNumber{
+    font-size: 1rem;
+  }
 }
 
 @media (min-width:320px)  {
@@ -285,6 +295,18 @@ g{
     font-size:0.9rem;
     line-height:1.2rem;
   }
+  .infoCont{
+    margin-bottom:3rem;
+  }
+  .number{
+    font-size: 1.2rem;
+    width:1.2rem;
+    height:1.2rem;
+    line-height: 1.2rem;
+  }
+  .titleNumber{
+    font-size: 1.2rem;
+  }
 }
 @media screen and(min-width:480px)  {
 /* smartphones, Android phones, landscape iPhone */
@@ -295,32 +317,80 @@ g{
     font-size:1rem;
     line-height:1.2rem;
   }
+  .infoCont{
+    margin-bottom:3.4rem;
+  }
+  .number{
+    font-size: 1.2rem;
+    width:1.2rem;
+    height:1.2rem;
+    line-height: 1.2rem;
+  }
+  .titleNumber{
+    font-size: 1.2rem;
+  }
 }
 @media screen and (min-width:600px)  {/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
   .title{
     max-width:30rem;
   }
+  .infoCont{
+    margin-bottom:4rem;
+  }
   .desc{
     font-size:1rem;
     line-height:1.2rem;
+  }
+  .number{
+    font-size: 1.6rem;
+    width:1.6rem;
+    height:1.6rem;
+    line-height: 1.6rem;
+  }
+  .titleNumber{
+    font-size: 1.6rem;
   }
 }
 @media screen and (min-width:801px)  {
   .title{
     max-width:40rem;
   }
+  .infoCont{
+    margin-bottom:4rem;
+  }
   .desc{
     font-size:1rem;
     line-height:1.2rem;
+  }
+  .number{
+    font-size: 1.8rem;
+    width:1.8rem;
+    height:1.8rem;
+    line-height: 1.8rem;
+  }
+  .titleNumber{
+    font-size: 1.8rem;
   }
 /* tablet, landscape iPad, lo-res laptops ands desktops */ }
 @media screen and (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
   .title{
     max-width:40rem;
   }
+  .infoCont{
+    margin-bottom:4rem;
+  }
   .desc{
     font-size:1rem;
     line-height:1.2rem;
+  }
+  .number{
+    font-size: 2rem;
+    width:2rem;
+    height:2rem;
+    line-height: 2rem;
+  }
+  .titleNumber{
+    font-size: 2rem;
   }
 }
 @media screen and (min-width:1281px) {
@@ -330,6 +400,15 @@ g{
   .desc{
     font-size:1.2rem;
     line-height:1.4rem;
+  }
+  .number{
+    font-size: 2rem;
+    width:2rem;
+    height:2rem;
+    line-height: 2rem;
+  }
+  .titleNumber{
+    font-size: 2rem;
   }
  /* hi-res laptops and desktops */
  }
