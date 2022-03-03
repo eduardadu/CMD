@@ -9,7 +9,6 @@
   color: var(--text-color);
   background-color:  var(--main-bg-color);
 
-
   text-align: center;
   font-size: 0.65rem;
   font-family: "MainFont";
@@ -19,13 +18,10 @@
   word-spacing: 0.35rem;
   z-index:2;
 
-
-
   display:none;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
 
   transition: opacity 1s, max-height 2s;
   animation: topbarDown 1s;
@@ -94,3 +90,181 @@
   font-size:1.4rem;
   margin-bottom: 1.8rem;
 }
+
+
+
+/* --------------------------------------------------------------------------    BURGER INTO CROSS*/
+/* --------------------------------------------------------------------------
+TAKEN FROM THE FOLLOWING AUTHOR
+https://stackoverflow.com/questions/65828562/hi-i-want-to-change-from-hamburgur-to-cross-on-click-of-the-menu
+ -------------------------------------------------------------------------- */
+
+.mobile-nav {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #393e46;
+  padding: 1em;
+  text-align: right;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+.mobile-nav a {
+  color: #393e46;
+  padding: 0.25em;
+  font-size: larger;
+  opacity: 0;
+  transition: opacity 150ms ease-in;
+}
+
+.mobile-nav-toggle {
+  display:none;
+  position: absolute !important;
+  top: -99999px !important;
+  right: -999999px !important;
+}
+
+.mobile-nav-toggle-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 1.25rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 99999;
+}
+
+.mobile-nav-toggle:focus ~ .mobile-nav-toggle-label {
+  outline: 3px solid rgba(0, 172, 181, 0.75);
+}
+
+.mobile-nav-toggle-label span,
+.mobile-nav-toggle-label span::before,
+.mobile-nav-toggle-label span::after {
+  width: 100%;
+  display: block;
+  background: #393e46;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+  transition: transform 400ms ease-in-out;
+}
+
+.mobile-nav-toggle-label span::before,
+.mobile-nav-toggle-label span::after {
+  content: "";
+  position: absolute;
+}
+
+.mobile-nav-toggle-label span::before {
+  bottom: 7px;
+  transition: opacity 250ms ease-in-out 400ms;
+}
+
+.mobile-nav-toggle-label span::after {
+  top: 7px;
+}
+
+.mobile-nav-toggle:checked ~ .mobile-nav {
+  transform: scale(1, 1);
+}
+
+.mobile-nav-toggle:checked ~ .mobile-nav a {
+  opacity: 1;
+  transition: opacity 150ms ease-in 350ms;
+}
+
+.mobile-nav-toggle:checked ~ .mobile-nav-toggle-label span:before {
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}
+
+.mobile-nav-toggle:checked ~ .mobile-nav-toggle-label span {
+  transform: rotate(45deg);
+}
+
+.mobile-nav-toggle:checked ~ .mobile-nav-toggle-label span:after {
+  transform: rotate(-90deg) translateX(7px);
+}
+
+
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+
+
+@media (max-width:320px)  {
+/* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+  .mobiletopbar {
+    display: flex;
+  }
+  .webtopbar {
+    display: none;
+  }
+}
+
+@media (min-width:320px)  {
+/* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+  .mobiletopbar {
+    display: flex;
+  }
+  .webtopbar {
+    display: none;
+  }
+}
+@media screen and(min-width:480px)  {
+/* smartphones, Android phones, landscape iPhone */
+
+  .mobiletopbar {
+    display: flex;
+  }
+  .webtopbar {
+    display: none;
+  }
+}
+@media screen and (min-width:600px)  {/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+
+  .mobiletopbar {
+    display: flex;
+  }
+  .webtopbar {
+    display: none;
+  }
+}
+@media screen and (min-width:801px)  {
+  .webtopbar {
+    display: flex;
+  }
+  .mobiletopbar {
+    display: none;
+  }
+/* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media screen and (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+  .webtopbar {
+    display: flex;
+  }
+  .mobiletopbar {
+    display: none;
+  }
+}
+@media screen and (min-width:1281px) {
+
+  .mobiletopbar {
+    display: none;
+  }
+  .webtopbar {
+    display: flex;
+  }
+ /* hi-res laptops and desktops */
+ }

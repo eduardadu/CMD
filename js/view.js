@@ -74,7 +74,6 @@ class View{
   expandMenu(){
     document.querySelector("#burger").addEventListener("click",function(){
       var exp= document.querySelector("#mobileExtend");
-      console.log("festa");
       if(exp.style.maxHeight == "3rem" || exp.style.maxHeight ==""){
         exp.style.maxHeight= "100vh";
       }else{

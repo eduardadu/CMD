@@ -12,18 +12,18 @@ class PageConnect{
         t.triggerSeparator();
         $('#content').load("content/home.html", function(){
           t.outSeparator();
-                  });
+                  view= new View();  });
         break;
       case "Info":
         $('#content').load("content/info.html", function(){
           t.outSeparator();
-
+            view= new View();
         });
         break;
       case "Contacts":
         $('#content').load("content/info.html", function(){
           t.outSeparator();
-
+            view= new View();
         });
         break;
     }
@@ -57,7 +57,7 @@ class PageConnect{
     document.body.appendChild(divAux);
     $('#topbar').load("content/navbar.html", function(){
 
-      view= new View();
+
 
       t.addHyps();
       t.manageTabs();
