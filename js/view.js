@@ -57,12 +57,9 @@ class View{
 
   expandInfo(){
     var list = document.querySelectorAll(".infoS");
-
     list.forEach((item, index) => {
       item.addEventListener("click",function(){
-
         var exp= item.nextElementSibling;
-
         if(exp.style.maxHeight == "0px" || exp.style.maxHeight ==""){
           exp.style.maxHeight= "100vh";
         }else{
@@ -71,6 +68,17 @@ class View{
       });
     });
 
+  }
+
+  expandMenu(){
+    document.querySelector("#burger").addEventListener("click",function(){
+      var exp= document.querySelector("#mobileExtend");
+      if(exp.style.maxHeight == "0px" || exp.style.maxHeight ==""){
+        exp.style.maxHeight= "100vh";
+      }else{
+        exp.style.maxHeight= "0px";
+      }
+    });
   }
 
 }

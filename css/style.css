@@ -83,46 +83,6 @@ g{
   left:0px;
 }
 
-
-/* --------------------------------------------------------------------------    TOPBAR*/
-/* -------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
-#topbar{
-  position:fixed;
-  top:0px;
-  width:100%;
-  color: var(--text-color);
-  background-color:  var(--main-bg-color);
-  height: 2rem;
-
-  text-align: center;
-  font-size: 0.65rem;
-  font-family: "MainFont";
-
-  text-transform: uppercase;
-  letter-spacing: .1rem;
-  word-spacing: 0.35rem;
-  z-index:2;
-
-  border-bottom: 1px solid var(--text-color);
-
-  display:none;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-
-  transition: opacity 1s;
-  animation: topbarDown 1s;
-}
-
-.topItem{
-  margin-left:0.8rem;
-  height:1.2rem;
-}
-.topItem:hover{
-  background-color: var(--highlight-color);
-}
 #myCanvas{
   z-index:-50;
   position:fixed;
@@ -131,6 +91,7 @@ g{
   top:0px;
   left:0px;
 }
+
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
@@ -263,3 +224,46 @@ g{
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
+
+
+
+@media (max-width:320px)  {
+/* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+  .title{
+    max-width:15rem;
+  }
+}
+
+@media (min-width:320px)  {
+/* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+  .title{
+    max-width:15rem;
+  }
+}
+@media screen and(min-width:480px)  {
+/* smartphones, Android phones, landscape iPhone */
+  .title{
+    max-width:25rem;
+  }
+}
+@media screen and (min-width:600px)  {/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+  .title{
+    max-width:40rem;
+  }
+}
+@media screen and (min-width:801px)  {
+  .title{
+    max-width:40rem;
+  }
+/* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media screen and (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+  .title{
+    max-width:40rem;
+  }
+}
+@media screen and (min-width:1281px) {
+  .title{
+    max-width:40rem;
+  }
+ /* hi-res laptops and desktops */
+ }
