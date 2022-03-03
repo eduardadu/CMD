@@ -30,7 +30,7 @@ class View{
     //original*0.8 /original = width pretendida
     //widthatual / widthpretendida = factor de multiplicaçao
     var percentage=0.8;
-    
+
     var wP= this.ogX / this.ogX;
 
     var x = document.body.clientWidth;                                          //window width
@@ -41,18 +41,29 @@ class View{
     var marginY= 0;                                                             //margin for svg
     var proportionX= x/this.ogX;                                                //proportion of the reduced svg
 
+    //var trasformerX = x/this.ogX;
+    var pretX= this.ogX * 0.8;
+    var facX = x/pretX;
+
     marginX = parseFloat( - (x -  newW) / 2);                               //deslocation that viewbox must suffer to fake margins
     marginY = -y/10;
 
+    if(this.ogX + (marginX*2) > x){
 
+    }
+    if(this.ogY + (marginY*2) < y){
+
+    }
     if(x>y){
-      $( "#cmd " ).attr("viewBox", marginX + " " + marginY + " "+ (x)+ " " + (y*1));
+      $( "#cmd " ).attr("viewBox", marginX + " " + marginY + " "+ (x)+ " " + (y));
     }else{
-      $( "#cmd " ).attr("viewBox", marginX + " " + marginY + " "+ (x)+ " " + (y*1));
+      $( "#cmd " ).attr("viewBox", marginX + " " + marginY + " "+ (x)+ " " + (y));
     }
     $( "#cmd " ).attr("width",  x);
     $( "#cmd " ).attr("height", y);
   }
+
+
 
 
   mobileCursor(){
