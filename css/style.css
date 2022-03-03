@@ -253,7 +253,7 @@ g{
 
 .infoDesc span{
   display:block;
-  padding:1.2rem;
+  padding:2rem;
 }
 
 
@@ -273,7 +273,7 @@ g{
     line-height:1.2rem;
   }
   .infoCont{
-    margin-bottom:2.6rem;
+    margin-bottom:2rem;
   }
   .number{
     font-size: 1rem;
@@ -289,14 +289,14 @@ g{
 @media (min-width:320px)  {
 /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
   .title{
-    max-width:15rem;
+    max-width:18rem;
   }
   .desc{
     font-size:0.9rem;
     line-height:1.2rem;
   }
   .infoCont{
-    margin-bottom:3rem;
+    margin-bottom:2rem;
   }
   .number{
     font-size: 1.2rem;
@@ -318,7 +318,7 @@ g{
     line-height:1.2rem;
   }
   .infoCont{
-    margin-bottom:3.4rem;
+    margin-bottom:3rem;
   }
   .number{
     font-size: 1.2rem;
@@ -399,7 +399,7 @@ g{
   }
   .desc{
     font-size:1.2rem;
-    line-height:1.4rem;
+    line-height:1.5rem;
   }
   .number{
     font-size: 2rem;
@@ -409,6 +409,7 @@ g{
   }
   .titleNumber{
     font-size: 2rem;
+
   }
  /* hi-res laptops and desktops */
  }
