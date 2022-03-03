@@ -41,6 +41,7 @@ class Drawer{
 let lastKnownScrollPosition = 0;
 let ticking = false;
 let cellList = [];
+let groupList = [];
 
 class Cell{
   constructor(e){
@@ -55,7 +56,11 @@ class Cell{
     var b= this.addY * e;
     this.ref.attr("transform","translate("+ a +", " + b + ")");
   }
-
+  updateVertical(e){
+    var a=0;
+    var b= this.addY * e;
+    this.ref.attr("transform","translate("+ a +", " + b + ")");
+  }
   reduce(){
     this.scale = 0;
     this.ref.attr("width", this.scale);
@@ -70,6 +75,10 @@ function svgReduce(){
     element.update(1000);
     }
   );
+  groupList.forEach(function(element){
+    element.updateVertical(3000);
+    }
+  );
 }
 
 function initSVG(){
@@ -77,7 +86,13 @@ function initSVG(){
    let g= $( this);
    cellList.push(new Cell(g));
  });
+ $( "#cmd > g" ).each(function(e){
+   let g= $( this);
+   groupList.push(new Cell(g));
+ });
 }
+
+
 initSVG();
 
 /*

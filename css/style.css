@@ -54,10 +54,13 @@ a{
 rect {
   transition: all 0ms ease-in-out; /* 700ms*/
   filter: url(#blur);
-  opacity:0.8;
+  opacity:0.6;
   fill: #C4E4FC;
-  mix-blend-mode: multiply;
 
+
+  transition: width 10s, height 10s, transform 10s ease;
+}
+g{
   transition: width 10s, height 10s, transform 10s ease;
 }
 
