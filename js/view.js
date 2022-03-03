@@ -30,6 +30,7 @@ class View{
     //original*0.8 /original = width pretendida
     //widthatual / widthpretendida = factor de multiplicaçao
     var percentage=0.8;
+    
     var wP= this.ogX / this.ogX;
 
     var x = document.body.clientWidth;                                          //window width
@@ -41,7 +42,7 @@ class View{
     var proportionX= x/this.ogX;                                                //proportion of the reduced svg
 
     marginX = parseFloat( - (x -  newW) / 2);                               //deslocation that viewbox must suffer to fake margins
-    marginY = -y/3;
+    marginY = -y/10;
 
 
     if(x>y){

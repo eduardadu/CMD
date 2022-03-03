@@ -82,7 +82,7 @@ function svgReduce(){
 }
 
 function initSVG(){
- $( "#cmd > g >rect" ).each(function(e){
+ $( "#cmd > g > circle" ).each(function(e){
    let g= $( this);
    cellList.push(new Cell(g));
  });
