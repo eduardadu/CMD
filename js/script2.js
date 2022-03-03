@@ -11,7 +11,7 @@ var context = canvasAux.getContext('2d');
 var MAX_WIDTH = document.body.clientWidth;
 var MAX_HEIGHT = $(window).height();
 var MAX_SPEED = 20;
-var POINT_SIZE = 14;
+var POINT_SIZE = 12;
 var POINT_COUNT = 10000;
 
 var IMG_WIDTH = document.body.clientWidth;
@@ -24,13 +24,11 @@ var INCREMENT = 0.02;
 
 var MX=0;
 var MY=0;
-var OFFX=200;
-var OFFY=200;
+var OFFX=100;
+var OFFY=100;
 onmousemove = function(e){
   MX= (e.clientX - MAX_WIDTH/2)/10;
   MY= (e.clientY - MAX_HEIGHT/2)/10;
-  //MX= MX+ (INCREMENT*10);
-  //MX= MY+ (INCREMENT*10);
 }
 
 
@@ -39,6 +37,11 @@ function initBackground(){
 
     var regl = createREGL({});
     var ctx= document.querySelectorAll("canvas")[1].id="myCanvas";
+    var ctx=document.querySelector("#myCanvas");
+    ctx.width=MAX_WIDTH;
+    ctx.height=MAX_HEIGHT;
+    ctx.style.width= "'" + MAX_WIDTH + "px";
+    ctx.style.height="'" + MAX_HEIGHT + "px";
     document.querySelector("#myCanvas").style.position="fixed";
 
     // Helper function to generate some fake data.
@@ -66,12 +69,7 @@ function initBackground(){
           alpha= (alpha - 0)*(0-1)/(255-0) + 1;
 
 
-          var randomX=0;
-          var randomY=0;
-          if(Math.random()<0.01){
-            randomX= Math.random()*40 -20;
-            randomY= Math.random()*40 -20;
-          }
+
           var noisePosX= noise(xoff, yoff) *20;  //10
           var noisePosY= noise(xoff, yoff) *160; //80
 
@@ -79,8 +77,9 @@ function initBackground(){
 
           var starterX;
           var starterY;
+
           if(randomX<0.25){
-            starterX= x + POINT_SIZE+ Math.random()*1000;
+            starterX= x + POINT_SIZE + Math.random()*1000;
             starterY= Math.random()*y;
           }else if(randomX>=0.25 && randomX<0.5){
             starterY= y + POINT_SIZE + Math.random()*1000;
@@ -92,6 +91,7 @@ function initBackground(){
             starterY= -POINT_SIZE - Math.random()*1000;
             starterX= Math.random()*x;
           }
+
 
           //starterY= y + POINT_SIZE + Math.random()*1000;
 
@@ -144,9 +144,11 @@ function initBackground(){
         function reportWindowSize(event) {
           MAX_WIDTH = document.body.clientWidth;
           MAX_HEIGHT = $(window).height();
-          ctx = document.querySelector('#myCanvas');
-          ctx.style.width  = document.body.clientWidth;
-          ctx.style.height = $(window).height();
+          var ctx=document.querySelector("#myCanvas");
+          ctx.width=MAX_WIDTH;
+          ctx.height=MAX_HEIGHT;
+          ctx.style.width= "'" + MAX_WIDTH + "px";
+          ctx.style.height="'" + MAX_HEIGHT + "px";
 
           regl.poll();
           regl._refresh();
