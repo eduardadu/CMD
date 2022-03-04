@@ -78,7 +78,7 @@ function svgReduce(){
     }
   );
   groupList.forEach(function(element){
-    element.updateVertical(3000);
+    //element.updateVertical(1000);
     }
   );
 }
