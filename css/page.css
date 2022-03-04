@@ -15,8 +15,11 @@
 
 .pagetitle{
   font-family: "MainFont";
-  font-size:2rem;
+  font-size:1.4rem;
   margin-bottom:4rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  word-spacing: 0.35rem;
 }
 
 
@@ -45,7 +48,8 @@
   display:block;
   margin-bottom:4rem;
   font-family: "MainFont";
-  max-width:620px;
+  max-width:640px;
+  line-height: 1.3rem;
 }
 .infoPTitle:hover{
   text-decoration:underline;

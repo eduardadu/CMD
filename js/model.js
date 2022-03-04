@@ -45,7 +45,7 @@ function svgReduce(){
     }
   );
   groupList.forEach(function(element){
-    //element.updateVertical(1000);
+    element.updateVertical(3000);
     }
   );
 }
