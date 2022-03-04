@@ -412,7 +412,7 @@ li{
 }
 @media screen and (min-width:1281px) {
   .title{
-    max-width:50rem;
+    max-width:40rem;
   }
   .desc{
     font-size:1.2rem;
@@ -428,5 +428,24 @@ li{
     font-size: 2rem;
 
   }
+
+  @media screen and (min-width:1581px) {
+    .title{
+      max-width:50rem;
+    }
+    .desc{
+      font-size:1.2rem;
+      line-height:1.6rem;
+    }
+    .number{
+      font-size: 2rem;
+      width:2rem;
+      height:2rem;
+      line-height: 2rem;
+    }
+    .titleNumber{
+      font-size: 2rem;
+
+    }
  /* hi-res laptops and desktops */
  }
