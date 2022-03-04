@@ -27,7 +27,7 @@ class PageConnect{
         });
         break;
       case "Applications":
-        $('#content').load("content/application.html", function(){
+        $('#content').load("content/applications.html", function(){
           t.outSeparator();
             view= new View();
         });
@@ -63,8 +63,6 @@ class PageConnect{
     document.body.appendChild(divAux);
     $('#topbar').load("content/navbar.html", function(){
 
-
-
       t.addHyps();
       t.manageTabs();
 
@@ -97,7 +95,7 @@ class PageConnect{
       this.addHyper(homeHyp, 2, 'CMD', '/home.html', '/content/home.html');
       this.addHyper(aboutHyp, 3, 'Info', '/info.html', '/content/info.html');
       this.addHyper(contactHyp, 5, 'Contacts', '/contacts.html', '/content/contacts.html');
-      this.addHyper(admissionHyp, 5, 'Applications', '/application.html', '/content/application.html');
+      this.addHyper(admissionHyp, 5, 'Applications', '/applications.html', '/content/applications.html');
   }
 
 
