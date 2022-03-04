@@ -7,6 +7,7 @@ class PageConnect{
   manageTabs(e){
     var title= document.title;
     var t= this;
+    
     switch(title){
       case "CMD":
         t.triggerSeparator();
@@ -16,9 +17,11 @@ class PageConnect{
         });
         break;
       case "Info":
+
         $('#content').load("content/info.html", function(){
           t.outSeparator();
           t.checkView();
+          t.expandInfoPage();
         });
         break;
       case "Contacts":
@@ -51,7 +54,9 @@ class PageConnect{
     }
   }
 
-
+  expandInfoPage(){
+    view.expandInfoPage();
+  }
 
   loadSeparator(){
 

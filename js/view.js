@@ -22,6 +22,7 @@ class View{
     window.addEventListener('resize', reportWindowSize);
     function reportWindowSize(){
       t.resizeSVG();
+      t.mobileCursor();
     }
   }
 
@@ -50,7 +51,6 @@ class View{
 
       $( "#cmd " ).attr("viewBox", marginX + " " + marginY + " "+ (x*facY) + " " + (y*facY));
     }else{
-      console.log("y");
       let aux2= (this.ogX*facX) * y /x;
 
       marginX = -((x*facX)-this.ogX)/2;
@@ -71,7 +71,15 @@ class View{
     //return check;
     if(check==true){
       document.querySelector(".cursor").style.display="none";
+    }else{
+      document.querySelector(".cursor").style.display="block";
     }
+  }
+
+
+  setResponsiveLogo(){
+    var logo = document.querySelector("#");
+    var contentMargin = document.querySelector();
   }
 
 
@@ -87,12 +95,10 @@ class View{
         }
       });
     });
-
   }
 
   expandMenu(){
     document.querySelector("#burger").addEventListener("click",function(){
-      console.log("clicked");
       var exp= document.querySelector("#mobileExtend");
       if(exp.style.maxHeight == "3rem" || exp.style.maxHeight ==""){
         exp.style.maxHeight= "100vh";
@@ -130,7 +136,23 @@ class View{
         ticking = true;
       }
     });
-
   }
+
+
+  expandInfoPage(){
+    var list = document.querySelectorAll(".infoS");
+    list.forEach((item, index) => {
+      item.addEventListener("click",function(){
+        var exp= item.nextElementSibling;
+        if(exp.style.maxHeight == "0px" || exp.style.maxHeight ==""){
+          exp.style.maxHeight= "100vh";
+        }else{
+          exp.style.maxHeight= "0px";
+        }
+      });
+    });
+  }
+
+
 
 }

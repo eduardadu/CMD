@@ -6,7 +6,7 @@
   height:70vh;
   width:100%;
   max-height:auto;
-  animation: pageUp 0.5s ease;
+  animation: pageUp 1s ease;
   padding-top:6rem;
 
   overflow-y: scroll;
