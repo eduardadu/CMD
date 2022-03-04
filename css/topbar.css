@@ -37,6 +37,16 @@
 }
 
 
+.logouc{
+  position:relative;
+  height:100%;
+  display: flex;
+  align-items: center;
+}
+.logouc img{
+  position:relative;
+  height:70%;
+}
 .webtopbar{
   position:relative;
   width:100%;
@@ -45,7 +55,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 2rem;
+  height: 3.4rem;
   border-bottom: 1px solid var(--text-color);
 }
 
