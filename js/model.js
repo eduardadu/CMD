@@ -69,6 +69,8 @@ class Cell{
 
 }
 
+
+
 function svgReduce(){
   cellList.forEach(function(element){
     element.reduce();
