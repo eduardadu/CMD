@@ -28,10 +28,24 @@
   padding-left:10%;
 }
 
+
 .infoPTitle{
   font-family: "MainFont";
   margin-bottom:1.4rem;
+  text-align: left;
 
+}
+.infoPText{
+    text-align: left;
+  max-height:0px;
+  overflow-y: hidden;
+  transition: max-height 1s;
+}
+.infoPText span{
+  display:block;
+  margin-bottom:4rem;
+  font-family: "MainFont";
+  max-width:620px;
 }
 .infoPTitle:hover{
   text-decoration:underline;

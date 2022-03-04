@@ -7,7 +7,7 @@ class PageConnect{
   manageTabs(e){
     var title= document.title;
     var t= this;
-    
+
     switch(title){
       case "CMD":
         t.triggerSeparator();
@@ -48,6 +48,11 @@ class PageConnect{
   switchInfo(){
 
   }
+
+  loadLogo(){
+    view.setResponsiveLogo();
+  }
+
   checkView(){  //create view if its not been created
     if(view == undefined || view== null){
       view= new View();
@@ -59,7 +64,6 @@ class PageConnect{
   }
 
   loadSeparator(){
-
     var divAux = document.createElement("div");
     divAux.id="separator";
     document.body.appendChild(divAux);

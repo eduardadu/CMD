@@ -140,7 +140,7 @@ class View{
 
 
   expandInfoPage(){
-    var list = document.querySelectorAll(".infoS");
+    var list = document.querySelectorAll(".infoPTitle");
     list.forEach((item, index) => {
       item.addEventListener("click",function(){
         var exp= item.nextElementSibling;
