@@ -84,7 +84,7 @@
   justify-content: center;
   align-items:center;
   position:absolute;
-  top:40vh;
+  top:27rem;
 }
 .topMobItem{
   font-size:1.4rem;
@@ -93,7 +93,7 @@
 
 .logomobilenav{
   position:absolute;
-  margin-top:6rem;
+  margin-top:10rem;
   width:100%;
   display: flex;
   align-items: center;
@@ -222,6 +222,10 @@ https://stackoverflow.com/questions/65828562/hi-i-want-to-change-from-hamburgur-
   .webtopbar {
     display: none;
   }
+  .logomobilenav img{
+    width:100%;
+    max-width:18rem;
+  }
 }
 
 @media (min-width:320px)  {
@@ -231,6 +235,10 @@ https://stackoverflow.com/questions/65828562/hi-i-want-to-change-from-hamburgur-
   }
   .webtopbar {
     display: none;
+  }
+  .logomobilenav img{
+    width:100%;
+    max-width:18rem;
   }
 }
 @media screen and(min-width:480px)  {
@@ -242,6 +250,10 @@ https://stackoverflow.com/questions/65828562/hi-i-want-to-change-from-hamburgur-
   .webtopbar {
     display: none;
   }
+  .logomobilenav img{
+    width:100%;
+    max-width:25rem;
+  }
 }
 @media screen and (min-width:600px)  {/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
 
@@ -251,6 +263,7 @@ https://stackoverflow.com/questions/65828562/hi-i-want-to-change-from-hamburgur-
   .webtopbar {
     display: none;
   }
+
 }
 @media screen and (min-width:801px)  {
   .webtopbar {

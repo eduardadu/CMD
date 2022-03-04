@@ -4,7 +4,7 @@ class View{
     this.initSVG();
     this.expandInfo();
     this.expandMenu();
-
+    this.resizeWindow();
   }
 
 
@@ -18,10 +18,10 @@ class View{
 
   resizeWindow(){
     var t=this;
-    window.onresize = function(event) {
+    window.addEventListener('resize', reportWindowSize);
+    function reportWindowSize(){
       t.resizeSVG();
-    };
-
+    }
   }
 
 
@@ -29,8 +29,7 @@ class View{
     //widthAtual/original = 0.9  que queremos transformar em 0.8
     //original*0.8 /original = width pretendida
     //widthatual / widthpretendida = factor de multiplicaçao
-    var percentage=0.8;
-
+    var perc=0.7;
 
     var x = document.body.clientWidth;                                          //window width
     var y= $(window).height();                                                  //window height
@@ -40,31 +39,27 @@ class View{
     var marginY= 0;                                                             //margin for svg
 
     //var trasformerX = x/this.ogX;
-    var pretX= x * 0.8;
+    var pretX= x * perc;
     var facX = this.ogX/pretX;
-
-    var pretY= y * 0.8;
+    var pretY= y * perc;
     var facY = this.ogY/pretY;
 
 
     //if((this.ogX/facY)< x && (this.ogY/facY)<y){       //   x<y     y > this.ogY &&
-    if((this.ogX/facY)<= x*0.8 ){
-      let aux= (this.ogY*facY) * x /y;
-      marginX = parseFloat( - (aux -  newW) / 2);                               //deslocation that viewbox must suffer to fake margins
-      marginY = -((this.ogY*facY) - this.ogY)/2;
+    if(x>y){
 
-      $( "#cmd " ).attr("viewBox", marginX + " " + marginY + " "+ aux + " " + (this.ogY*facY));
+      marginX = -((x*facY)-this.ogX)/2;
+      marginY = -((y*facY)-this.ogY)/2;
 
+      $( "#cmd " ).attr("viewBox", marginX + " " + marginY + " "+ (x*facY) + " " + (y*facY));
     }else{
       console.log("y");
       let aux2= (this.ogX*facX) * y /x;
-                                    //deslocation that viewbox must suffer to fake margins
-      marginY = -((aux2) - (this.ogY))/2;
-      marginX = parseFloat( - ((this.ogX*facX) -  this.ogX) / 2);
-      console.log(this.ogX*facX);
-      console.log(aux2);
 
-      $( "#cmd " ).attr("viewBox", marginX + " " + marginY + " "+ (this.ogX*facX) + " " + aux2);
+      marginX = -((x*facX)-this.ogX)/2;
+      marginY = -((y*facX)-this.ogY)/2;
+
+      $( "#cmd " ).attr("viewBox", marginX + " " + marginY + " "+ (x*facX) + " " + (y*facX));
     }
     $( "#cmd " ).attr("width",  x);
     $( "#cmd " ).attr("height", y);

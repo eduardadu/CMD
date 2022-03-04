@@ -304,6 +304,7 @@ li{
   .title{
     max-width:18rem;
   }
+
   .desc{
     font-size:1rem;
     line-height:1.3rem;
@@ -391,6 +392,7 @@ li{
   .title{
     max-width:40rem;
   }
+
   .infoCont{
     margin-bottom:4rem;
   }
@@ -410,7 +412,7 @@ li{
 }
 @media screen and (min-width:1281px) {
   .title{
-    max-width:40rem;
+    max-width:50rem;
   }
   .desc{
     font-size:1.2rem;
