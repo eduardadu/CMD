@@ -1,36 +1,3 @@
-class Drawer{
-  constructor(){
-    this.cellList = [];
-    this.size=40;
-    //this.initDrawer();
-    this.image= loadImage('assets/img.jpg');
-    this.image.loadPixels();
-  }
-
-
-
-
-
-
-  updateList(){
-    for(var i=0; i < this.cellList.size; i++){
-
-    }
-  }
-
-  analyseImg(){
-    //analisar cada pixel da imagem
-  }
-  analyseEnd(){
-    //quando acabar a analise da imagem, começar a desenhar
-  }
-
-  startDrawing(){
-    //ate acabar as bolinhas...
-  }
-}
-
-
 
 
 //------------------------------------------------------------------------------
@@ -93,24 +60,3 @@ function initSVG(){
    groupList.push(new Cell(g));
  });
 }
-
-
-initSVG();
-
-
-document.addEventListener('scroll', function(e) {
-  lastKnownScrollPosition = window.scrollY;
-  if (!ticking) {
-    window.requestAnimationFrame(function() {
-      //doSomething(lastKnownScrollPosition);
-      cellList.forEach(function(element){
-        element.update(lastKnownScrollPosition);
-        element.reduce(lastKnownScrollPosition);
-        }
-      );
-
-      ticking = false;
-    });
-    ticking = true;
-  }
-});

@@ -1,7 +1,7 @@
 class PageConnect{
   constructor(){
     this.loadSeparator();
-    this.loadNavbar();
+    this.loadSVG(); //begin all loads
   }
 
   manageTabs(e){
@@ -12,25 +12,28 @@ class PageConnect{
         t.triggerSeparator();
         $('#content').load("content/home.html", function(){
           t.outSeparator();
-                  view= new View();  });
+          t.checkView();
+        });
         break;
       case "Info":
         $('#content').load("content/info.html", function(){
           t.outSeparator();
-            view= new View();
+          t.checkView();
         });
         break;
       case "Contacts":
         $('#content').load("content/contacts.html", function(){
           t.outSeparator();
-            view= new View();
+          t.checkView();
         });
         break;
       case "Applications":
         $('#content').load("content/applications.html", function(){
           t.outSeparator();
-            view= new View();
+          t.checkView();
         });
+
+
         break;
     }
 
@@ -42,8 +45,10 @@ class PageConnect{
   switchInfo(){
 
   }
-  switchContacts(){
-
+  checkView(){  //create view if its not been created
+    if(view == undefined || view== null){
+      view= new View();
+    }
   }
 
 
@@ -54,6 +59,15 @@ class PageConnect{
     divAux.id="separator";
     document.body.appendChild(divAux);
     $('#separator').load("content/separator.html", function(){
+    });
+  }
+
+  loadSVG(){
+    var t=this;
+    var divAux = document.createElement("div");
+    document.body.appendChild(divAux);
+    $('#cmd').load("content/svg.html", function(){
+      t.loadNavbar();
     });
   }
   loadNavbar(){
@@ -159,10 +173,7 @@ class PageConnect{
 //------------------------------------------------------------------------------
 
 
-function getBaseUrl() {
+function getBaseUrl() { //get to the root url
             var re = new RegExp(/^.*\//);
             return re.exec(window.location.href);
         }
-
-
-        //establish page connections with ajax calls
