@@ -170,7 +170,12 @@ g{
 }
 
 ul{
-  padding-left:3.4rem;
+  padding-left:0px;
+  list-style-type: none;
+
+}
+li{
+  margin-bottom:0.4rem;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -242,7 +247,7 @@ ul{
 }
 
 .infoDescBorder{
-  background-color:  var(--main-bg-color);
+  background-color:  #91d0ff;
   color:black;
   width:100%;
   transition: max-height 0.50s ease-in;
@@ -274,8 +279,8 @@ ul{
     max-width:15rem;
   }
   .desc{
-    font-size:0.9rem;
-    line-height:1.2rem;
+    font-size:1rem;
+    line-height:1.3rem;
   }
   .infoCont{
     margin-bottom:2rem;
@@ -300,8 +305,8 @@ ul{
     max-width:18rem;
   }
   .desc{
-    font-size:0.9rem;
-    line-height:1.2rem;
+    font-size:1rem;
+    line-height:1.3rem;
   }
   .infoCont{
     margin-bottom:2rem;
@@ -324,7 +329,7 @@ ul{
   }
   .desc{
     font-size:1rem;
-    line-height:1.2rem;
+    line-height:1.3rem;
   }
   .infoCont{
     margin-bottom:3rem;
@@ -349,7 +354,7 @@ ul{
   }
   .desc{
     font-size:1rem;
-    line-height:1.2rem;
+    line-height:1.3rem;
   }
   .number{
     font-size: 1.6rem;
@@ -370,7 +375,7 @@ ul{
   }
   .desc{
     font-size:1rem;
-    line-height:1.2rem;
+    line-height:1.3rem;
   }
   .number{
     font-size: 1.8rem;
@@ -391,7 +396,7 @@ ul{
   }
   .desc{
     font-size:1rem;
-    line-height:1.2rem;
+    line-height:1.3rem;
   }
   .number{
     font-size: 2rem;
@@ -409,7 +414,7 @@ ul{
   }
   .desc{
     font-size:1.2rem;
-    line-height:1.5rem;
+    line-height:1.6rem;
   }
   .number{
     font-size: 2rem;

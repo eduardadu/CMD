@@ -31,7 +31,6 @@ class View{
     //widthatual / widthpretendida = factor de multiplicaçao
     var percentage=0.8;
 
-    var wP= this.ogX / this.ogX;
 
     var x = document.body.clientWidth;                                          //window width
     var y= $(window).height();                                                  //window height
@@ -39,25 +38,33 @@ class View{
     var newW = this.ogX;
     var marginX= 0;                                                             //margin for svg
     var marginY= 0;                                                             //margin for svg
-    var proportionX= x/this.ogX;                                                //proportion of the reduced svg
 
     //var trasformerX = x/this.ogX;
-    var pretX= this.ogX * 0.8;
-    var facX = x/pretX;
+    var pretX= x * 0.8;
+    var facX = this.ogX/pretX;
 
-    marginX = parseFloat( - (x -  newW) / 2);                               //deslocation that viewbox must suffer to fake margins
-    marginY = -y/10;
+    var pretY= y * 0.8;
+    var facY = this.ogY/pretY;
 
-    if(this.ogX + (marginX*2) > x){
 
-    }
-    if(this.ogY + (marginY*2) < y){
+    //if((this.ogX/facY)< x && (this.ogY/facY)<y){       //   x<y     y > this.ogY &&
+    if((this.ogX/facY)<= x*0.8 ){
+      let aux= (this.ogY*facY) * x /y;
+      marginX = parseFloat( - (aux -  newW) / 2);                               //deslocation that viewbox must suffer to fake margins
+      marginY = -((this.ogY*facY) - this.ogY)/2;
 
-    }
-    if(x>y){
-      $( "#cmd " ).attr("viewBox", marginX + " " + marginY + " "+ (x)+ " " + (y));
+      $( "#cmd " ).attr("viewBox", marginX + " " + marginY + " "+ aux + " " + (this.ogY*facY));
+
     }else{
-      $( "#cmd " ).attr("viewBox", marginX + " " + marginY + " "+ (x)+ " " + (y));
+      console.log("y");
+      let aux2= (this.ogX*facX) * y /x;
+                                    //deslocation that viewbox must suffer to fake margins
+      marginY = -((aux2) - (this.ogY))/2;
+      marginX = parseFloat( - ((this.ogX*facX) -  this.ogX) / 2);
+      console.log(this.ogX*facX);
+      console.log(aux2);
+
+      $( "#cmd " ).attr("viewBox", marginX + " " + marginY + " "+ (this.ogX*facX) + " " + aux2);
     }
     $( "#cmd " ).attr("width",  x);
     $( "#cmd " ).attr("height", y);
