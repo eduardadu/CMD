@@ -73,16 +73,16 @@ g circle {
   fill: none;
   stroke:white;
   stroke-width:3px;
-  -webkit-transition:  width 10s, height 10s, transform 10s ease;
-  -moz-transition:  width 10s, height 10s, transform 10s ease;
-  -o-transition:  width 10s, height 10s, transform 10s ease;
-  transition:  width 10s, height 10s, transform 10s ease;
+  -webkit-transition:  width 3s, height 3s, transform 2s ease;
+  -moz-transition:  width 4s, height 4s, transform 2s ease;
+  -o-transition:  width 4s, height 10s, transform 2s ease;
+  transition:  width 4s, height 4s, transform 2s ease;
 }
 g{
-  -webkit-transition:  width 10s, height 10s, transform 10s ease;
-  -moz-transition:  width 10s, height 10s, transform 10s ease;
-  -o-transition:  width 10s, height 10s, transform 10s ease;
-  transition:  width 10s, height 10s, transform 10s ease;
+  -webkit-transition:  width 4s, height 4s, transform 2s ease;
+  -moz-transition:  width 4s, height 4s, transform 2s ease;
+  -o-transition:  width 4s, height 4s, transform 2s ease;
+  transition:  width 4s, height 4s, transform 2s ease;
 }
 
 

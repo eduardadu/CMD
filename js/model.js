@@ -16,11 +16,18 @@ class Cell{
     this.scale=this.ref.attr("width");
     this.addX= parseFloat((Math.random()*3)-1.5);
     this.addY= parseFloat((Math.random()*3)-1.5);
+
+    this.range= 40;
   }
 
+  noise(){
+    var a= Math.random()* this.range - this.range/2;
+    var b= Math.random()* this.range - this.range/2;
+    this.ref.attr("transform","translate("+ a +", " + b + ")");
+  }
   update(e){
-    var a= this.addX * e;
-    var b= this.addY * e;
+    var a= this.addX * e + Math.random()* this.range - this.range/2;;
+    var b= this.addY * e + Math.random()* this.range - this.range/2;;
     this.ref.attr("transform","translate("+ a +", " + b + ")");
   }
   updateVertical(e){
@@ -39,13 +46,15 @@ class Cell{
 
 
 function svgReduce(){
+
   cellList.forEach(function(element){
-    element.reduce();
-    element.update(1000);
+    //element.reduce();
+    //element.update(1000);
+    element.noise();
     }
   );
   groupList.forEach(function(element){
-    element.updateVertical(3000);
+    //element.updateVertical(3000);
     }
   );
 }

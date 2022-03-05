@@ -89,7 +89,7 @@ class View{
       item.addEventListener("click",function(){
         var exp= item.nextElementSibling;
         if(exp.style.maxHeight == "0px" || exp.style.maxHeight ==""){
-          exp.style.maxHeight= "100vh";
+          exp.style.maxHeight= "1000vh";
         }else{
           exp.style.maxHeight= "0px";
         }
@@ -101,7 +101,7 @@ class View{
     document.querySelector("#burger").addEventListener("click",function(){
       var exp= document.querySelector("#mobileExtend");
       if(exp.style.maxHeight == "3rem" || exp.style.maxHeight ==""){
-        exp.style.maxHeight= "100vh";
+        exp.style.maxHeight= "1000vh";
       }else{
         exp.style.maxHeight= "3rem";
       }
@@ -112,7 +112,7 @@ class View{
 
   closeMenu(){
     var exp= document.querySelector("#mobileExtend");
-    if(exp.style.maxHeight == "100vh"){
+    if(exp.style.maxHeight == "1000vh"){
       $('#burger').click();
     }
   }
@@ -128,6 +128,7 @@ class View{
           cellList.forEach(function(element){
             element.update(lastKnownScrollPosition);
             element.reduce(lastKnownScrollPosition);
+            //element.noise();
             }
           );
 
