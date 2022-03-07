@@ -77,11 +77,6 @@ class View{
   }
 
 
-  setResponsiveLogo(){
-    var logo = document.querySelector("#");
-    var contentMargin = document.querySelector();
-  }
-
 
   expandInfo(){
     var list = document.querySelectorAll(".infoS");
@@ -117,6 +112,22 @@ class View{
     }
   }
 
+  startLogo(e){
+    var logoCont= document.querySelector("#titleCont");
+    var logo= document.querySelector("#title");
+    if(e=="little"){
+    //  logo.style.maxWidth="6rem";
+      logoCont.style.marginTop="4rem";
+
+      logo.classList.add("tS");
+      logo.classList.remove("tB");
+    }else if(e=="big"){
+
+
+      logo.classList.add("tB");
+      logo.classList.remove("tS");
+    }
+  }
 
   scrollAnimation(){
 
@@ -126,8 +137,8 @@ class View{
         window.requestAnimationFrame(function() {
           //doSomething(lastKnownScrollPosition);
           cellList.forEach(function(element){
-            element.update(lastKnownScrollPosition);
-            element.reduce(lastKnownScrollPosition);
+            element.updateSmooth(lastKnownScrollPosition);
+            //element.reduce(lastKnownScrollPosition);
             //element.noise();
             }
           );
@@ -156,4 +167,25 @@ class View{
 
 
 
+}
+
+
+
+function enterAnimation(){
+
+    var reduce = setTimeout(function(){
+      svgReduce();
+    }, 2000);
+
+
+    var enterThings = setTimeout(function(){
+      document.querySelector("#content").style.opacity = 1 ;
+      document.querySelector("#titleCont").style.opacity = 1;
+      document.querySelector("#topbar").style.display ="flex";
+    }, 3000);
+
+    var backgroundEnter = setTimeout(function(){
+      enterAnim=true;
+
+    }, 6000);
 }

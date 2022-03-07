@@ -321,30 +321,3 @@ function initBackground(){
 
   }
 }
-
-
-
-
-function enterAnimation(){
-    var time = 4000;
-    var logo = setTimeout(function(){
-    }, 0);
-
-    var reduce = setTimeout(function(){
-
-      svgReduce();
-    }, 2000);
-    var bubbles = setTimeout(function(){
-      enterBubbles=true;
-    }, 3000);
-
-    var enterThings = setTimeout(function(){
-      document.querySelector("#content").style.opacity = 1 ;
-      document.querySelector("#topbar").style.display ="flex";
-    }, 3000);
-
-    var backgroundEnter = setTimeout(function(){
-      enterAnim=true;
-
-    }, 6000);
-}

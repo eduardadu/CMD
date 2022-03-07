@@ -14,6 +14,8 @@ class PageConnect{
         $('#content').load("content/home.html", function(){
           t.outSeparator();
           t.checkView();
+
+          view.startLogo("big");
         });
         break;
       case "Info":
@@ -21,19 +23,21 @@ class PageConnect{
         $('#content').load("content/info.html", function(){
           t.outSeparator();
           t.checkView();
-          t.expandInfoPage();
+          view.startLogo("little");
         });
         break;
       case "Contacts":
         $('#content').load("content/contacts.html", function(){
           t.outSeparator();
           t.checkView();
+          view.startLogo("little");
         });
         break;
       case "Applications":
         $('#content').load("content/applications.html", function(){
           t.outSeparator();
           t.checkView();
+          view.startLogo("little");
         });
 
 
@@ -56,12 +60,14 @@ class PageConnect{
   checkView(){  //create view if its not been created
     if(view == undefined || view== null){
       view= new View();
+    }else{
+        view.expandInfo();
+        view.expandInfoPage();
     }
   }
 
-  expandInfoPage(){
-    view.expandInfoPage();
-  }
+
+
 
   loadSeparator(){
     var divAux = document.createElement("div");
@@ -85,7 +91,6 @@ class PageConnect{
     divAux.id="topbar";
     document.body.appendChild(divAux);
     $('#topbar').load("content/navbar.html", function(){
-
       t.addHyps();
       t.manageTabs();
 

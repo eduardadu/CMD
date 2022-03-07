@@ -73,16 +73,16 @@ g circle {
   fill: none;
   stroke:white;
   stroke-width:3px;
-  -webkit-transition:  width 3s, height 3s, transform 2.5s ease;
-  -moz-transition:  width 4s, height 4s, transform 2.5s ease;
-  -o-transition:  width 4s, height 10s, transform 2.5s ease;
-  transition:  width 4s, height 4s, transform 2.5s ease;
+  -webkit-transition:  width 3s, height 3s, transform 2s ease;
+  -moz-transition:  width 4s, height 4s, transform 2s ease;
+  -o-transition:  width 4s, height 10s, transform 2s ease;
+  transition:  width 4s, height 4s, transform 2s ease;
 }
 g{
-  -webkit-transition:  width 4s, height 4s, transform 2.5s ease;
-  -moz-transition:  width 4s, height 4s, transform 2.5s ease;
-  -o-transition:  width 4s, height 4s, transform 2.5s ease;
-  transition:  width 4s, height 4s, transform 2.5s ease;
+  -webkit-transition:  width 4s, height 4s, opacity 2.5s, transform 2s ease;
+  -moz-transition:  width 4s, height 4s, opacity 2.5s, transform 2s ease;
+  -o-transition:  width 4s, height 4s, opacity 2.5s, transform 2s ease;
+  transition:  width 4s, height 4s, opacity 2.5s, transform 2s ease;
 }
 
 
@@ -121,7 +121,6 @@ g{
   opacity:0;
 }
 .content{
-  padding-top:10rem;
   text-align: center;
   display:flex;
   flex-direction: column;
@@ -132,16 +131,31 @@ g{
   display:flex;
   justify-content: center;
   align-items: center;
+  transition: opacity 1s, margin-top 0.8s;
+  opacity:0;
 }
+
+.tcB{
+  margin-top:10rem;
+}
+.tcS{
+  margin-top:4rem;
+}
+
 .title{
   color: var(--text-color);
   font-family: "MainFont";
-
   font-size: 4rem;
-
   text-align: justify;
-  max-width:40rem;
+
   text-transform: uppercase;
+  transition: max-width 0.8s;
+}
+.tB{
+  max-width:40rem;
+}
+.tS{
+  max-width:6rem;
 }
 .title img{
   position:relative;
@@ -229,7 +243,6 @@ li{
 }
 
 .infoDesc{
-  background-color:  var(--main-bg-color);
   color:black;
 
   margin-top: 2rem;
@@ -248,6 +261,7 @@ li{
 
 .infoDescBorder{
   background-color:  #91d0ff;
+  mix-blend-mode: hard-light;
   color:black;
   width:100%;
   transition: max-height 0.50s ease-in;
@@ -260,6 +274,7 @@ li{
   display:flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .infoDesc span{
@@ -276,7 +291,7 @@ li{
 
 @media (max-width:320px)  {
 /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
-  .title{
+  .tB{
     max-width:15rem;
   }
   .desc{
@@ -302,7 +317,7 @@ li{
 
 @media (min-width:320px)  {
 /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
-  .title{
+  .tB{
     max-width:18rem;
   }
 
@@ -326,7 +341,7 @@ li{
 }
 @media screen and(min-width:480px)  {
 /* smartphones, Android phones, landscape iPhone */
-  .title{
+  .tB{
     max-width:25rem;
   }
   .desc{
@@ -348,7 +363,7 @@ li{
 
 }
 @media screen and (min-width:600px)  {/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
-  .title{
+  .tB{
     max-width:30rem;
   }
   .infoCont{
@@ -369,7 +384,7 @@ li{
   }
 }
 @media screen and (min-width:801px)  {
-  .title{
+  .tB{
     max-width:40rem;
   }
   .infoCont{
@@ -390,7 +405,7 @@ li{
   }
 /* tablet, landscape iPad, lo-res laptops ands desktops */ }
 @media screen and (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
-  .title{
+  .tB{
     max-width:40rem;
   }
 
@@ -412,7 +427,7 @@ li{
   }
 }
 @media screen and (min-width:1281px) {
-  .title{
+  .tB{
     max-width:40rem;
   }
   .desc{
@@ -431,7 +446,7 @@ li{
   }
 
   @media screen and (min-width:1581px) {
-    .title{
+    .tB{
       max-width:50rem;
     }
     .desc{
