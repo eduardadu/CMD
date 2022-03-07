@@ -117,12 +117,14 @@ class View{
     var logo= document.querySelector("#title");
     if(e=="little"){
     //  logo.style.maxWidth="6rem";
-      logoCont.style.marginTop="4rem";
+      logoCont.classList.remove("tcB");
+      logoCont.classList.add("tcS");
 
       logo.classList.add("tS");
       logo.classList.remove("tB");
     }else if(e=="big"){
-
+      logoCont.classList.add("tcB");
+      logoCont.classList.remove("tcS");
 
       logo.classList.add("tB");
       logo.classList.remove("tS");
