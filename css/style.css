@@ -41,9 +41,7 @@ a{
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background:
-#ebebf0
-;
+  background: #ebebf0;
   opacity:0.6;
 }
 
@@ -286,11 +284,8 @@ li{
 
 .infoDesc{
   color:black;
-
   margin-top: 2rem;
   width:100%;
-  max-height:0px;
-  transition: max-height 0.50s ease-in;
   overflow-y: hidden;
   font-family: 'MainFont';
   line-height: 1.3rem;
@@ -299,13 +294,17 @@ li{
   display:flex;
   justify-content: center;
   align-items: center;
+  max-height: 0;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
 }
-
+.infoDesc.full{
+  max-height: 1000px;
+  transition: max-height 1s ease-in-out;
+}
 .infoDescBorder{
   background-color:  #91d0ff;
   color:black;
   width:100%;
-  transition: max-height 0.50s ease-in;
   overflow-y: hidden;
   font-family: 'MainFont';
   line-height: 1.3rem;

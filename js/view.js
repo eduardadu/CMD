@@ -83,10 +83,12 @@ class View{
     list.forEach((item, index) => {
       item.addEventListener("click",function(){
         var exp= item.nextElementSibling;
-        if(exp.style.maxHeight == "0px" || exp.style.maxHeight ==""){
-          exp.style.maxHeight= "1000vh";
+        if(exp.classList.contains("full")){
+          //exp.style.maxHeight= "1000vh";
+          exp.classList.remove("full");
         }else{
-          exp.style.maxHeight= "0px";
+          //exp.style.maxHeight= "0px";
+          exp.classList.add("full");
         }
       });
     });
