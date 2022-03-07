@@ -132,7 +132,7 @@ class View{
   }
 
   scrollAnimation(){
-
+    var t = this;
     document.addEventListener('scroll', function(e) {
       lastKnownScrollPosition = window.scrollY;
       if (!ticking) {
@@ -144,12 +144,15 @@ class View{
             //element.noise();
             }
           );
-
+          t.scrollBackground(lastKnownScrollPosition);
           ticking = false;
         });
         ticking = true;
       }
+
     });
+
+
   }
 
 
@@ -165,9 +168,23 @@ class View{
         }
       });
     });
+
+
   }
 
 
+  scrollBackground(e){
+    var bg = document.querySelector("#bgCont");
+    var image= document.querySelector("#bgImage");
+    var limit = Math.max( document.body.scrollHeight, document.body.offsetHeight,
+                   document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
+    var bgHeight= image.height/3;
+
+    //e--limit
+    //aux -- bgHeight
+    //aux= e*bgheight/limit
+    image.style.top= (-e* bgHeight/limit) + "px" ;
+  }
 
 }
 
