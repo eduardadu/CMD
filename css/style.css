@@ -82,7 +82,7 @@ g circle {
   opacity:0.75;
   fill: none;
   stroke:white;
-  stroke-width:3px;
+  stroke-width:2px;
   -webkit-transition:  width 3s, height 3s, transform 2s ease;
   -moz-transition:  width 4s, height 4s, transform 2s ease;
   -o-transition:  width 4s, height 10s, transform 2s ease;
@@ -271,7 +271,6 @@ li{
 
 .infoDescBorder{
   background-color:  #91d0ff;
-  mix-blend-mode: hard-light;
   color:black;
   width:100%;
   transition: max-height 0.50s ease-in;
