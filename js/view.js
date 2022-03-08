@@ -94,6 +94,7 @@ class View{
     });
   }
 
+
   expandMenu(){
     document.querySelector("#burger").addEventListener("click",function(){
       var exp= document.querySelector("#mobileExtend");
@@ -151,10 +152,7 @@ class View{
         });
         ticking = true;
       }
-
     });
-
-
   }
 
 

@@ -6,6 +6,7 @@
 let lastKnownScrollPosition = 0;
 let ticking = false;
 let cellList = [];
+let floatersList = [];
 let groupList = [];
 
 class Cell{
@@ -20,6 +21,8 @@ class Cell{
     this.noiseY = Math.random()* this.range - this.range/2;
     this.addXS= this.addX ;
     this.addYS= this.addY ;
+
+    this.rangeBig= 60;
 
   }
 
@@ -39,19 +42,33 @@ class Cell{
     var b= this.addYS *e + this.noiseY;
     this.ref.attr("transform","translate("+ a +", " + b + ")");
   }
-  updateVertical(e){
-    var a=0;
-    var b= this.addY * e;
-    this.ref.attr("transform","translate("+ a +", " + b + ")");
+
+
+  floating(){
+    var t=this;
+    var move=true;
+    function moveIt(){
+      var time= Math.random()*6000 + 6000;
+      var aux = setInterval( function(){
+        var a= Math.random()* t.rangeBig - t.rangeBig/2;
+        var b= Math.random()* t.rangeBig - t.rangeBig/2;
+        //t.ref[0].style.transition ="width 4s, height 4s, opacity 2.5s, translate "+ String(parseInt(time/1000))  + "s";
+        t.ref.attr("transform","translate("+ a +", " + b + ")");
+
+        if(move==true){
+          moveIt();
+        }
+      }, time);
+    }
+    moveIt();
   }
 
 
-  reduce(){
-    this.scale = 0.5;
-    this.ref.attr("width", this.scale);
-    this.ref.attr("height", this.scale);
-  }
 
+  svgMouse(ex, ey){
+      var vecx = (this.x  - ex);
+      var vecx = (this.y  - ex);
+  }
 
   addTransition(){
     var wid = 4;
@@ -67,6 +84,12 @@ class Cell{
 
 
 
+/* ----------------------------------------------------------------------------*/
+/* ----------------------------------------------------------------------------*/
+/* ----------------------------------------------------------------------------*/
+
+
+
 function svgReduce(){
   cellList.forEach(function(element){
     element.noise();
@@ -76,19 +99,41 @@ function svgReduce(){
     }
   );
   groupList.forEach(function(element){
-    //element.updateVertical(3000);
     element.noise();
+    }
+  );
+
+  floatersList.forEach(function(element){
+    element.floating();
     }
   );
 }
 
+
+/* ----------------------------------------------------------------------------*/
+/* ----------------------------------------------------------------------------*/
+/* ----------------------------------------------------------------------------*/
+
+
 function initSVG(){
  $( "#cmd > g > circle" ).each(function(e){
-   let g= $( this);
-   cellList.push(new Cell(g));
+   let c= $( this);
+   var newG = document.createElementNS("http://www.w3.org/2000/svg", "g")
+   var parent = c[0].closest("g");
+   newG.classList.add("floaters");
+   parent.appendChild(newG);
+   newG.appendChild(c[0]);
+   cellList.push(new Cell(c));
+
  });
+
  $( "#cmd > g" ).each(function(e){
    let g= $( this);
    groupList.push(new Cell(g));
+ });
+
+ $( ".floaters" ).each(function(e){
+   let g= $( this);
+   floatersList.push( new Cell(g));
  });
 }
