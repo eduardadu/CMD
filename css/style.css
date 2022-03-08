@@ -124,10 +124,10 @@ g{
   transition:  width 4s, height 4s, opacity 2.5s, transform 2s ease;
 }
 .floaters{
-  -webkit-transition:  width 4s, height 4s, opacity 2.5s, transform 6s ;
-  -moz-transition:  width 4s, height 4s, opacity 2.5s, transform 6s ;
-  -o-transition:  width 4s, height 4s, opacity 2.5s, transform 6s ;
-  transition:  width 4s, height 4s, opacity 2.5s, transform 6s ;
+  -webkit-transition:  width 4s, height 4s, opacity 2.5s, transform 8s ;
+  -moz-transition:  width 4s, height 4s, opacity 2.5s, transform 8s ;
+  -o-transition:  width 4s, height 4s, opacity 2.5s, transform 8s ;
+  transition:  width 4s, height 4s, opacity 2.5s, transform 8s ;
 }
 
 .separator{

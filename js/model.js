@@ -22,7 +22,7 @@ class Cell{
     this.addXS= this.addX ;
     this.addYS= this.addY ;
 
-    this.rangeBig= 60;
+    this.rangeBig= 20;
 
   }
 
@@ -50,8 +50,9 @@ class Cell{
     function moveIt(){
       var time= Math.random()*6000 + 6000;
       var aux = setInterval( function(){
-        var a= Math.random()* t.rangeBig - t.rangeBig/2;
-        var b= Math.random()* t.rangeBig - t.rangeBig/2;
+        var a= Math.random()* t.rangeBig + t.rangeBig/2;//- t.rangeBig/2;
+        var b= Math.random()* t.rangeBig + t.rangeBig/2;//- t.rangeBig/2;
+        if(Math.random()<0.5){ a=-a; }  if(Math.random()<0.5){ b=-b;}
         //t.ref[0].style.transition ="width 4s, height 4s, opacity 2.5s, translate "+ String(parseInt(time/1000))  + "s";
         t.ref.attr("transform","translate("+ a +", " + b + ")");
 
