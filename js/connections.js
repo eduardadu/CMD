@@ -19,7 +19,7 @@ class PageConnect{
 
 
 
-  manageTabs(e){
+  manageTabs(){
     var title= document.title;
     var t= this;
 
@@ -36,7 +36,6 @@ class PageConnect{
       case "Info":
         console.log("info");
         $('#content').load("content/info.html", function(){
-
           t.outSeparator();
           t.checkView();
           view.startLogo("little");
@@ -60,7 +59,36 @@ class PageConnect{
         });
         break;
     }
+  }
 
+  manageTabsNoLoad(){
+    var title= document.title;
+    var t= this;
+
+    switch(title){
+      case "CMD":
+          t.outSeparator();
+          t.checkView();
+          view.startLogo("big");
+
+        break;
+      case "Info":
+          t.outSeparator();
+          t.checkView();
+          view.startLogo("little");
+
+        break;
+      case "Contacts":
+          t.outSeparator();
+          t.checkView();
+          view.startLogo("little");
+        break;
+      case "Applications":
+          t.outSeparator();
+          t.checkView();
+          view.startLogo("little");
+        break;
+    }
   }
 
 
@@ -71,8 +99,7 @@ class PageConnect{
   checkView(){  //create view if its not been created
     if(view == undefined || view== null){
       view= new View();
-      view.expandInfo();
-      view.expandInfoPage();
+      
     }else{
         view.expandInfo();
         view.expandInfoPage();
@@ -158,7 +185,6 @@ class PageConnect{
           t.triggerSeparator();
           document.title = pageName;
           t.manageTabs();
-
         });
         element.setAttribute('listener', 'true');
       }
@@ -180,7 +206,11 @@ class PageConnect{
         if(contentURL.length==0){contentURL= "home.html"}
         contentURL = "/content/" + contentURL;
 
-        t.manageTabs();
+
+        $("#content").load(contentURL, function(){
+                    t.manageTabsNoLoad();
+
+        });
 
         $(window).resize();
 

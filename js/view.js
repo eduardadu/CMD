@@ -4,6 +4,9 @@ class View{
     this.initSVG();       //resize svg and initialize animations
     this.expandInfo();    //expand info at homepage
     this.expandMenu();    //menu interactions
+
+
+    this.expandInfoPage();
     this.resizeWindow();  //resize svg when window resize
   }
 
