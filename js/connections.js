@@ -143,12 +143,12 @@ class PageConnect{
       if (element.getAttribute('listener') !== 'true') {
 
         element.addEventListener("click", function(){
-
+          var vala= getBaseUrl();
           //closemenu
           view.closeMenu();
-          window.history.pushState('page' + pageNumber, pageName, pageURL);
+          window.history.pushState('page' + pageNumber, pageName, vala + pageURL);
           //window.history.replaceState('page' + pageNumber, pageName, pageURL);
-          var vala= getBaseUrl();
+
           localStorage.setItem("response", vala + pageURL);
 
           t.triggerSeparator();
