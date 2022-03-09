@@ -129,10 +129,10 @@ class PageConnect{
       var homeHyp= document.querySelectorAll(".homeHyp");
       var contactHyp= document.querySelectorAll(".contactHyp");
       var admissionHyp= document.querySelectorAll(".admissionHyp");
-      this.addHyper(homeHyp, 2, 'CMD', '/home.html', '/content/home.html');
-      this.addHyper(aboutHyp, 3, 'Info', '/info.html', '/content/info.html');
-      this.addHyper(contactHyp, 5, 'Contacts', '/contacts.html', '/content/contacts.html');
-      this.addHyper(admissionHyp, 5, 'Applications', '/applications.html', '/content/applications.html');
+      this.addHyper(homeHyp, 2, 'CMD', 'home.html', '/content/home.html');
+      this.addHyper(aboutHyp, 3, 'Info', 'info.html', '/content/info.html');
+      this.addHyper(contactHyp, 5, 'Contacts', 'contacts.html', '/content/contacts.html');
+      this.addHyper(admissionHyp, 5, 'Applications', 'applications.html', '/content/applications.html');
   }
 
 
