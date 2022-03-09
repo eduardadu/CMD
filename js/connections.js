@@ -34,21 +34,25 @@ class PageConnect{
         });
         break;
       case "Info":
-
+        console.log("info");
         $('#content').load("content/info.html", function(){
+
           t.outSeparator();
           t.checkView();
           view.startLogo("little");
         });
         break;
       case "Contacts":
+       console.log("contacts");
         $('#content').load("content/contacts.html", function(){
+
           t.outSeparator();
           t.checkView();
           view.startLogo("little");
         });
         break;
       case "Applications":
+        console.log("applications");
         $('#content').load("content/applications.html", function(){
           t.outSeparator();
           t.checkView();
@@ -153,9 +157,7 @@ class PageConnect{
 
           t.triggerSeparator();
           document.title = pageName;
-          setTimeout(function(){
-            t.manageTabs();
-          },400);
+          t.manageTabs();
 
         });
         element.setAttribute('listener', 'true');
@@ -178,9 +180,7 @@ class PageConnect{
         if(contentURL.length==0){contentURL= "home.html"}
         contentURL = "/content/" + contentURL;
 
-        $("#content").load(contentURL, function(){
-            t.manageTabs();
-        });
+        t.manageTabs();
 
         $(window).resize();
 
