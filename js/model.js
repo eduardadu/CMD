@@ -12,36 +12,51 @@ let groupList = [];
 class Cell{
   constructor(e){
     this.ref=e;
-    this.scale=this.ref.attr("width");
+
     this.addX= parseFloat((Math.random()*3)-1.5);
     this.addY= parseFloat((Math.random()*3)-1.5);
+    this.a=0;
+    this.b=0;
+
     this.range= 40;
+    this.rangeBig= 20;
 
     this.noiseX=  Math.random()* this.range - this.range/2;
     this.noiseY = Math.random()* this.range - this.range/2;
-    this.addXS= this.addX ;
-    this.addYS= this.addY ;
 
-    this.rangeBig= 20;
-
+    this.scrollX = 0;
+    this.scrollY = 0;
   }
 
   noise(){
     var a= Math.random()* this.range - this.range/2;
     var b= Math.random()* this.range - this.range/2;
     this.ref.attr("transform","translate("+ a +", " + b + ")");
-    this.ref.attr("opacity","0.7");
+    this.ref.attr("opacity","0.8");
   }
   update(e){
     var a= this.addX * e + Math.random()* this.range - this.range/2;;
     var b= this.addY * e + Math.random()* this.range - this.range/2;;
     this.ref.attr("transform","translate("+ a +", " + b + ")");
+    this.a=a;
+    this.b=a;
   }
+
   updateSmooth(e){
-    var a= this.addXS * e + this.noiseX;
-    var b= this.addYS *e + this.noiseY;
+    var a= this.addX * e + this.noiseX ;
+    var b= this.addY *e + this.noiseY ;
     this.ref.attr("transform","translate("+ a +", " + b + ")");
+    //this.a=a;
+    //this.b=a;
   }
+
+    svgMouse(ex, ey){
+        var vecx = (this.x  - ex);
+        var vecx = (this.y  - ey);
+        this.scrollX = this.ref.attr("cx") - ex;
+        this.scrollY = this.ref.attr("cy") - ey;
+        this.updateSmooth(document.body.scrollTop);
+    }
 
 
   floating(){
@@ -66,11 +81,6 @@ class Cell{
 
 
 
-  svgMouse(ex, ey){
-      var vecx = (this.x  - ex);
-      var vecx = (this.y  - ex);
-  }
-
   addTransition(){
     var wid = 4;
     var hei = 4;
@@ -78,9 +88,11 @@ class Cell{
     var trans = 2.5;
     this.ref.attr("transition"," width 4s, height 4s, opacity 2.5s, translate "+ trans  + "s");
   }
+
   takeTransition(){
     this.ref[0].style.transition ="width 4s, height 4s, opacity 2.5s, translate "+ String(0.2)  + "s";
   }
+
 }
 
 

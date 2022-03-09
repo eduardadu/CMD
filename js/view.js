@@ -24,6 +24,12 @@ class View{
       t.resizeSVG();
       t.mobileCursor();
     }
+
+  /*  window.addEventListener("mousemove", function(){
+      cellList.forEach(function(element){
+        element.svgMouse(event.clientX, event.clientY);
+      });
+    }); */
   }
 
 
@@ -45,17 +51,14 @@ class View{
 
 
     if(x>y){
-
       marginX = -((x*facY)-this.ogX)/2;
       marginY = -((y*facY)-this.ogY)/2;
-
       $( "#cmd " ).attr("viewBox", marginX + " " + marginY + " "+ (x*facY) + " " + (y*facY));
     }else{
-      let aux2= (this.ogX*facX) * y /x;
 
+      let aux2= (this.ogX*facX) * y /x;
       marginX = -((x*facX)-this.ogX)/2;
       marginY = -((y*facX)-this.ogY)/2;
-
       $( "#cmd " ).attr("viewBox", marginX + " " + marginY + " "+ (x*facX) + " " + (y*facX));
     }
     $( "#cmd " ).attr("width",  x);
@@ -179,10 +182,6 @@ class View{
     var limit = Math.max( document.body.scrollHeight, document.body.offsetHeight,
                    document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
     var bgHeight= image.height/3;
-
-    //e--limit
-    //aux -- bgHeight
-    //aux= e*bgheight/limit
     image.style.top= (-e* bgHeight/limit) + "px" ;
   }
 

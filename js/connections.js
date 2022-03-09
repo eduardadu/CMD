@@ -2,6 +2,19 @@ class PageConnect{
   constructor(){
     this.loadSeparator();
     this.loadSVG(); //begin all loads
+
+    var img = document.querySelector('#bgImage')
+    function loaded() {
+      alert('loaded')
+    }
+    if (img.complete) {
+      document.querySelector("#cmd").style.display="block";
+    } else {
+      img.addEventListener('load', loaded)
+      img.addEventListener('error', function() {
+          alert('error')
+      })
+    }
   }
 
   manageTabs(e){
@@ -39,8 +52,6 @@ class PageConnect{
           t.checkView();
           view.startLogo("little");
         });
-
-
         break;
     }
 
