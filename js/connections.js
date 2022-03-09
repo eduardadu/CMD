@@ -17,6 +17,8 @@ class PageConnect{
     }
   }
 
+
+
   manageTabs(e){
     var title= document.title;
     var t= this;
@@ -57,12 +59,6 @@ class PageConnect{
 
   }
 
-  switchHome(){
-
-  }
-  switchInfo(){
-
-  }
 
   loadLogo(){
     view.setResponsiveLogo();
@@ -71,6 +67,8 @@ class PageConnect{
   checkView(){  //create view if its not been created
     if(view == undefined || view== null){
       view= new View();
+      view.expandInfo();
+      view.expandInfoPage();
     }else{
         view.expandInfo();
         view.expandInfoPage();
