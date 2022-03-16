@@ -5,11 +5,9 @@ class View{
     this.expandInfo();    //expand info at homepage
     this.expandMenu();    //menu interactions
 
-
     this.expandInfoPage();
     this.resizeWindow();  //resize svg when window resize
   }
-
 
   initSVG(){
     var bBox = document.querySelector("#cmd").getBBox();                        //save initial proportions of svg
@@ -27,7 +25,6 @@ class View{
       t.resizeSVG();
       t.mobileCursor();
     }
-
   /*  window.addEventListener("mousemove", function(){
       cellList.forEach(function(element){
         element.svgMouse(event.clientX, event.clientY);
@@ -166,11 +163,16 @@ class View{
     var list = document.querySelectorAll(".infoPTitle");
     list.forEach((item, index) => {
       item.addEventListener("click",function(){
+
+
+
         var exp= item.nextElementSibling;
         if(exp.style.maxHeight == "0px" || exp.style.maxHeight ==""){
           exp.style.maxHeight= "100vh";
+          item.style.textDecoration = "underline ";
         }else{
           exp.style.maxHeight= "0px";
+            item.style.textDecoration = "none";
         }
       });
     });

@@ -34,7 +34,6 @@ class PageConnect{
         });
         break;
       case "Info":
-        console.log("info");
         $('#content').load("content/info.html", function(){
           t.outSeparator();
           t.checkView();
@@ -42,7 +41,6 @@ class PageConnect{
         });
         break;
       case "Contacts":
-       console.log("contacts");
         $('#content').load("content/contacts.html", function(){
 
           t.outSeparator();
@@ -51,7 +49,6 @@ class PageConnect{
         });
         break;
       case "Applications":
-        console.log("applications");
         $('#content').load("content/applications.html", function(){
           t.outSeparator();
           t.checkView();
@@ -99,7 +96,7 @@ class PageConnect{
   checkView(){  //create view if its not been created
     if(view == undefined || view== null){
       view= new View();
-      
+
     }else{
         view.expandInfo();
         view.expandInfoPage();
