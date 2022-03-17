@@ -35,7 +35,7 @@ class View{
 
   resizeSVG(){
 
-    var perc=0.8;                                                               //percentage of space that svg occupies (either in x or in y)
+    var perc=0.85;                                                               //percentage of space that svg occupies (either in x or in y)
     var x = document.body.clientWidth;                                          //window width
     var y= $(window).height();                                                  //window height
 

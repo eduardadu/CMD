@@ -82,6 +82,7 @@ a{
   z-index:-1;
   display:none;
   mix-blend-mode: difference;
+  padding-top: 2rem;
 }
 
 
