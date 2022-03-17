@@ -203,7 +203,7 @@ function enterAnimation(){
 
     var enterThings = setTimeout(function(){
       document.querySelector("#content").style.opacity = 1 ;
-      document.querySelector("#titleCont").style.opacity = 1;
+      document.querySelector("#titleImg").style.opacity = 1;
       document.querySelector("#topbar").style.display ="flex";
     }, 3000);
 

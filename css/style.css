@@ -79,7 +79,7 @@ a{
   position:fixed;
   opacity:1;
   animation: svgEnter 2s;
-  z-index: -100;
+  z-index:-1;
   display:none;
   mix-blend-mode: difference;
 }
@@ -93,12 +93,12 @@ a{
   z-index:-80;
   top:0px;
   animation: svgEnter 0.5s;
+
 }
 #auxBG{
   position:absolute;
   min-width:100%;
   min-height:100%;
-/*  background-image: linear-gradient(#e6007e , #e6007e);*/
 }
 .backgroundImg img{
   position:relative;
@@ -181,7 +181,7 @@ g{
   justify-content: center;
   align-items: center;
   transition: opacity 1s, margin-top 0.8s;
-  opacity:0;
+  opacity:1;
 }
 
 .tcB{
@@ -199,6 +199,7 @@ g{
 
   text-transform: uppercase;
   transition: max-width 0.8s;
+  z-index: -5;
 }
 .tB{
   max-width:40rem;
@@ -209,6 +210,9 @@ g{
 .title img{
   position:relative;
   width:100%;
+  z-index: -5;
+  opacity:0;
+    transition: opacity 1s, margin-top 0.8s;
 }
 .description{
   margin:auto;
@@ -241,11 +245,11 @@ li{
 /* -------------------------------------------------------------------------- */
 
 .number{
-  color: white;
+  color: blacl;
   font-family: "MainFont";
   text-align: center;
   font-size: 2rem;
-  border: 2px solid white;
+  border: 2px solid black;
   width:2rem;
   height: 2rem;
   padding:0.2rem;
@@ -255,7 +259,7 @@ li{
   line-height: 2rem;
 }
 .titleNumber{
-  color: white;
+  color: black;
   font-family: "MainFont";
   text-align: center;
   font-size: 2rem;
