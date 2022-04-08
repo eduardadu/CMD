@@ -1,0 +1,5 @@
+var appGoals;
+
+function startGoals(){
+  
+}

@@ -1,34 +1,45 @@
-  <div class="webtopbar" >
+<div class="webtopbar" id="webExtend">
+  <div class="webtopbarCont" style="height:3.4rem">
+    <institute style="margin-left:2rem; width:40%;" href="https://www.uc.pt/en/iii" target=”_blank”></institute>
 
-    <a style="margin-left:2rem" href="https://www.uc.pt/en/iii" target=”_blank”>Institute for Interdisciplinary Research</a>
     <div class="logouc">
       <img src="assets/uc.svg">
     </div>
-    <div style="margin-right:2rem">
-      <a class="homeHyp topItem">Home</a>
-      <a class="admissionHyp topItem">Applications</a>
-      <a class="infoHyp topItem">Info</a>
-      <a class="contactHyp topItem">Contacts</a>
+    <div class="topbarRight" style="margin-right:2rem; ">
+
+      <div class=" languageBox">
+          <div id="en" class="language">EN</div>
+          <div id="pt" class="language">PT</div>
+      </div>
+
+      <div class="burgerWeb" >
+        <input  type='checkbox' id='mobile-nav-toggle' class='mobile-nav-toggle'>
+        <label for='mobile-nav-toggle' class='mobile-nav-toggle-label' id="burger"><span></span></label>
+        <img  src="assets/burger.svg" style="display:none">
+      </div>
+
     </div>
   </div>
+  <menu-box-mobile class="topMobCont" >
+
+  </menu-box-mobile>
+</div>
 
 
 
-  <div class="mobiletopbar" id="mobileExtend">
-    <div class="burger" >
-      <input  type='checkbox' id='mobile-nav-toggle' class='mobile-nav-toggle'>
-      <label for='mobile-nav-toggle' class='mobile-nav-toggle-label' id="burger"><span></span></label>
+
+
+  <div class="mobiletopbar" id="mobileExtend2">
+    <div class="burger burger2" >
+      <input  type='checkbox' id='mobile-nav-toggle2' class='mobile-nav-toggle2'>
+      <label for='mobile-nav-toggle2' class='mobile-nav-toggle-label2' id="burger2"><span></span></label>
 
       <img  src="assets/burger.svg" style="display:none">
     </div>
 
     <div class="logomobilenav">
-      <img src="assets/titleSVG.svg">
+      <img src="assets/title_black.svg">
     </div>
-    <div class="topMobCont" >
-      <a class="homeHyp topMobItem">Home</a>
-      <a class="admissionHyp topMobItem">Admission</a>
-      <a class="infoHyp topMobItem">Info</a>
-      <a class="contactHyp topMobItem">Contacts</a>
-    </div>
+    <menu-box-mobile class="topMobCont" >
+    </menu-box-mobile>
   </div>

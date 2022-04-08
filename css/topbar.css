@@ -9,7 +9,6 @@
   color: var(--text-color);
   background-color:  var(--main-bg-color);
 
-  text-align: center;
   font-size: 0.65rem;
   font-family: "MainFont";
 
@@ -36,6 +35,12 @@
   background-color: var(--highlight-color);
 }
 
+.topbarRight{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width:40%;
+}
 
 .logouc{
   position:relative;
@@ -50,20 +55,33 @@
 .webtopbar{
   position:relative;
   width:100%;
-  height:100%;
+  height:100vh;
   display:flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 3.4rem;
+  justify-content:space-around;
+  max-height:3.4rem;
   border-bottom: 1px solid var(--text-color);
+  transition: max-height 2s;
+  overflow-y: hidden;
+}
+.webtopbarCont{
+  top:0px;
+  position:relative;
+  height:3.4rem;
+  width:100%;
+  display:flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-items: center;
+}
+#webExtend{
+  max-height:3.4rem;
 }
 
 .mobiletopbar{
   position:relative;
   width:100%;
-  height:100%;
-
+  padding-right: 1.25rem;
   height:100vh;
   max-height: 3rem;
   transition: max-height 2s;
@@ -74,12 +92,18 @@
 
 .burger{
   position:relative;
-
   display:flex;
   align-items: center;
   justify-content: flex-end;
   width:100%;
-  height:3rem;
+  height: 3rem;
+}
+.burgerWeb{
+  width:3rem;
+  position:relative;
+  display:flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 .burger img{
   margin-right:1.4rem;
@@ -111,6 +135,16 @@
 }
 .logomobilenav img{
   width:140px;
+}
+
+
+.languageBox{
+  display: inline-flex;
+  flex-direction: row;
+  margin-left:2rem;
+}
+.languageBox div{
+
 }
 
 /* --------------------------------------------------------------------------    BURGER INTO CROSS*/
@@ -152,7 +186,7 @@ https://stackoverflow.com/questions/65828562/hi-i-want-to-change-from-hamburgur-
   position: absolute;
   top: 0;
   right: 0;
-  margin-right: 1.25rem;
+  /*margin-right: 1.25rem; */
   height: 100%;
   display: flex;
   align-items: center;
@@ -215,6 +249,108 @@ https://stackoverflow.com/questions/65828562/hi-i-want-to-change-from-hamburgur-
 
 
 
+
+/* ---------------------------------------------------------------------------*/
+
+/* --------------------------------------------------------------------------    BURGER INTO CROSS*/
+/* --------------------------------------------------------------------------
+TAKEN FROM THE FOLLOWING AUTHOR
+https://stackoverflow.com/questions/65828562/hi-i-want-to-change-from-hamburgur-to-cross-on-click-of-the-menu
+ -------------------------------------------------------------------------- */
+
+.mobile-nav2 {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #393e46;
+  padding: 1em;
+  text-align: right;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+.mobile-nav2 a {
+  color: #393e46;
+  padding: 0.25em;
+  font-size: larger;
+  opacity: 0;
+  transition: opacity 150ms ease-in;
+}
+
+.mobile-nav-toggle2 {
+  display:none;
+  position: absolute !important;
+  top: -99999px !important;
+  right: -999999px !important;
+}
+
+.mobile-nav-toggle-label2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /*margin-right: 1.25rem; */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 99999;
+}
+
+.mobile-nav-toggle2:focus ~ .mobile-nav-toggle-label2 {
+  outline: 3px solid rgba(0, 172, 181, 0.75);
+}
+
+.mobile-nav-toggle-label2 span,
+.mobile-nav-toggle-label2 span::before,
+.mobile-nav-toggle-label2 span::after {
+  width: 100%;
+  display: block;
+  background: #393e46;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+  transition: transform 400ms ease-in-out;
+}
+
+.mobile-nav-toggle-label2 span::before,
+.mobile-nav-toggle-label2 span::after {
+  content: "";
+  position: absolute;
+}
+
+.mobile-nav-toggle-label2 span::before {
+  bottom: 7px;
+  transition: opacity 250ms ease-in-out 400ms;
+}
+
+.mobile-nav-toggle-label2 span::after {
+  top: 7px;
+}
+
+.mobile-nav-toggle2:checked ~ .mobile-nav2 {
+  transform: scale(1, 1);
+}
+
+.mobile-nav-toggle2:checked ~ .mobile-nav2 a {
+  opacity: 1;
+  transition: opacity 150ms ease-in 350ms;
+}
+
+.mobile-nav-toggle2:checked ~ .mobile-nav-toggle-label2 span:before {
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}
+
+.mobile-nav-toggle2:checked ~ .mobile-nav-toggle-label2 span {
+  transform: rotate(45deg);
+}
+
+.mobile-nav-toggle2:checked ~ .mobile-nav-toggle-label2 span:after {
+  transform: rotate(-90deg) translateX(7px);
+}
 
 
 

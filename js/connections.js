@@ -3,90 +3,27 @@ class PageConnect{
     this.loadSeparator();
     this.loadSVG(); //begin all loads
 
-    var img = document.querySelector('#bgImage')
-    function loaded() {
-      alert('loaded')
+    //this.checkCache();
+    if(localStorage['language']!= null && localStorage['language']!= undefined ){
+      this.language = localStorage['language'];
+    }else{
+      this.language='EN';
+      localStorage['language']='EN';
     }
-    if (img.complete) {
-      document.querySelector("#cmd").style.display="block";
-    } else {
-      img.addEventListener('load', loaded)
-      img.addEventListener('error', function() {
-          alert('error')
-      })
-    }
+    this.vueInit=false;
+    var img = document.querySelector('#bgImage');
+    document.querySelector("#cmd").style.opacity="0";
+
+
+    this.pg= new Pages();
   }
 
 
 
   manageTabs(){
-    var title= document.title;
-    var t= this;
-
-    switch(title){
-      case "CMD":
-        t.triggerSeparator();
-        $('#content').load("content/home.html", function(){
-          t.outSeparator();
-          t.checkView();
-
-          view.startLogo("big");
-        });
-        break;
-      case "Info":
-        $('#content').load("content/info.html", function(){
-          t.outSeparator();
-          t.checkView();
-          view.startLogo("little");
-        });
-        break;
-      case "Contacts":
-        $('#content').load("content/contacts.html", function(){
-
-          t.outSeparator();
-          t.checkView();
-          view.startLogo("little");
-        });
-        break;
-      case "Applications":
-        $('#content').load("content/applications.html", function(){
-          t.outSeparator();
-          t.checkView();
-          view.startLogo("little");
-        });
-        break;
-    }
+    this.pg.managePage(this,view);
   }
 
-  manageTabsNoLoad(){
-    var title= document.title;
-    var t= this;
-
-    switch(title){
-      case "CMD":
-          t.outSeparator();
-          t.checkView();
-          view.startLogo("big");
-
-        break;
-      case "Info":
-          t.outSeparator();
-          t.checkView();
-          view.startLogo("little");
-
-        break;
-      case "Contacts":
-          t.outSeparator();
-          t.checkView();
-          view.startLogo("little");
-        break;
-      case "Applications":
-          t.outSeparator();
-          t.checkView();
-          view.startLogo("little");
-        break;
-    }
-  }
 
 
   loadLogo(){
@@ -96,7 +33,6 @@ class PageConnect{
   checkView(){  //create view if its not been created
     if(view == undefined || view== null){
       view= new View();
-
     }else{
         view.expandInfo();
         view.expandInfoPage();
@@ -104,7 +40,50 @@ class PageConnect{
   }
 
 
+    startVue(){
+      if(this.vueInit==false){
+        if(this.language=='EN'){
+          startVue();
+        }else{
+          startVuePT();
+        }
+        this.vueInit=true;
+      }else{
 
+      }
+    }
+
+
+
+  changeLanguage(){
+    var t=this;
+    document.getElementById("en").addEventListener("click", function(){
+      var actPage= window.location.pathname.split("/").pop();
+      actPage= actPage.split(".")[0];
+      if(actPage==""){actPage="home"}
+      if(t.language!="EN"){
+        localStorage['language'] = 'EN';
+        window.location.href = t.pg.pageRelation[actPage + ".html"] ;
+      }
+    });
+    document.getElementById("pt").addEventListener("click", function(){
+      var actPage= window.location.pathname.split("/").pop();
+      actPage= actPage.split(".")[0];
+      if(actPage==""){actPage="home"}
+
+      if(t.language!="PT"){
+        localStorage['language'] = 'PT';
+        window.location.href = t.pg.pageRelation[actPage + ".html"] ;
+      }
+    });
+  }
+
+
+
+  setLanguage(str){
+    this.language= str;
+    localStorage["language"]= str;
+  }
 
   loadSeparator(){
     var divAux = document.createElement("div");
@@ -126,46 +105,49 @@ class PageConnect{
     var t=this;
     var divAux = document.createElement("div");
     divAux.id="topbar";
-    document.body.appendChild(divAux);
+    document.querySelector("#app").appendChild(divAux);
+
     $('#topbar').load("content/navbar.html", function(){
       t.addHyps();
       t.manageTabs();
-
       document.querySelector("#content").style.opacity = 0;
-      //document.querySelector("#topbar").style.opacity = 0;
       enterAnimation();
 
     });
   }
 
-  triggerSeparator(){
-
-  }
-  outSeparator(){
-
-  }
-
-
-
-  clickOnHyps(){
-
-  }
 
 
   addHyps(){
-      var aboutHyp= document.querySelectorAll(".infoHyp");
       var homeHyp= document.querySelectorAll(".homeHyp");
+
       var contactHyp= document.querySelectorAll(".contactHyp");
+      var aboutHyp= document.querySelectorAll(".infoHyp");
+
       var admissionHyp= document.querySelectorAll(".admissionHyp");
-      this.addHyper(homeHyp, 2, 'CMD', 'home.html', '/content/home.html');
-      this.addHyper(aboutHyp, 3, 'Info', 'info.html', '/content/info.html');
-      this.addHyper(contactHyp, 5, 'Contacts', 'contacts.html', '/content/contacts.html');
-      this.addHyper(admissionHyp, 5, 'Applications', 'applications.html', '/content/applications.html');
+      var goalsHyp= document.querySelectorAll(".goalsHyp");
+
+      var planHyp= document.querySelectorAll(".planHyp");
+      var modelHyp= document.querySelectorAll(".modelHyp");
+
+      var eventsHyp= document.querySelectorAll(".eventsHyp");
+
+      this.addHyper(homeHyp, 2, 'PhD in Computational Media Design', 'Doutoramento em Computational Media Design', 'home.html', '/content/home.html');
+
+      this.addHyper(goalsHyp, 3, 'Goals', 'Objectivos', 'goals.html',  'objectivos.html',  '/content/goals.html');
+      this.addHyper(admissionHyp, 4, 'Admission', 'Admissão', 'admission.html', 'admissao.html',   '/content/admission.html');
+      this.addHyper(planHyp, 5, 'Plan', 'Plano' , 'plan.html', 'plano.html' , '/content/plan.html');
+      this.addHyper(modelHyp, 5, 'Model', 'Modelo','model.html', 'modelo.html' , '/content/model.html');
+      this.addHyper(eventsHyp, 5, 'Events', 'Eventos','events.html', 'eventos.html' , '/content/events.html');
   }
 
 
 
-  addHyper(clickables, pageNumber, pageName, pageURL, contentURL){
+  addHyper(clickables, pageNumber, pageName, pageNamept, pageURL, pageURLpt, contentURL){
+    if(this.language=="PT"){
+      pageName= pageNamept;
+      pageURL= pageURLpt;
+    }
     var t= this;
     clickables.forEach(function(element){
       if (element.getAttribute('listener') !== 'true') {
@@ -176,10 +158,7 @@ class PageConnect{
           view.closeMenu();
           window.history.pushState('page' + pageNumber, pageName, vala + pageURL);
           //window.history.replaceState('page' + pageNumber, pageName, pageURL);
-
           localStorage.setItem("response", vala + pageURL);
-
-          t.triggerSeparator();
           document.title = pageName;
           t.manageTabs();
         });
@@ -193,7 +172,6 @@ class PageConnect{
       if (state === null) {
           state = { value: 1 };
       }
-      t.triggerSeparator();
       var s= setTimeout(function(){
         var pageName= "";
         var contentURL;
@@ -203,14 +181,12 @@ class PageConnect{
         if(contentURL.length==0){contentURL= "home.html"}
         contentURL = "/content/" + contentURL;
 
-
-        $("#content").load(contentURL, function(){
+      /*  $("#content").load(contentURL, function(){
                     t.manageTabsNoLoad();
-
-        });
+        });*/
+          t.pg.managePage(t,view);
 
         $(window).resize();
-
       }, 500);
     }
   }

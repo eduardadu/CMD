@@ -29,13 +29,13 @@ class Cell{
   }
 
   noise(){
-    var a= Math.random()* this.range - this.range/2;
+    var a=Math.random()* this.range/2 - this.range/4;
     var b= Math.random()* this.range - this.range/2;
     this.ref.attr("transform","translate("+ a +", " + b + ")");
     this.ref.attr("opacity","0.8");
   }
   update(e){
-    var a= this.addX * e + Math.random()* this.range - this.range/2;;
+    var a= this.addX * e + Math.random()* this.range/2 - this.range/4;;
     var b= this.addY * e + Math.random()* this.range - this.range/2;;
     this.ref.attr("transform","translate("+ a +", " + b + ")");
     this.a=a;
@@ -46,17 +46,8 @@ class Cell{
     var a= this.addX * e + this.noiseX ;
     var b= this.addY *e + this.noiseY ;
     this.ref.attr("transform","translate("+ a +", " + b + ")");
-    //this.a=a;
-    //this.b=a;
   }
 
-    svgMouse(ex, ey){
-        var vecx = (this.x  - ex);
-        var vecx = (this.y  - ey);
-        this.scrollX = this.ref.attr("cx") - ex;
-        this.scrollY = this.ref.attr("cy") - ey;
-        this.updateSmooth(document.body.scrollTop);
-    }
 
 
   floating(){
@@ -117,7 +108,7 @@ function svgReduce(){
   );
 
   floatersList.forEach(function(element){
-    element.floating();
+    //element.floating();
     }
   );
 }

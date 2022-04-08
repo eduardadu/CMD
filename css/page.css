@@ -1,5 +1,5 @@
 .page{
-  background-color: white;
+  background-color: #65C1CC;
   border-top: 1px solid var(--text-color);
   position:fixed;
   bottom:0px;
@@ -64,7 +64,7 @@
   padding:0.2rem;
   padding-left:0.8rem;
   padding-right:0.8rem;
-  background-color: white;
+  background-color: var(----main-bg-color);
   font-family: "MainFont";
 }
 
