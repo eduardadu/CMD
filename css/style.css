@@ -6,10 +6,10 @@ body{
   margin:0px;
 background-color: #F80F8D;/*linear-gradient(#e6007e , #e6007e); */
 
-/*  cursor: none;
- */
- background-image:    url(../assets/sky3.png);
-  background-size:     cover;
+  /*cursor: none;
+
+/*  background-image:    url(../assets/sky3.png);
+  background-size:     cover; */
 }
 a{
   text-decoration: none;
