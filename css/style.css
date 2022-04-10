@@ -414,6 +414,11 @@ li{
 .knowMore{
   margin-bottom:2rem;
   cursor:pointer;
+  border: 1px solid black;
+  padding: 0.2rem;
+  padding-right: 0.6rem;
+  padding-left: 0.46em;
+  border-radius: 2rem;
 }
 .knowMore:hover{
   text-decoration: underline;

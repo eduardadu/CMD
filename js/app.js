@@ -132,11 +132,13 @@ function startVue(){
 
               A distinctive aspect of this program is the exploration of computational methods and techniques in Design, in dialectics with the innovation of computational media and their literacies, for the innovation of interaction models and technologies, the study of the dynamics of collaboration, in interdisciplinary synergy with the study of human perception and cognition and artistic practices.
 
-              The new PhD graduates will develop capacities for:
-              the autonomous conduct of high quality interdisciplinary scientific research;
-              to carry out research projects of high scientific potential, providing integration in international knowledge networks in the area;
-              contribute to the development of critical and complex thinking in Computational Design and Media;
-              to understand and exercise Computational Media Design as a tool for social innovation and for the transition to sustainable development.`
+              <ul>
+                The new PhD graduates will develop capacities for:
+                <li> the autonomous conduct of high quality interdisciplinary scientific research;
+                <li> to carry out research projects of high scientific potential, providing integration in international knowledge networks in the area;
+                <li> contribute to the development of critical and complex thinking in Computational Design and Media;
+                <li> to understand and exercise Computational Media Design as a tool for social innovation and for the transition to sustainable development.
+              </ul>`
           },
           {
             name: 'Admission',
@@ -187,8 +189,8 @@ function startVue(){
           </div>
           <div class="infoDesc">
             <div class="infoDescBorder" style="background-color:#65C1CC">
-              <div class="desc">
-                {{textVal}}
+              <div class="desc"   v-html="textVal">
+
               </div>
                 <div :class="[page , 'knowMore']">Know more</div>
             </div>
@@ -286,12 +288,8 @@ function startVue(){
                   <span class="desc">
                     {{textVal}}
                   </span>
-
                   <img :src="'content/events/photos/' + imageEvent ">
                 </div>
-
-
-
               </div>
           </div>
         `,

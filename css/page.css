@@ -26,12 +26,14 @@
 .pageContent{
   display:flex;
   flex-direction: column;
-  justify-content:flex-start;
-  align-items: flex-start;
-  padding-left:10%;
+  justify-content: center;
+  align-items: center;
+
 }
 
-
+.pageContentContainer{
+    max-width:45rem;
+}
 .infoPTitle{
   font-family: "MainFont";
   margin-bottom:1.4rem;
@@ -70,4 +72,25 @@
 
 .buttonMain:hover{
   background-color: var(--highlight-color);
+}
+
+
+.pageContentContainer > div{
+  margin-bottom:2rem;
+  font-family: "MainFont";
+
+  text-align: left;
+}
+
+.pageContentContainer ul{
+  margin-top:2rem;
+}
+
+.pageContentContainer li{
+  margin-top:0rem;
+}
+.pageSubTitle{
+  margin-bottom:1rem;
+  margin-top:3rem;
+  text-transform: uppercase;
 }
