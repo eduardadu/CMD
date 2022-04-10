@@ -144,29 +144,33 @@ function startVue(){
             name: 'Admission',
             url: 'admissionHyp',
             text: `  1- Podem candidatar-se ao ciclo de estudos conducentes ao grau de doutor:
-              a) Os titulares do grau de mestre ou equivalente legal em diferentes áreas e afins, relacionadas com o ciclo de estudos, nomeadamente Ciências e Informática, Design, Audiovisuais e produção dos media, Arquitetura, Belas-Artes;
-              b) Os titulares do grau de licenciado, detentores de um currículo escolar ou científico especialmente relevante que seja reconhecido como atestando capacidade para a realização deste ciclo de estudos pelo Conselho Científico do Instituto de Investigação Interdisciplinar da Universidade de Coimbra;
-              c) Os detentores de um currículo escolar, científico ou profissional que seja reconhecido como atestando capacidade para a realização deste ciclo de estudos pelo Conselho Científico do Instituto de Investigação Interdisciplinar da Universidade de Coimbra.
-`
+            <ul>
+              <li>a) Os titulares do grau de mestre ou equivalente legal em diferentes áreas e afins, relacionadas com o ciclo de estudos, nomeadamente Ciências e Informática, Design, Audiovisuais e produção dos media, Arquitetura, Belas-Artes;
+              <li> b) Os titulares do grau de licenciado, detentores de um currículo escolar ou científico especialmente relevante que seja reconhecido como atestando capacidade para a realização deste ciclo de estudos pelo Conselho Científico do Instituto de Investigação Interdisciplinar da Universidade de Coimbra;
+              <li> c) Os detentores de um currículo escolar, científico ou profissional que seja reconhecido como atestando capacidade para a realização deste ciclo de estudos pelo Conselho Científico do Instituto de Investigação Interdisciplinar da Universidade de Coimbra.
+            </ul>`
           },
           {
             name: 'Curricular Plan',
             url: 'planHyp',
-            text: `  The Research Methodologies in Computational Media Design aims for the student to:
-              - Acquire a broad view of the interdisciplinary research domain of Computational Media Design.
-              - Develop specific knowledge of the research challenges and main applicable methodologies, of the new objects of design, of the evolution of design practices, of organizing research processes, and of advanced forms of interdisciplinary reflection in Design.
-              - Improve competencies of critical analysis of scientific works, synthesis, scientific writing, verbal and written communication, critical reasoning, autonomous learning, research and collaborative work.     
-
+            text: `
+            The Research Methodologies in Computational Media Design aims for the student to:
+            <ul>
+              <li> - Acquire a broad view of the interdisciplinary research domain of Computational Media Design.
+              <li> - Develop specific knowledge of the research challenges and main applicable methodologies, of the new objects of design, of the evolution of design practices, of organizing research processes, and of advanced forms of interdisciplinary reflection in Design.
+              <li> - Improve competencies of critical analysis of scientific works, synthesis, scientific writing, verbal and written communication, critical reasoning, autonomous learning, research and collaborative work.     
+            </ul>
         `
           },
           {
             name: 'Functioning Model',
             url: 'modelHyp',
             text: `  The Research Methodologies in Computational Media Design aims for the student to:
-              - Acquire a broad view of the interdisciplinary research domain of Computational Media Design.
-              - Develop specific knowledge of the research challenges and main applicable methodologies, of the new objects of design, of the evolution of design practices, of organizing research processes, and of advanced forms of interdisciplinary reflection in Design.
-              - Improve competencies of critical analysis of scientific works, synthesis, scientific writing, verbal and written communication, critical reasoning, autonomous learning, research and collaborative work.     
-
+            <ul>
+              <li> - Acquire a broad view of the interdisciplinary research domain of Computational Media Design.
+              <li> - Develop specific knowledge of the research challenges and main applicable methodologies, of the new objects of design, of the evolution of design practices, of organizing research processes, and of advanced forms of interdisciplinary reflection in Design.
+              <li> - Improve competencies of critical analysis of scientific works, synthesis, scientific writing, verbal and written communication, critical reasoning, autonomous learning, research and collaborative work.     
+            </ul>
         `
           }
         ]
