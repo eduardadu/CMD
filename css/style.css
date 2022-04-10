@@ -188,14 +188,17 @@ g{
 
 .languageBox{
   margin-left:1.2rem;
+  display: inline-flex;
+  flex-direction: row;
+  margin-left:2rem;
 }
 .language{
   margin-left:0.6rem;
 }
-.language:hover{
-  background-color: var(--highlight-color);
+.language:hover, #institute:hover{
+  text-decoration: underline;
+  cursor:pointer;
 }
-
 
 
 
@@ -338,6 +341,7 @@ li{
 }
 .info{
   margin-top:8rem;
+  margin-bottom:4rem;
 }
 .infoCont{
   display: flex;
@@ -352,12 +356,13 @@ li{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
+  cursor:pointer;
 }
 
 .infoS:hover .titleNumber{
   /*font-style: italic; */
   text-decoration: underline;
+  cursor:pointer;
 }
 
 .infoDesc{

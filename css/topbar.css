@@ -84,7 +84,7 @@
   padding-right: 1.25rem;
   height:100vh;
   max-height: 3rem;
-  transition: max-height 2s;
+  transition: max-height 2s cubic-bezier(0, 1, 0, 1);
   overflow-y: hidden;
   border-bottom: 1px solid var(--text-color);
 }
@@ -110,7 +110,9 @@
   width:24px;
 }
 
-
+#burger{
+  cursor: pointer;
+}
 .topMobCont{
   display:flex;
   flex-direction: column;
@@ -118,7 +120,7 @@
   justify-content: center;
   align-items:center;
   position:absolute;
-  top:27rem;
+  top:10rem;
 }
 .topMobItem{
   font-size:1.4rem;
@@ -138,15 +140,6 @@
 }
 
 
-.languageBox{
-  display: inline-flex;
-  flex-direction: row;
-  margin-left:2rem;
-}
-.languageBox div{
-
-}
-
 /* --------------------------------------------------------------------------    BURGER INTO CROSS*/
 /* --------------------------------------------------------------------------
 TAKEN FROM THE FOLLOWING AUTHOR
@@ -160,7 +153,7 @@ https://stackoverflow.com/questions/65828562/hi-i-want-to-change-from-hamburgur-
   right: 0;
   display: flex;
   flex-direction: column;
-  background-color: #393e46;
+  background-color: black;
   padding: 1em;
   text-align: right;
   transform: scale(1, 0);
@@ -168,7 +161,7 @@ https://stackoverflow.com/questions/65828562/hi-i-want-to-change-from-hamburgur-
   transition: transform 400ms ease-in-out;
 }
 .mobile-nav a {
-  color: #393e46;
+  color: black;
   padding: 0.25em;
   font-size: larger;
   opacity: 0;
@@ -202,7 +195,7 @@ https://stackoverflow.com/questions/65828562/hi-i-want-to-change-from-hamburgur-
 .mobile-nav-toggle-label span::after {
   width: 100%;
   display: block;
-  background: #393e46;
+  background: black;
   height: 2px;
   width: 2em;
   border-radius: 2px;
@@ -265,7 +258,7 @@ https://stackoverflow.com/questions/65828562/hi-i-want-to-change-from-hamburgur-
   right: 0;
   display: flex;
   flex-direction: column;
-  background-color: #393e46;
+  background-color: black;
   padding: 1em;
   text-align: right;
   transform: scale(1, 0);
@@ -273,7 +266,7 @@ https://stackoverflow.com/questions/65828562/hi-i-want-to-change-from-hamburgur-
   transition: transform 400ms ease-in-out;
 }
 .mobile-nav2 a {
-  color: #393e46;
+  color: black;
   padding: 0.25em;
   font-size: larger;
   opacity: 0;
@@ -307,7 +300,7 @@ https://stackoverflow.com/questions/65828562/hi-i-want-to-change-from-hamburgur-
 .mobile-nav-toggle-label2 span::after {
   width: 100%;
   display: block;
-  background: #393e46;
+  background: black;
   height: 2px;
   width: 2em;
   border-radius: 2px;

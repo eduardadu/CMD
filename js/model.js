@@ -18,7 +18,7 @@ class Cell{
     this.a=0;
     this.b=0;
 
-    this.range= 40;
+    this.range= 25;
     this.rangeBig= 20;
 
     this.noiseX=  Math.random()* this.range - this.range/2;
