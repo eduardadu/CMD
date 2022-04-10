@@ -134,13 +134,8 @@ class View{
   closeMenu(){
     var exp= document.querySelector("#webExtend");
     var exp2= document.querySelector("#mobileExtend2");
-    if(exp.style.maxHeight == "3.4rem" || exp.style.maxHeight ==""){
-      exp.style.maxHeight= "1000vh";
-      exp2.style.maxHeight= "1000vh";
-    }else{
       exp.style.maxHeight= "3.4rem";
       exp2.style.maxHeight= "3rem";
-    }
   }
 
   startLogo(e){
@@ -175,7 +170,6 @@ class View{
             //element.noise();
             }
           );
-          t.scrollBackground(lastKnownScrollPosition);
           ticking = false;
         });
         ticking = true;
@@ -203,12 +197,6 @@ class View{
     });
 
 
-  }
-
-
-  scrollBackground(e){
-
-  
   }
 
 }

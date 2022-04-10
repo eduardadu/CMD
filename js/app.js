@@ -32,73 +32,6 @@ function startVue(){
   //-----------------------------------------------------------------------------------------------
   //-----------------------------------------------------------------------------------------------
 
-  app.component('menu-box',{
-    template: `
-      <menu-item v-for="(input, i) in inputs"
-      :key="i"
-      v-model="input.name"
-      :label= "input.name"
-      :href=" input.url"
-      :childClass="input.class"></menu-item>`,
-    data(){
-      return{
-        inputs: [
-          {
-            name: 'Home',
-            url: 'home.html',
-            class: 'homeHyp'
-          },
-          {
-            name: 'Admission',
-            url: 'admission.html',
-            class: 'admissionHyp'
-          },
-          {
-            name: `Info`,
-            url: '',
-            class: 'infoHyp'
-          },
-          {
-            name: 'Events',
-            url: 'events.html',
-            class: 'contactHyp'
-          }
-        ],
-        info: [
-          {
-            name: 'Goals',
-            url: 'goals.html',
-            class: 'goalsHyp'
-          },
-          {
-
-          },
-        ]
-     }
-    },
-    methods: {},
-    mounted(){
-      connector.addHyps();
-    }
-  });
-
-
-
-
-  app.component('menu-item',{
-    template:`<a href="{{url}}" :class="[childClass , 'topItem']" @click.prevent>{{modelValue}}</a>`,
-    props: ['label', 'url', 'childClass' , 'modelValue'],
-    data(){
-      return{
-      }
-    },
-    methods: {},
-    mounted(){
-
-    }
-  });
-
-
   //----------------------------------------------------------------------------------------------- MENUS MOBILE
   //-----------------------------------------------------------------------------------------------
   //-----------------------------------------------------------------------------------------------
@@ -143,7 +76,7 @@ function startVue(){
           {
             name: 'Events',
             url: 'events.html',
-            class: 'contactHyp'
+            class: 'eventsHyp'
           }
         ]
      }
@@ -185,15 +118,16 @@ function startVue(){
     :label= "input.name"
     :href=" input.url"
     :textVal="input.text"
+    :page= "input.url"
     :number="i+1">{{input.name}}</home-section-item>`,
 
-    props: ['label', 'url', 'childClass' , 'modelValue', 'textVal'],
+    props: ['label', 'url', 'childClass' , 'modelValue', 'textVal', 'page'],
     data(){
       return{
         inputs: [
           {
             name: 'Objectives of the Program',
-            url: 'home.html',
+            url: 'goalsHyp',
             text: `  The PhD in Computational Media Design aims to provide advanced scientific training at the confluence of Design and Computational Media, and respective research methods. Through an immersive program of learning in the context of laboratory projects and design practice, it aims to enable new researchers to understand and contribute to the advancement of the object and practice of design.
 
               A distinctive aspect of this program is the exploration of computational methods and techniques in Design, in dialectics with the innovation of computational media and their literacies, for the innovation of interaction models and technologies, the study of the dynamics of collaboration, in interdisciplinary synergy with the study of human perception and cognition and artistic practices.
@@ -206,7 +140,7 @@ function startVue(){
           },
           {
             name: 'Admission',
-            url: 'admission.html',
+            url: 'admissionHyp',
             text: `  1- Podem candidatar-se ao ciclo de estudos conducentes ao grau de doutor:
               a) Os titulares do grau de mestre ou equivalente legal em diferentes áreas e afins, relacionadas com o ciclo de estudos, nomeadamente Ciências e Informática, Design, Audiovisuais e produção dos media, Arquitetura, Belas-Artes;
               b) Os titulares do grau de licenciado, detentores de um currículo escolar ou científico especialmente relevante que seja reconhecido como atestando capacidade para a realização deste ciclo de estudos pelo Conselho Científico do Instituto de Investigação Interdisciplinar da Universidade de Coimbra;
@@ -215,7 +149,7 @@ function startVue(){
           },
           {
             name: 'Curricular Plan',
-            url: 'plan.html',
+            url: 'planHyp',
             text: `  The Research Methodologies in Computational Media Design aims for the student to:
               - Acquire a broad view of the interdisciplinary research domain of Computational Media Design.
               - Develop specific knowledge of the research challenges and main applicable methodologies, of the new objects of design, of the evolution of design practices, of organizing research processes, and of advanced forms of interdisciplinary reflection in Design.
@@ -225,8 +159,7 @@ function startVue(){
           },
           {
             name: 'Functioning Model',
-            url: 'model.html',
-
+            url: 'modelHyp',
             text: `  The Research Methodologies in Computational Media Design aims for the student to:
               - Acquire a broad view of the interdisciplinary research domain of Computational Media Design.
               - Develop specific knowledge of the research challenges and main applicable methodologies, of the new objects of design, of the evolution of design practices, of organizing research processes, and of advanced forms of interdisciplinary reflection in Design.
@@ -254,14 +187,15 @@ function startVue(){
           </div>
           <div class="infoDesc">
             <div class="infoDescBorder" style="background-color:#65C1CC">
-              <span class="desc">
+              <div class="desc">
                 {{textVal}}
-              </span>
+              </div>
+                <div :class="[page , 'knowMore']">Know more</div>
             </div>
           </div>
-      </div>
-    `,
-    props: ['label', 'url', 'number' , 'modelValue', 'textVal'],
+      </div>`,
+
+    props: ['label', 'url', 'number' , 'modelValue', 'textVal', 'page'],
     data(){
       return{
       }
@@ -289,6 +223,7 @@ function startVue(){
         :href=" input.url"
         :textVal="input.text"
         :placeHour = "input.placeHour"
+        :imageEvent= "input.url"
         :number="i+1">{{input.name}}</home-event-item>`,
 
         props: ['label', 'url', 'childClass' , 'modelValue', "textVal", 'placeHour'],
@@ -302,7 +237,7 @@ function startVue(){
                 placeHour: '10:00 Sala E4.5',
                 tags: 'p5.s',
                 authors: 'John Doe',
-                url: 'home.html',
+                url: 'placeholder.jpg',
                 text: 'John Doe comes to preswent his work on Advanced TYpography'
               },
               {
@@ -312,7 +247,7 @@ function startVue(){
                 placeHour: '10:00 Sala E4.5',
                 tags: 'p5.s',
                 authors: 'John Doe',
-                url: 'home.html',
+                url: 'placeholder.jpg',
                 text: ''
               },
               {
@@ -322,7 +257,7 @@ function startVue(){
                 placeHour: '10:00 Sala E4.5',
                 tags: 'p5.s',
                 authors: 'John Doe',
-                url: 'home.html',
+                url: 'placeholder.jpg',
                 text: ''
               }
 
@@ -351,11 +286,16 @@ function startVue(){
                   <span class="desc">
                     {{textVal}}
                   </span>
+
+                  <img :src="'content/events/photos/' + imageEvent ">
                 </div>
+
+
+
               </div>
           </div>
         `,
-        props: ['label', 'url', 'number' , 'modelValue', 'date', 'textVal', 'placeHour'],
+        props: ['label', 'url', 'number' , 'modelValue', 'date', 'textVal', 'placeHour', 'imageEvent'],
         data(){
           return{
           }

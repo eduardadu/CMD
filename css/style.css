@@ -288,6 +288,7 @@ g{
   text-align: left;
   font-size:1.2rem;
   line-height:1.6rem;
+  display:block;
 }
 
 ul{
@@ -341,7 +342,7 @@ li{
 .placeHour{
   font-family: "MainFont";
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-top:0.2rem;
 }
 .info{
@@ -402,13 +403,22 @@ li{
   display:flex;
   justify-content: center;
   align-items: center;
-
+  flex-direction: column;
 }
 
 .infoDesc span{
   display:block;
   padding:2rem;
 }
+
+.knowMore{
+  margin-bottom:2rem;
+  cursor:pointer;
+}
+.knowMore:hover{
+  text-decoration: underline;
+}
+
 
 
 /* --------------------------------------------------------------------------  MEDIA QUERIES */
