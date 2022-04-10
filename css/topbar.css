@@ -122,6 +122,9 @@
   position:absolute;
   top:10rem;
 }
+.mobiletopbar .topMobCont{
+  top:25rem;
+}
 .topMobItem{
   font-size:1.4rem;
   margin-bottom: 1.8rem;

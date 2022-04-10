@@ -337,7 +337,12 @@ li{
   margin-bottom: 0.6rem;
   position:relative;
   line-height: 2rem;
-
+}
+.placeHour{
+  font-family: "MainFont";
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top:0.2rem;
 }
 .info{
   margin-top:8rem;

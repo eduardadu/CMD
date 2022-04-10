@@ -2,9 +2,6 @@ class View{
   constructor(){
     this.mobileCursor();  //detect if its mobile and hide cursor if so
     this.initSVG();       //resize svg and initialize animations
-    //this.expandInfo();    //expand info at homepage
-
-    //this.expandInfoPage();
     this.resizeWindow();  //resize svg when window resize
   }
 
@@ -135,10 +132,14 @@ class View{
 
 
   closeMenu(){
-    var exp= document.querySelector("#mobileExtend");
-    if(exp.style.maxHeight == "1000vh"){
-      $('#burger2').click();
-      $('#burger').click();
+    var exp= document.querySelector("#webExtend");
+    var exp2= document.querySelector("#mobileExtend2");
+    if(exp.style.maxHeight == "3.4rem" || exp.style.maxHeight ==""){
+      exp.style.maxHeight= "1000vh";
+      exp2.style.maxHeight= "1000vh";
+    }else{
+      exp.style.maxHeight= "3.4rem";
+      exp2.style.maxHeight= "3rem";
     }
   }
 
@@ -207,12 +208,7 @@ class View{
 
   scrollBackground(e){
 
-    var bg = document.querySelector("#bgCont");
-    var image= document.querySelector("#bgImage");
-    var limit = Math.max( document.body.scrollHeight, document.body.offsetHeight,
-                   document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
-    var bgHeight= image.height/3;
-    image.style.top= (-e* bgHeight/limit) + "px" ;
+  
   }
 
 }

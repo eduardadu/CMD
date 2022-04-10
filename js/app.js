@@ -78,9 +78,7 @@ function startVue(){
     },
     methods: {},
     mounted(){
-      document.querySelector(".infoHyp").addEventListener("mouseover", function(){
-        var objectives;
-      });
+      connector.addHyps();
     }
   });
 
@@ -96,7 +94,7 @@ function startVue(){
     },
     methods: {},
     mounted(){
-      connector.addHyps();
+
     }
   });
 
@@ -186,31 +184,55 @@ function startVue(){
     v-model="input.name"
     :label= "input.name"
     :href=" input.url"
+    :textVal="input.text"
     :number="i+1">{{input.name}}</home-section-item>`,
 
-    props: ['label', 'url', 'childClass' , 'modelValue'],
+    props: ['label', 'url', 'childClass' , 'modelValue', 'textVal'],
     data(){
       return{
         inputs: [
           {
             name: 'Objectives of the Program',
             url: 'home.html',
-            text: ''
+            text: `  The PhD in Computational Media Design aims to provide advanced scientific training at the confluence of Design and Computational Media, and respective research methods. Through an immersive program of learning in the context of laboratory projects and design practice, it aims to enable new researchers to understand and contribute to the advancement of the object and practice of design.
+
+              A distinctive aspect of this program is the exploration of computational methods and techniques in Design, in dialectics with the innovation of computational media and their literacies, for the innovation of interaction models and technologies, the study of the dynamics of collaboration, in interdisciplinary synergy with the study of human perception and cognition and artistic practices.
+
+              The new PhD graduates will develop capacities for:
+              the autonomous conduct of high quality interdisciplinary scientific research;
+              to carry out research projects of high scientific potential, providing integration in international knowledge networks in the area;
+              contribute to the development of critical and complex thinking in Computational Design and Media;
+              to understand and exercise Computational Media Design as a tool for social innovation and for the transition to sustainable development.`
           },
           {
             name: 'Admission',
             url: 'admission.html',
-            text: ''
+            text: `  1- Podem candidatar-se ao ciclo de estudos conducentes ao grau de doutor:
+              a) Os titulares do grau de mestre ou equivalente legal em diferentes áreas e afins, relacionadas com o ciclo de estudos, nomeadamente Ciências e Informática, Design, Audiovisuais e produção dos media, Arquitetura, Belas-Artes;
+              b) Os titulares do grau de licenciado, detentores de um currículo escolar ou científico especialmente relevante que seja reconhecido como atestando capacidade para a realização deste ciclo de estudos pelo Conselho Científico do Instituto de Investigação Interdisciplinar da Universidade de Coimbra;
+              c) Os detentores de um currículo escolar, científico ou profissional que seja reconhecido como atestando capacidade para a realização deste ciclo de estudos pelo Conselho Científico do Instituto de Investigação Interdisciplinar da Universidade de Coimbra.
+`
           },
           {
             name: 'Curricular Plan',
-            url: 'events.html',
-            text: ''
+            url: 'plan.html',
+            text: `  The Research Methodologies in Computational Media Design aims for the student to:
+              - Acquire a broad view of the interdisciplinary research domain of Computational Media Design.
+              - Develop specific knowledge of the research challenges and main applicable methodologies, of the new objects of design, of the evolution of design practices, of organizing research processes, and of advanced forms of interdisciplinary reflection in Design.
+              - Improve competencies of critical analysis of scientific works, synthesis, scientific writing, verbal and written communication, critical reasoning, autonomous learning, research and collaborative work.     
+
+        `
           },
           {
             name: 'Functioning Model',
-            url: 'events.html',
-            text: ''
+            url: 'model.html',
+
+            text: `  The Research Methodologies in Computational Media Design aims for the student to:
+              - Acquire a broad view of the interdisciplinary research domain of Computational Media Design.
+              - Develop specific knowledge of the research challenges and main applicable methodologies, of the new objects of design, of the evolution of design practices, of organizing research processes, and of advanced forms of interdisciplinary reflection in Design.
+              - Improve competencies of critical analysis of scientific works, synthesis, scientific writing, verbal and written communication, critical reasoning, autonomous learning, research and collaborative work.     
+
+        `
           }
         ]
      }
@@ -219,8 +241,6 @@ function startVue(){
     mounted(){
       connector.addHyps();
       view.expandInfo();
-      console.log("expanded");
-
     }
   });
 
@@ -235,19 +255,13 @@ function startVue(){
           <div class="infoDesc">
             <div class="infoDescBorder" style="background-color:#65C1CC">
               <span class="desc">
-                The doctoral program aims to offer national and international students advanced scientific training at the confluence of Design and Computational Media, and associated research methods, with the following goals:
-                <ul>
-                  <li>Train researchers to understand and contribute to the advancement of Design object and practices, as well as computational methods and techniques in Design, in dialectics with the innovation of computational media and its literacies, with the models of interaction and collaboration, with the human perception and cognition, and with artistic practices;</li>
-                  <li>Empower towards autonomous high-quality interdisciplinary scientific research;</li>
-                  <li>Enable students to develop high-potential scientific projects, integrated in international knowledge networks;</li>
-                  <li>Contribute to the development of critical and complex thinking, to the understanding and exercise of Computational Media Design, as an instrument of social innovation and transition to sustainable development.</li>
-                </ul>
+                {{textVal}}
               </span>
             </div>
           </div>
       </div>
     `,
-    props: ['label', 'url', 'number' , 'modelValue'],
+    props: ['label', 'url', 'number' , 'modelValue', 'textVal'],
     data(){
       return{
       }
@@ -273,9 +287,11 @@ function startVue(){
         :date= "input.date"
         :label= "input.name"
         :href=" input.url"
+        :textVal="input.text"
+        :placeHour = "input.placeHour"
         :number="i+1">{{input.name}}</home-event-item>`,
 
-        props: ['label', 'url', 'childClass' , 'modelValue'],
+        props: ['label', 'url', 'childClass' , 'modelValue', "textVal", 'placeHour'],
         data(){
           return{
             inputs: [
@@ -283,6 +299,17 @@ function startVue(){
                 type: 'Workshop',
                 name: 'Moving Type',
                 date: '31 Abr',
+                placeHour: '10:00 Sala E4.5',
+                tags: 'p5.s',
+                authors: 'John Doe',
+                url: 'home.html',
+                text: 'John Doe comes to preswent his work on Advanced TYpography'
+              },
+              {
+                type: 'Workshop',
+                name: 'Moving Type',
+                date: '31 Abr',
+                placeHour: '10:00 Sala E4.5',
                 tags: 'p5.s',
                 authors: 'John Doe',
                 url: 'home.html',
@@ -292,15 +319,7 @@ function startVue(){
                 type: 'Workshop',
                 name: 'Moving Type',
                 date: '31 Abr',
-                tags: 'p5.s',
-                authors: 'John Doe',
-                url: 'home.html',
-                text: ''
-              },
-              {
-                type: 'Workshop',
-                name: 'Moving Type',
-                date: '31 Abr',
+                placeHour: '10:00 Sala E4.5',
                 tags: 'p5.s',
                 authors: 'John Doe',
                 url: 'home.html',
@@ -324,24 +343,19 @@ function startVue(){
             <div class="infoS">
                 <div class="eventDate">{{date}}</div>
                 <div class="titleNumber">{{modelValue}}</div>
+                <div class="placeHour">{{placeHour}}</div>
               </div>
 
               <div class="infoDesc">
                 <div class="infoDescBorder" style="background-color:#65C1CC">
                   <span class="desc">
-                    The doctoral program aims to offer national and international students advanced scientific training at the confluence of Design and Computational Media, and associated research methods, with the following goals:
-                    <ul>
-                      <li>Train researchers to understand and contribute to the advancement of Design object and practices, as well as computational methods and techniques in Design, in dialectics with the innovation of computational media and its literacies, with the models of interaction and collaboration, with the human perception and cognition, and with artistic practices;</li>
-                      <li>Empower towards autonomous high-quality interdisciplinary scientific research;</li>
-                      <li>Enable students to develop high-potential scientific projects, integrated in international knowledge networks;</li>
-                      <li>Contribute to the development of critical and complex thinking, to the understanding and exercise of Computational Media Design, as an instrument of social innovation and transition to sustainable development.</li>
-                    </ul>
+                    {{textVal}}
                   </span>
                 </div>
               </div>
           </div>
         `,
-        props: ['label', 'url', 'number' , 'modelValue', 'date'],
+        props: ['label', 'url', 'number' , 'modelValue', 'date', 'textVal', 'placeHour'],
         data(){
           return{
           }
