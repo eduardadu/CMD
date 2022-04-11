@@ -229,6 +229,7 @@ g{
 
 .titleCont{
   display:flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: opacity 1s, padding-top 0.8s;
