@@ -32,7 +32,7 @@
 }
 
 .pageText{
-    max-width:45rem;
+    max-width:42rem;
 }
 .infoPTitle{
   font-family: "MainFont";
@@ -97,14 +97,22 @@
   text-transform: uppercase;
 }
 
-.list{
+ul{
   text-decoration: none;
   margin-bottom:3rem;
-  padding-left:0px;
-  list-style-type: none;
+  list-style-type: circle;
+  padding-left:1rem;
 }
 
 .list li{
-  margin-top:0rem;
+  margin-top:0.4rem;
   margin-bottom:0.4rem;
+
+}
+
+.unordered{
+    text-decoration: none;
+    margin-bottom:3rem;
+    list-style-type: none;
+    padding-left:0px;
 }
