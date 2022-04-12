@@ -19,7 +19,7 @@
   text-transform: uppercase;
   letter-spacing: .1rem;
   word-spacing: 0.35rem;
-  margin-bottom:2rem;
+  margin-bottom:0rem;
 }
 
 
@@ -92,9 +92,10 @@
 
 
 .pageSubTitle{
-  margin-bottom:1rem;
-  margin-top:4rem;
+  margin-bottom:2rem;
+  margin-top:5rem;
   text-transform: uppercase;
+  text-align: center;
 }
 
 ul{
