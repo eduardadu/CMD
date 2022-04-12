@@ -129,7 +129,9 @@
   font-size:1.4rem;
   margin-bottom: 1.8rem;
 }
-
+.topMobItem:hover{
+  text-decoration: underline;
+}
 .logomobilenav{
   position:absolute;
   margin-top:10rem;

@@ -17,12 +17,13 @@ class Pages{
 
     var actualPage= window.location.pathname.split("/").pop();
     actualPage= actualPage.split(".")[0];
+
     this.setLanguage(t,actualPage);
 
     switch(actualPage){
       case "home":
       case "":
-        $('#content').load("content/home.html", function(){
+        $('#homeContainer').load("content/home.html", function(){
           t.checkView();
           t.startVue();
           view.expandMenu();
@@ -33,7 +34,7 @@ class Pages{
         break;
       case "goals":
       case "objectivos":
-        $('#content').load("content/"+ "goals" + ".html", function(){
+        $('#pageContainer').load("content/"+ "goals" + ".html", function(){
           t.checkView();
           view.startLogo("little");
           t.startVue();
@@ -41,7 +42,7 @@ class Pages{
         break;
       case "admission":
       case "admissao":
-        $('#content').load("content/"+ "admission" + ".html", function(){
+        $('#pageContainer').load("content/"+ "admission" + ".html", function(){
           t.checkView();
           view.startLogo("little");
           t.startVue();
@@ -49,7 +50,7 @@ class Pages{
           break;
       case "events":
       case "eventos":
-      $('#content').load("content/"+ "events" + ".html", function(){
+      $('#pageContainer').load("content/"+ "events" + ".html", function(){
         t.checkView();
         view.startLogo("little");
         t.startVue();
@@ -57,7 +58,7 @@ class Pages{
         break;
       case "model":
       case "modelo":
-        $('#content').load("content/"+ "model" + ".html", function(){
+        $('#pageContainer').load("content/"+ "model" + ".html", function(){
           t.checkView();
           view.startLogo("little");
           t.startVue();
@@ -65,7 +66,7 @@ class Pages{
         break;
       case "plan":
       case "plano":
-        $('#content').load("content/"+ "plan" + ".html", function(){
+        $('#pageContainer').load("content/"+ "plan" + ".html", function(){
           t.checkView();
           view.startLogo("little");
           t.startVue();
@@ -85,6 +86,7 @@ class Pages{
   checkLanguage(t, str){
     if(this.listEN.includes(str)){
       t.setLanguage("EN");
+
     }else{
       t.setLanguage("PT");
     }
@@ -99,6 +101,5 @@ class Pages{
         t.setLanguage("PT");
       }
     }
-
   }
 }

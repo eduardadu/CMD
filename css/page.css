@@ -8,7 +8,7 @@
   max-height:auto;
   animation: pageUp 1s ease;
   padding-top:6rem;
-
+  z-index:100;
   overflow-y: scroll;
 }
 
@@ -16,7 +16,6 @@
 .pagetitle{
   font-family: "MainFont";
   font-size:1.4rem;
-  margin-bottom:4rem;
   text-transform: uppercase;
   letter-spacing: .1rem;
   word-spacing: 0.35rem;
@@ -31,7 +30,7 @@
 
 }
 
-.pageContentContainer{
+.pageText{
     max-width:45rem;
 }
 .infoPTitle{
@@ -75,22 +74,22 @@
 }
 
 
-.pageContentContainer > div{
+.pageText > div{
   margin-bottom:2rem;
   font-family: "MainFont";
 
   text-align: left;
 }
 
-.pageContentContainer ul{
+.pageText ul{
   margin-top:2rem;
 }
 
-.pageContentContainer li{
+.pageText li{
   margin-top:0rem;
 }
 .pageSubTitle{
   margin-bottom:1rem;
-  margin-top:3rem;
+  margin-top:4rem;
   text-transform: uppercase;
 }

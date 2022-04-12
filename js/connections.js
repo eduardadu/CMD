@@ -44,12 +44,13 @@ class PageConnect{
       if(this.vueInit==false){
         if(this.language=='EN'){
           startVue();
+          view.changeLanguageStyle("en");
         }else{
+          view.changeLanguageStyle("pt");
           startVuePT();
         }
         this.vueInit=true;
       }else{
-
       }
     }
 
@@ -64,6 +65,8 @@ class PageConnect{
       if(t.language!="EN"){
         localStorage['language'] = 'EN';
         window.location.href = t.pg.pageRelation[actPage + ".html"] ;
+
+      view.changeLanguageStyle("en");
       }
     });
     document.getElementById("pt").addEventListener("click", function(){
@@ -74,6 +77,8 @@ class PageConnect{
       if(t.language!="PT"){
         localStorage['language'] = 'PT';
         window.location.href = t.pg.pageRelation[actPage + ".html"] ;
+        view.changeLanguageStyle("pt");
+
       }
     });
   }

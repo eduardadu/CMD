@@ -9,7 +9,8 @@ function startVue(){
          language: 'EN',
          currentPage: 'home'
        }
-     }
+     
+    }
    });
 
 
@@ -39,6 +40,7 @@ function startVue(){
     template: `
       <div class="topMobCont" >
         <menu-item-mobile v-for="(input, i) in inputs"
+
         :key="i"
         v-model="input.name"
         :label= "input.name"
@@ -54,14 +56,14 @@ function startVue(){
             class: 'homeHyp'
           },
           {
-            name: 'Admission',
-            url: 'admission.html',
-            class: 'admissionHyp'
-          },
-          {
             name: `Goals`,
             url: 'goals.html',
             class: 'goalsHyp'
+          },
+          {
+            name: 'Admission',
+            url: 'admission.html',
+            class: 'admissionHyp'
           },
           {
             name: `Curricular Plan`,
@@ -238,23 +240,23 @@ function startVue(){
             inputs: [
               {
                 type: 'Workshop',
-                name: 'Moving Type',
-                date: '31 Abr',
+                name: 'Patrick Thomas, TBA',
+                date: '27 Abr',
                 placeHour: '10:00 Sala E4.5',
                 tags: 'p5.s',
-                authors: 'John Doe',
+                authors: 'Patrick Thomas, TBA',
                 url: 'placeholder.jpg',
-                text: 'John Doe comes to preswent his work on Advanced TYpography'
+                text: `John Doe comes to preswent his work on Advanced TYpography`
               },
               {
                 type: 'Workshop',
-                name: 'Moving Type',
-                date: '31 Abr',
+                name: 'Adriana Sá, André Rangel',
+                date: '4 May',
                 placeHour: '10:00 Sala E4.5',
                 tags: 'p5.s',
-                authors: 'John Doe',
+                authors: 'Adriana Sá, André Rangel',
                 url: 'placeholder.jpg',
-                text: ''
+                text: ``
               },
               {
                 type: 'Workshop',
@@ -266,7 +268,6 @@ function startVue(){
                 url: 'placeholder.jpg',
                 text: ''
               }
-
             ]
          }
         },
@@ -291,12 +292,15 @@ function startVue(){
                 <div class="infoDescBorder" style="background-color:#65C1CC">
                   <span class="desc">
                     {{textVal}}
+                    <div class="imgEventCont">
+                      <img class="imgEvent" :src="'content/events/photos/' + imageEvent ">
+                    </div>
                   </span>
-                  <img :src="'content/events/photos/' + imageEvent ">
                 </div>
               </div>
           </div>
         `,
+
         props: ['label', 'url', 'number' , 'modelValue', 'date', 'textVal', 'placeHour', 'imageEvent'],
         data(){
           return{

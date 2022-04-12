@@ -357,6 +357,19 @@ li{
   flex-direction: column;
   margin-bottom: 4rem;
 }
+.imgEventCont{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.imgEvent{
+  margin:auto;
+  margin-bottom:0rem;
+  margin-top:2rem;
+  max-width:80%;
+  position:relative;
+}
+
 
 .infoS{
   display:flex;
@@ -420,11 +433,11 @@ li{
   padding-right: 0.6rem;
   padding-left: 0.46em;
   border-radius: 2rem;
+  font-size:1rem;
 }
 .knowMore:hover{
-  text-decoration: underline;
+  background-color: var(--highlight-color);
 }
-
 
 
 /* --------------------------------------------------------------------------  MEDIA QUERIES */
@@ -590,8 +603,8 @@ li{
     max-width:40rem;
   }
   .desc{
-    font-size:1.2rem;
-    line-height:1.6rem;
+    font-size:1rem;
+    line-height:1.3rem;
   }
   .number, .eventDate{
     font-size: 2rem;

@@ -89,12 +89,16 @@ class View{
     list.forEach((item, index) => {
       item.addEventListener("click",function(){
         var exp= item.nextElementSibling;
-        if(exp.classList.contains("full")){
-          //exp.style.maxHeight= "1000vh";
+        if(exp.classList.contains("full")){   //check if its already open
           exp.classList.remove("full");
         }else{
-          //exp.style.maxHeight= "0px";
           exp.classList.add("full");
+
+          for(var i=0; i<list.length;i++){    //hide the rest when one is open
+            if(i!= index){
+              list[i].nextElementSibling.classList.remove("full");
+            }
+          }
         }
       });
     });
@@ -103,7 +107,6 @@ class View{
 
   expandMenu(){
     document.querySelector("#burger").addEventListener("click",function(){
-      //event.preventDefault();
       var exp= document.querySelector("#webExtend");
       var exp2= document.querySelector("#mobileExtend2");
       if(exp.style.maxHeight == "3.4rem" || exp.style.maxHeight ==""){
@@ -114,9 +117,7 @@ class View{
         exp2.style.maxHeight= "3rem";
       }
     });
-
     document.querySelector("#burger2").addEventListener("click",function(){
-      //event.preventDefault();
       var exp= document.querySelector("#webExtend");
       var exp2= document.querySelector("#mobileExtend2");
       if(exp.style.maxHeight == "3.4rem" || exp.style.maxHeight ==""){
@@ -195,10 +196,17 @@ class View{
         }
       });
     });
-
-
   }
 
+  changeLanguageStyle(state){
+    if(state=="en"){
+      document.querySelector("#en").style.textDecoration="underline";
+      document.querySelector("#pt").style.textDecoration="none";
+    }else{
+      document.querySelector("#en").style.textDecoration="none";
+      document.querySelector("#pt").style.textDecoration="underline";
+    }
+  }
 }
 
 
@@ -209,7 +217,6 @@ function enterAnimation(){
       svgReduce();
     }, 2000);
 
-
     var enterThings = setTimeout(function(){
       document.querySelector("#content").style.opacity = 1 ;
       document.querySelector("#titleImg").style.display = "flex";
@@ -219,6 +226,5 @@ function enterAnimation(){
 
     var backgroundEnter = setTimeout(function(){
       enterAnim=true;
-
     }, 6000);
 }
