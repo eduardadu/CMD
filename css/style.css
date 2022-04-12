@@ -292,14 +292,6 @@ g{
   display:block;
 }
 
-ul{
-  padding-left:0px;
-  list-style-type: none;
-
-}
-li{
-  margin-bottom:0.4rem;
-}
 
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
@@ -364,6 +356,7 @@ li{
   display:flex;
   align-items: center;
   justify-content: center;
+
 }
 .imgEvent{
   margin:auto;

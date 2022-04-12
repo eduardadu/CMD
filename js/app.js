@@ -134,7 +134,7 @@ function startVue(){
 
               A distinctive aspect of this program is the exploration of computational methods and techniques in Design, in dialectics with the innovation of computational media and their literacies, for the innovation of interaction models and technologies, the study of the dynamics of collaboration, in interdisciplinary synergy with the study of human perception and cognition and artistic practices.
 
-              <ul>
+              <ul class="list">
                 The new PhD graduates will develop capacities for:
                 <li> the autonomous conduct of high quality interdisciplinary scientific research;
                 <li> to carry out research projects of high scientific potential, providing integration in international knowledge networks in the area;
@@ -146,7 +146,7 @@ function startVue(){
             name: 'Admission',
             url: 'admissionHyp',
             text: ` Podem candidatar-se ao ciclo de estudos conducentes ao grau de doutor:
-            <ul>
+            <ul class="list">
               <li>a) Os titulares do grau de mestre ou equivalente legal em diferentes áreas e afins, relacionadas com o ciclo de estudos, nomeadamente Ciências e Informática, Design, Audiovisuais e produção dos media, Arquitetura, Belas-Artes;
               <li> b) Os titulares do grau de licenciado, detentores de um currículo escolar ou científico especialmente relevante que seja reconhecido como atestando capacidade para a realização deste ciclo de estudos pelo Conselho Científico do Instituto de Investigação Interdisciplinar da Universidade de Coimbra;
               <li> c) Os detentores de um currículo escolar, científico ou profissional que seja reconhecido como atestando capacidade para a realização deste ciclo de estudos pelo Conselho Científico do Instituto de Investigação Interdisciplinar da Universidade de Coimbra.
@@ -157,7 +157,7 @@ function startVue(){
             url: 'planHyp',
             text: `
             The Research Methodologies in Computational Media Design aims for the student to:
-            <ul>
+            <ul class="list">
               <li> - Acquire a broad view of the interdisciplinary research domain of Computational Media Design.
               <li> - Develop specific knowledge of the research challenges and main applicable methodologies, of the new objects of design, of the evolution of design practices, of organizing research processes, and of advanced forms of interdisciplinary reflection in Design.
               <li> - Improve competencies of critical analysis of scientific works, synthesis, scientific writing, verbal and written communication, critical reasoning, autonomous learning, research and collaborative work.     
@@ -168,7 +168,7 @@ function startVue(){
             name: 'Functioning Model',
             url: 'modelHyp',
             text: `  The Research Methodologies in Computational Media Design aims for the student to:
-            <ul>
+            <ul class="list">
               <li> - Acquire a broad view of the interdisciplinary research domain of Computational Media Design.
               <li> - Develop specific knowledge of the research challenges and main applicable methodologies, of the new objects of design, of the evolution of design practices, of organizing research processes, and of advanced forms of interdisciplinary reflection in Design.
               <li> - Improve competencies of critical analysis of scientific works, synthesis, scientific writing, verbal and written communication, critical reasoning, autonomous learning, research and collaborative work.     
@@ -292,10 +292,13 @@ function startVue(){
                 <div class="infoDescBorder" style="background-color:#65C1CC">
                   <span class="desc">
                     {{textVal}}
-                    <div class="imgEventCont">
-                      <img class="imgEvent" :src="'content/events/photos/' + imageEvent ">
-                    </div>
                   </span>
+
+                  <div class="imgEventCont">
+                    <img class="imgEvent" :src="'content/events/photos/' + imageEvent ">
+                  </div>
+                  <a class="buttonMain" target="_blank" :href="url">More about the event</a>
+
                 </div>
               </div>
           </div>
