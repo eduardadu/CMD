@@ -52,7 +52,7 @@ class Pages{
       case "eventos":
       $('#content').load("content/"+ "events" + ".html", function(){
         t.checkView();
-        view.startLogo("little");
+        view.startLogo("hide");
         t.startVue();
       });
         break;
@@ -67,14 +67,6 @@ class Pages{
       case "plan":
       case "plano":
         $('#content').load("content/"+ "plan" + ".html", function(){
-          t.checkView();
-          view.startLogo("little");
-          t.startVue();
-        });
-        break;
-      case "events":
-      case "eventos":
-        $('#content').load("content/"+ "events" + ".html", function(){
           t.checkView();
           view.startLogo("little");
           t.startVue();

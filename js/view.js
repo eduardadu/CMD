@@ -143,7 +143,6 @@ class View{
     var logoCont= document.querySelector("#titleCont");
     var logo= document.querySelector("#title");
     if(e=="little"){
-    //  logo.style.maxWidth="6rem";
       logoCont.classList.remove("tcB");
       logoCont.classList.add("tcS");
 
@@ -151,10 +150,14 @@ class View{
       logo.classList.remove("tB");
     }else if(e=="big"){
       logoCont.classList.add("tcB");
-      logoCont.classList.remove("tcS");
+      logoCont.classList.remove("tS");
 
       logo.classList.add("tB");
       logo.classList.remove("tS");
+    }
+    else if(e=="hide"){
+      logo.style.display="none";
+      logoCont.style.display="none";
     }
   }
 
