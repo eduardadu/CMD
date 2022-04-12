@@ -37,9 +37,9 @@
 .auto            {  }
 
 :root {
-  --main-bg-color: #65C1CC;/*#F6F6F0;*/
+  --main-bg-color: #66d1de;/*#F6F6F0;*/
   --text-color: black;
-  --circle-color:  #65C1CC;/*#86C8CD; */
+  --circle-color:  #66d1de;/*#86C8CD; */
   --highlight-color: #ffd391;
 
 }

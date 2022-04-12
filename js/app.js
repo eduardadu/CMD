@@ -9,7 +9,7 @@ function startVue(){
          language: 'EN',
          currentPage: 'home'
        }
-     
+
     }
    });
 
@@ -194,7 +194,7 @@ function startVue(){
             <div class="titleNumber">{{modelValue}}</div>
           </div>
           <div class="infoDesc">
-            <div class="infoDescBorder" style="background-color:#65C1CC">
+            <div class="infoDescBorder">
               <div class="desc"   v-html="textVal">
 
               </div>

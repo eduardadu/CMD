@@ -318,6 +318,7 @@ li{
   margin-bottom: 0.6rem;
   position:relative;
   line-height: 2rem;
+  background-color:white;
 }
 .titleNumber{
   color: black;
@@ -325,8 +326,10 @@ li{
   text-align: center;
   font-size: 2rem;
   max-width: 350px;
+
 }
 .eventDate{
+  background-color:white;
   color: black;
   font-family: "MainFont";
   text-align: center;
@@ -405,7 +408,7 @@ li{
   transition: max-height 1s ease-in-out;
 }
 .infoDescBorder{
-  background-color:  #91d0ff;
+  background-color:  #66d1de;
   color:black;
   width:100%;
   overflow-y: hidden;

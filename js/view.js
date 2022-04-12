@@ -164,11 +164,8 @@ class View{
       lastKnownScrollPosition = window.scrollY;
       if (!ticking) {
         window.requestAnimationFrame(function() {
-          //doSomething(lastKnownScrollPosition);
           cellList.forEach(function(element){
             element.updateSmooth(lastKnownScrollPosition);
-            //element.reduce(lastKnownScrollPosition);
-            //element.noise();
             }
           );
           ticking = false;
