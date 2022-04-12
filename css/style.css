@@ -429,10 +429,10 @@ g{
   cursor:pointer;
   border: 1px solid black;
   padding: 0.24rem;
-  padding-right: 0.8rem;
-  padding-left: 0.8em;
+  height: 1.4rem;
+  width: 1.4rem;
   border-radius: 2rem;
-  font-size:1rem;
+  font-size:1.2rem;
   background-color: white;
   text-transform: uppercase;
 }

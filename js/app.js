@@ -1,5 +1,7 @@
 var app;
 var content;
+var appEvents;
+
 
 function startVue(){
 
@@ -198,7 +200,7 @@ function startVue(){
               <div class="desc"   v-html="textVal">
 
               </div>
-                <div :class="[page , 'knowMore']">Know more</div>
+                <a  :class="[page , 'knowMore']" target="_blank">+</a>
             </div>
           </div>
       </div>`,
@@ -283,21 +285,23 @@ function startVue(){
         template:`
           <div class="infoCont">
             <div class="infoS">
-                <div class="eventDate">{{date}}</div>
-                <div class="titleNumber">{{modelValue}}</div>
-                <div class="placeHour">{{placeHour}}</div>
-              </div>
-              <div class="infoDesc">
-                <div class="infoDescBorder" style="background-color:#65C1CC">
-                  <div class="desc">
-                    {{textVal}}
-                    <div class="imgEventCont">
-                      <img class="imgEvent" :src="'content/events/photos/' + imageEvent ">
-                    </div>
-                    <div style="display:flex; justify-content:center;"><a class="buttonMain" target="_blank" :href="url">More about the event</a><div>
+                <div class="eventDate"> {{date}}</div>
+                <div class="titleNumber"> {{modelValue}}</div>
+                <div class="placeHour"> {{placeHour}}</div>
+            </div>
+
+            <div class="infoDesc">
+              <div class="infoDescBorder" style="background-color:#65C1CC">
+                <div class="desc">
+                  {{textVal}}
+                  <div class="imgEventCont">
+                    <img class="imgEvent" :src="'content/events/photos/' + imageEvent ">
                   </div>
+                  <a :class="[ 'knowMore']">+</a>
                 </div>
               </div>
+            </div>
+
           </div>
         `,
 
@@ -320,4 +324,112 @@ function startVue(){
     //-----------------------------------------------------------------------------------------------
 
   app.mount("#app");
+}
+
+
+
+function startVueEvents(){
+
+  appEvents = Vue.createApp({
+     data() {
+       return {
+         language: 'EN',
+         currentPage: 'home',
+         checkChanges: 0,
+       }
+    }
+   });
+
+         app.component('home-events',{
+           template:`
+           <home-event-item v-for="(input, i) in inputs"
+           :key="i"
+           v-model="input.name"
+           :date= "input.date"
+           :label= "input.name"
+           :href=" input.url"
+           :textVal="input.text"
+           :placeHour = "input.placeHour"
+           :imageEvent= "input.url"
+           :number="i+1">{{input.name}}</home-event-item>`,
+
+           props: ['label', 'url', 'childClass' , 'modelValue', "textVal", 'placeHour'],
+           data(){
+             return{
+               inputs: [
+                 {
+                   type: 'Workshop',
+                   name: 'Patrick Thomas, TBA',
+                   date: '27 Abr',
+                   placeHour: '10:00 Sala E4.5',
+                   tags: 'p5.s',
+                   authors: 'Patrick Thomas, TBA',
+                   url: 'placeholder.jpg',
+                   text: `Information about the event goes here, this is a placeholder text to test the dimensions of this container. The image below is optional`
+                 },
+                 {
+                   type: 'Workshop',
+                   name: 'Adriana Sá, André Rangel',
+                   date: '4 May',
+                   placeHour: '10:00 Sala E4.5',
+                   tags: 'p5.s',
+                   authors: 'Adriana Sá, André Rangel',
+                   url: 'placeholder.jpg',
+                   text: ``
+                 },
+                 {
+                   type: 'Workshop',
+                   name: 'Moving Type',
+                   date: '31 Abr',
+                   placeHour: '10:00 Sala E4.5',
+                   tags: 'p5.s',
+                   authors: 'John Doe',
+                   url: 'placeholder.jpg',
+                   text: ''
+                 }
+               ]
+            }
+           },
+           methods: {},
+           mounted(){
+             connector.addHyps();
+
+           }
+         });
+
+
+         app.component('home-event-item',{ //#9FCAEA
+           template:`
+             <div class="infoCont">
+               <div class="infoS">
+                   <div class="eventDate"> {{date}}</div>
+                   <div class="titleNumber"> {{modelValue}}</div>
+                   <div class="placeHour"> {{placeHour}}</div>
+               </div>
+
+               <div class="infoDesc">
+                 <div class="infoDescBorder" style="background-color:#65C1CC">
+                   <div class="desc">
+                     {{textVal}}
+                     <div class="imgEventCont">
+                       <img class="imgEvent" :src="'content/events/photos/' + imageEvent ">
+                     </div>
+                     <a :class="[ 'knowMore']">+</a>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           `,
+           props: ['label', 'url', 'number' , 'modelValue', 'date', 'textVal', 'placeHour', 'imageEvent'],
+           data(){
+             return{
+             }
+           },
+           methods: {},
+           mounted(){
+             view.expandInfo();
+           }
+         });
+
+  app.mount("#events");
 }

@@ -137,6 +137,8 @@ class View{
     var exp2= document.querySelector("#mobileExtend2");
       exp.style.maxHeight= "3.4rem";
       exp2.style.maxHeight= "3rem";
+      document.getElementsByClassName("mobile-nav-toggle")[0].checked = false;
+    document.getElementsByClassName("mobile-nav-toggle2")[0].checked = false;
   }
 
   startLogo(e){
