@@ -12,14 +12,13 @@ let groupList = [];
 class Cell{
   constructor(e){
     this.ref=e;
-
     this.addX= parseFloat((Math.random()*3)-1.5);
     this.addY= parseFloat((Math.random()*3)-1.5);
     this.a=0;
     this.b=0;
 
     this.range= 25;
-    this.rangeBig= 20;
+    this.rangeBig= 15;
 
     this.noiseX=  Math.random()* this.range - this.range/2;
     this.noiseY = Math.random()* this.range - this.range/2;
@@ -34,13 +33,7 @@ class Cell{
     this.ref.attr("transform","translate("+ a +", " + b + ")");
     this.ref.attr("opacity","0.8");
   }
-  update(e){
-    var a= this.addX * e + Math.random()* this.range/2 - this.range/4;;
-    var b= this.addY * e + Math.random()* this.range - this.range/2;;
-    this.ref.attr("transform","translate("+ a +", " + b + ")");
-    this.a=a;
-    this.b=a;
-  }
+
 
   updateSmooth(e){
     var a= this.addX * e + this.noiseX ;
