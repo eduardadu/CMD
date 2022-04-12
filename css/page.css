@@ -28,7 +28,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  margin-bottom:5rem;
 }
 
 .pageText{
@@ -63,17 +63,24 @@
   line-height:1.5rem;
   border-radius: 1.2rem;
   border: 2px solid var(--text-color);
-  padding:0.2rem;
-  padding-left:0.8rem;
-  padding-right:0.8rem;
-  background-color: var(----main-bg-color);
+  padding:0.24rem;
+  padding-left:1rem;
+  padding-right:1rem;
   font-family: "MainFont";
+  margin-right:1rem;
+  background-color: white;
+  transition: background-color 0.2s;
 }
 
 .buttonMain:hover{
-  background-color: white;
+  background-color: var(--highlight-color);
+  transition: background-color 0.2s;
 }
-
+.centered{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .pageText > div{
   margin-bottom:2rem;
