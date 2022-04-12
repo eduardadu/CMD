@@ -330,11 +330,9 @@
 
 <div id="app" v-cloak>
 
-
-  <div class="content" id="content" >
+  <div class="content" id="content" :key="checkChanges">
     <div id="homeContainer"></div>
     <div id="pageContainer"></div>
-
   </div>
 
   <div class="backgroundImg" id="bgCont" >
@@ -343,13 +341,11 @@
     </div>
   </div>
 
-
   <div id="backgroundCanvas"></div>
 </div>
 
 
 <div style="display:none" class="custom-cursor"></div>
-
 
 
   <script src="https://unpkg.com/vue@3"></script>

@@ -32,7 +32,8 @@
 }
 
 .pageText{
-    max-width:42rem;
+    width:42rem;
+    max-width: calc(100% - 2rem);
 }
 .infoPTitle{
   font-family: "MainFont";
@@ -68,6 +69,7 @@
   padding-right:1rem;
   font-family: "MainFont";
   margin-right:1rem;
+  margin-left: 1rem;
   background-color: white;
   transition: background-color 0.2s;
 }
@@ -86,14 +88,13 @@
 .pageText > div{
   margin-bottom:2rem;
   font-family: "MainFont";
-
   text-align: left;
 }
 
 
 .pageSubTitle{
   margin-bottom:2rem;
-  margin-top:5rem;
+  margin-top:4rem;
   text-transform: uppercase;
   text-align: center;
 }

@@ -290,6 +290,8 @@ g{
   font-size:1.2rem;
   line-height:1.6rem;
   display:block;
+  display: flex;
+    flex-direction: column;
 }
 
 
@@ -338,7 +340,7 @@ g{
 .placeHour{
   font-family: "MainFont";
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-top:0.2rem;
 }
 .info{
@@ -360,7 +362,7 @@ g{
 }
 .imgEvent{
   margin:auto;
-  margin-bottom:0rem;
+  margin-bottom:2rem;
   margin-top:2rem;
   max-width:80%;
   position:relative;
@@ -422,7 +424,7 @@ g{
 }
 
 .knowMore{
-  margin-top:-0.4rem;
+  margin-top:-3rem;
   margin-bottom:2.4rem;
   cursor:pointer;
   border: 1px solid black;

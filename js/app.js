@@ -7,7 +7,8 @@ function startVue(){
      data() {
        return {
          language: 'EN',
-         currentPage: 'home'
+         currentPage: 'home',
+         checkChanges: 0,
        }
 
     }
@@ -286,18 +287,15 @@ function startVue(){
                 <div class="titleNumber">{{modelValue}}</div>
                 <div class="placeHour">{{placeHour}}</div>
               </div>
-
               <div class="infoDesc">
                 <div class="infoDescBorder" style="background-color:#65C1CC">
-                  <span class="desc">
+                  <div class="desc">
                     {{textVal}}
-                  </span>
-
-                  <div class="imgEventCont">
-                    <img class="imgEvent" :src="'content/events/photos/' + imageEvent ">
+                    <div class="imgEventCont">
+                      <img class="imgEvent" :src="'content/events/photos/' + imageEvent ">
+                    </div>
+                    <div style="display:flex; justify-content:center;"><a class="buttonMain" target="_blank" :href="url">More about the event</a><div>
                   </div>
-                  <a class="buttonMain" target="_blank" :href="url">More about the event</a>
-
                 </div>
               </div>
           </div>
