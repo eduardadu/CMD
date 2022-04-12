@@ -440,7 +440,7 @@ li{
   background-color: white;
 }
 .knowMore:hover{
-  background-color: white;
+  background-color: var(--highlight-color);
 }
 
 
