@@ -8,20 +8,16 @@
   width:100%;
   color: var(--text-color);
   background-color:  var(--main-bg-color);
-
   font-size: 0.65rem;
   font-family: "MainFont";
-
   text-transform: uppercase;
   letter-spacing: .1rem;
   word-spacing: 0.35rem;
   z-index:2;
-
   display:none;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
   transition: opacity 1s, max-height 1s;
   animation: topbarDown 1s;
   z-index:500;
@@ -110,7 +106,7 @@
   width:24px;
 }
 
-#burger{
+#burger, #burger2{
   cursor: pointer;
 }
 .topMobCont{
