@@ -145,7 +145,7 @@ function startVue(){
           {
             name: 'Admission',
             url: 'admissionHyp',
-            text: `  1- Podem candidatar-se ao ciclo de estudos conducentes ao grau de doutor:
+            text: ` Podem candidatar-se ao ciclo de estudos conducentes ao grau de doutor:
             <ul>
               <li>a) Os titulares do grau de mestre ou equivalente legal em diferentes áreas e afins, relacionadas com o ciclo de estudos, nomeadamente Ciências e Informática, Design, Audiovisuais e produção dos media, Arquitetura, Belas-Artes;
               <li> b) Os titulares do grau de licenciado, detentores de um currículo escolar ou científico especialmente relevante que seja reconhecido como atestando capacidade para a realização deste ciclo de estudos pelo Conselho Científico do Instituto de Investigação Interdisciplinar da Universidade de Coimbra;
@@ -246,7 +246,7 @@ function startVue(){
                 tags: 'p5.s',
                 authors: 'Patrick Thomas, TBA',
                 url: 'placeholder.jpg',
-                text: `John Doe comes to preswent his work on Advanced TYpography`
+                text: `Information about the event goes here, this is a placeholder text to test the dimensions of this container. The image below is optional`
               },
               {
                 type: 'Workshop',
