@@ -28,8 +28,19 @@ a{
 
 [v-cloak]{
   display:none;
+  animation: itensdown 1s;
 }
-
+@keyframes opacityFade {
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+#homeCont{
+  animation: opacityFade 2s;
+}
 .custom-cursor {
   position: fixed;
   opacity: 0;

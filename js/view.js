@@ -110,28 +110,34 @@ class View{
 
 
   expandMenu(){
-    document.querySelector("#burger").addEventListener("click",function(){
-      var exp= document.querySelector("#webExtend");
-      var exp2= document.querySelector("#mobileExtend2");
-      if(exp.style.maxHeight == "3.4rem" || exp.style.maxHeight ==""){
-        exp.style.maxHeight= "1000vh";
-        exp2.style.maxHeight= "1000vh";
-      }else{
-        exp.style.maxHeight= "3.4rem";
-        exp2.style.maxHeight= "3rem";
-      }
-    });
-    document.querySelector("#burger2").addEventListener("click",function(){
-      var exp= document.querySelector("#webExtend");
-      var exp2= document.querySelector("#mobileExtend2");
-      if(exp.style.maxHeight == "3.4rem" || exp.style.maxHeight ==""){
-        exp.style.maxHeight= "1000vh";
-        exp2.style.maxHeight= "1000vh";
-      }else{
-        exp.style.maxHeight= "3.4rem";
-        exp2.style.maxHeight= "3rem";
-      }
-    });
+    if(document.querySelector("#burger").classList.contains("clickable")==false) {
+      document.querySelector("#burger").classList.add("clickable");
+      document.querySelector("#burger").addEventListener("click",function(){
+        var exp= document.querySelector("#webExtend");
+        var exp2= document.querySelector("#mobileExtend2");
+        if(exp.style.maxHeight == "3.4rem" || exp.style.maxHeight ==""){
+          exp.style.maxHeight= "1000vh";
+          exp2.style.maxHeight= "1000vh";
+        }else{
+          exp.style.maxHeight= "3.4rem";
+          exp2.style.maxHeight= "3rem";
+        }
+      });
+    }
+    if(document.querySelector("#burger").classList.contains("clickable")==false) {
+      ocument.querySelector("#burger2").classList.add("clickable");
+      document.querySelector("#burger2").addEventListener("click",function(){
+        var exp= document.querySelector("#webExtend");
+        var exp2= document.querySelector("#mobileExtend2");
+        if(exp.style.maxHeight == "3.4rem" || exp.style.maxHeight ==""){
+          exp.style.maxHeight= "1000vh";
+          exp2.style.maxHeight= "1000vh";
+        }else{
+          exp.style.maxHeight= "3.4rem";
+          exp2.style.maxHeight= "3rem";
+        }
+      });
+    }
   }
 
 
@@ -148,6 +154,8 @@ class View{
   startLogo(e){
     var logoCont= document.querySelector("#titleCont");
     var logo= document.querySelector("#title");
+    logo.style.display="flex";
+    logoCont.style.display="flex";
     if(e=="little"){
       logoCont.classList.remove("tcB");
       logoCont.classList.add("tcS");
