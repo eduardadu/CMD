@@ -304,7 +304,7 @@ function startVueEvents(){
            methods: {},
            mounted(){
              connector.addHyps();
-
+             document.querySelector("#titleEvents").style.display="flex";
            }
          });
 
