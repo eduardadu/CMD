@@ -1,12 +1,9 @@
 
-<div id="homeCont" v-cloak ">
-  <component :is="'script'">
-    document.title="PhD in Computational Media Design";
-  </component>
+<div >
 
   <div id="pageContainer"></div>
 
-  <div class="info">
+  <div class="info" id="homeCont" v-cloak ">
     <home-sections></home-sections>
   </div>
 
@@ -17,7 +14,7 @@
     </div>
   </div>
 
-  <div class="info">
+  <div class="info" id="events" v-cloak>
     <home-events></home-events>
   </div>
 
@@ -29,8 +26,10 @@
   var a = setTimeout(function(){
     if(connector.language=="EN"){
       startVueHome();
+      startVueEvents();
     }else{
       startVueHomePT();
+      startVueEventsPT();
     }
   },1400);
 </script>

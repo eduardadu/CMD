@@ -230,113 +230,10 @@ function startVueHome(){
     }
   });
 
-    //----------------------------------------------------------------------------------------------- HOME ITENS
-    //-----------------------------------------------------------------------------------------------
-    //-----------------------------------------------------------------------------------------------
-
-      appHome.component('home-events',{
-        template:`
-        <home-event-item v-for="(input, i) in inputs"
-        :key="i"
-        v-model="input.name"
-        :date= "input.date"
-        :label= "input.name"
-        :href=" input.url"
-        :textVal="input.text"
-        :placeHour = "input.placeHour"
-        :imageEvent= "input.url"
-        :number="i+1">{{input.name}}</home-event-item>`,
-
-        props: ['label', 'url', 'childClass' , 'modelValue', "textVal", 'placeHour'],
-        data(){
-          return{
-            inputs: [
-              {
-                type: 'Workshop',
-                name: 'Patrick Thomas, TBA',
-                date: '27 Abr',
-                placeHour: '10:00 Sala E4.5',
-                tags: 'p5.s',
-                authors: 'Patrick Thomas, TBA',
-                url: ['thomas.png'],
-                text: `Information about the event goes here, this is a placeholder text to test the dimensions of this container. The image below is optional`
-              },
-              {
-                type: 'Workshop',
-                name: 'Adriana Sá, André Rangel',
-                date: '4 May',
-                placeHour: '10:00 Sala E4.5',
-                tags: 'p5.s',
-                authors: ['Adriana Sá', 'André Rangel'],
-                url: ['adriana.png', 'andre.png'],
-                text: ``
-              },
-              {
-                type: 'Workshop',
-                name: 'Moving Type',
-                date: '31 Abr',
-                placeHour: '10:00 Sala E4.5',
-                tags: 'p5.s',
-                authors: 'John Doe',
-                url: ['placeholder.jpg'],
-                text: ''
-              }
-            ]
-         }
-        },
-        methods: {},
-        mounted(){
-          connector.addHyps();
-          view.expandInfo();
-        }
-      });
-
-      appHome.component('home-event-item',{ //#9FCAEA
-        template:`
-          <div class="infoCont">
-            <div class="infoS">
-                <div class="eventDate"> {{date}}</div>
-                <div class="titleNumber"> {{modelValue}}</div>
-                <div class="placeHour"> {{placeHour}}</div>
-            </div>
-            <div class="infoDesc">
-              <div class="infoDescBorder" style="background-color:#65C1CC">
-                <div class="desc">
-                  {{textVal}}
-                  <div class="infoEventCont">
-                    <div class="imgEventCont">
-                    <!-- <img class="imgEvent" :src="'content/events/photos/' + imageEvent "> -->
-
-                    <img class="imgEvent" v-for="(input, i) in imageEvent"
-                    :key="i"
-                    :src="'content/events/photos/' + input ">
-
-                    </div>
-                    <a :class="[ 'knowMoreEvent']">+</a>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        `,
-
-        props: ['label', 'url', 'number' , 'modelValue', 'date', 'textVal', 'placeHour', 'imageEvent'],
-        data(){
-          return{
-          }
-        },
-        methods: {},
-        mounted(){
-        }
-      });
-
-
-
   appHome.mount("#homeCont");
-
-
 }
+
+
 //----------------------------------------------------------------------------------------------- EVENTS
 //-----------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------
@@ -357,7 +254,7 @@ function startVueEvents(){
            template:`
            <home-event-item v-for="(input, i) in inputs"
            :key="i"
-           v-model="input.name"
+           :titleEvent="input.name"
            :date= "input.date"
            :label= "input.name"
            :href=" input.url"
@@ -372,7 +269,7 @@ function startVueEvents(){
                inputs: [
                  {
                    type: 'Workshop',
-                   name: 'Patrick Thomas, TBA',
+                   name: ['Patrick Thomas', 'TBA'],
                    date: '27 Abr',
                    placeHour: '10:00 Sala E4.5',
                    tags: 'p5.s',
@@ -382,7 +279,7 @@ function startVueEvents(){
                  },
                  {
                    type: 'Workshop',
-                   name: 'Adriana Sá, André Rangel',
+                   name: ['Adriana Sá', 'André Rangel'],
                    date: '4 May',
                    placeHour: '10:00 Sala E4.5',
                    tags: 'p5.s',
@@ -392,14 +289,15 @@ function startVueEvents(){
                  },
                  {
                    type: 'Workshop',
-                   name: 'Moving Type',
+                   name: ['Jer Thorp'],
                    date: '31 Abr',
                    placeHour: '10:00 Sala E4.5',
                    tags: 'p5.s',
-                   authors: 'John Doe',
+                   authors: 'Jer Thorp',
                    url: ['placeholder.jpg'],
                    text: ''
-                 }
+                 },
+
                ]
             }
            },
@@ -416,7 +314,10 @@ function startVueEvents(){
            <div class="infoCont">
              <div class="infoS">
                  <div class="eventDate"> {{date}}</div>
-                 <div class="titleNumber"> {{modelValue}}</div>
+                 <!--<div class="titleNumber"> {{titleEvent}}</div> -->
+                 <div class="titleNumber" v-for="(input, i) in titleEvent"
+                 :key="i">{{input}}</div>
+
                  <div class="placeHour"> {{placeHour}}</div>
              </div>
              <div class="infoDesc">
@@ -430,7 +331,6 @@ function startVueEvents(){
                       <img class="imgEvent" v-for="(input, i) in imageEvent"
                       :key="i"
                       :src="'content/events/photos/' + input ">
-
                      </div>
                      <a :class="[ 'knowMoreEvent']">+</a>
                    </div>
@@ -440,7 +340,7 @@ function startVueEvents(){
              </div>
            </div>
            `,
-           props: ['label', 'url', 'number' , 'modelValue', 'date', 'textVal', 'placeHour', 'imageEvent'],
+           props: ['label', 'url', 'number' , 'titleEvent', 'date', 'textVal', 'placeHour', 'imageEvent'],
            data(){
              return{
              }
