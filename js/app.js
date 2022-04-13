@@ -258,7 +258,7 @@ function startVueHome(){
                 placeHour: '10:00 Sala E4.5',
                 tags: 'p5.s',
                 authors: 'Patrick Thomas, TBA',
-                url: 'thomas.png',
+                url: ['thomas.png'],
                 text: `Information about the event goes here, this is a placeholder text to test the dimensions of this container. The image below is optional`
               },
               {
@@ -267,8 +267,8 @@ function startVueHome(){
                 date: '4 May',
                 placeHour: '10:00 Sala E4.5',
                 tags: 'p5.s',
-                authors: 'Adriana Sá, André Rangel',
-                url: 'adriana.png',
+                authors: ['Adriana Sá', 'André Rangel'],
+                url: ['adriana.png', 'andre.png'],
                 text: ``
               },
               {
@@ -278,7 +278,7 @@ function startVueHome(){
                 placeHour: '10:00 Sala E4.5',
                 tags: 'p5.s',
                 authors: 'John Doe',
-                url: 'placeholder.jpg',
+                url: ['placeholder.jpg'],
                 text: ''
               }
             ]
@@ -305,7 +305,11 @@ function startVueHome(){
                   {{textVal}}
                   <div class="infoEventCont">
                     <div class="imgEventCont">
-                      <img class="imgEvent" :src="'content/events/photos/' + imageEvent ">
+                    <!-- <img class="imgEvent" :src="'content/events/photos/' + imageEvent "> -->
+
+                    <img class="imgEvent" v-for="(input, i) in imageEvent"
+                    :key="i"
+                    :src="'content/events/photos/' + input ">
 
                     </div>
                     <a :class="[ 'knowMoreEvent']">+</a>
@@ -328,7 +332,7 @@ function startVueHome(){
       });
 
 
-      
+
   appHome.mount("#homeCont");
 
 
@@ -349,7 +353,6 @@ function startVueEvents(){
        }
     }
    });
-
          appEvents.component('home-events',{
            template:`
            <home-event-item v-for="(input, i) in inputs"
@@ -374,7 +377,7 @@ function startVueEvents(){
                    placeHour: '10:00 Sala E4.5',
                    tags: 'p5.s',
                    authors: 'Patrick Thomas, TBA',
-                   url: 'placeholder.jpg',
+                   url: ['thomas.png'],
                    text: `Information about the event goes here, this is a placeholder text to test the dimensions of this container. The image below is optional`
                  },
                  {
@@ -384,7 +387,7 @@ function startVueEvents(){
                    placeHour: '10:00 Sala E4.5',
                    tags: 'p5.s',
                    authors: 'Adriana Sá, André Rangel',
-                   url: 'placeholder.jpg',
+                   url: ['adriana.png', 'andre.png'],
                    text: ``
                  },
                  {
@@ -394,7 +397,7 @@ function startVueEvents(){
                    placeHour: '10:00 Sala E4.5',
                    tags: 'p5.s',
                    authors: 'John Doe',
-                   url: 'placeholder.jpg',
+                   url: ['placeholder.jpg'],
                    text: ''
                  }
                ]
@@ -410,25 +413,32 @@ function startVueEvents(){
 
          appEvents.component('home-event-item',{ //#9FCAEA
            template:`
-             <div class="infoCont">
-               <div class="infoS">
-                   <div class="eventDate"> {{date}}</div>
-                   <div class="titleNumber"> {{modelValue}}</div>
-                   <div class="placeHour"> {{placeHour}}</div>
-               </div>
-
-               <div class="infoDesc">
-                 <div class="infoDescBorder" style="background-color:#65C1CC">
-                   <div class="desc">
-                     {{textVal}}
+           <div class="infoCont">
+             <div class="infoS">
+                 <div class="eventDate"> {{date}}</div>
+                 <div class="titleNumber"> {{modelValue}}</div>
+                 <div class="placeHour"> {{placeHour}}</div>
+             </div>
+             <div class="infoDesc">
+               <div class="infoDescBorder" style="background-color:#65C1CC">
+                 <div class="desc">
+                   {{textVal}}
+                   <div class="infoEventCont">
                      <div class="imgEventCont">
-                       <img class="imgEvent" :src="'content/events/photos/' + imageEvent ">
+                     <!-- <img class="imgEvent" :src="'content/events/photos/' + imageEvent "> -->
+
+                      <img class="imgEvent" v-for="(input, i) in imageEvent"
+                      :key="i"
+                      :src="'content/events/photos/' + input ">
+
                      </div>
                      <a :class="[ 'knowMoreEvent']">+</a>
                    </div>
+
                  </div>
                </div>
              </div>
+           </div>
            `,
            props: ['label', 'url', 'number' , 'modelValue', 'date', 'textVal', 'placeHour', 'imageEvent'],
            data(){
