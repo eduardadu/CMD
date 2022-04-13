@@ -365,11 +365,17 @@ g{
   flex-direction: column;
   margin-bottom: 4rem;
 }
+.infoEventCont{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .imgEventCont{
   display:flex;
   align-items: center;
   justify-content: center;
-
+  flex-direction: row;
 }
 .imgEvent{
   margin:auto;

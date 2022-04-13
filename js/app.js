@@ -258,7 +258,7 @@ function startVueHome(){
                 placeHour: '10:00 Sala E4.5',
                 tags: 'p5.s',
                 authors: 'Patrick Thomas, TBA',
-                url: 'placeholder.jpg',
+                url: 'thomas.png',
                 text: `Information about the event goes here, this is a placeholder text to test the dimensions of this container. The image below is optional`
               },
               {
@@ -303,10 +303,14 @@ function startVueHome(){
               <div class="infoDescBorder" style="background-color:#65C1CC">
                 <div class="desc">
                   {{textVal}}
-                  <div class="imgEventCont">
-                    <img class="imgEvent" :src="'content/events/photos/' + imageEvent ">
+                  <div class="infoEventCont">
+                    <div class="imgEventCont">
+                      <img class="imgEvent" :src="'content/events/photos/' + imageEvent ">
+
+                    </div>
+                    <a :class="[ 'knowMoreEvent']">+</a>
                   </div>
-                  <a :class="[ 'knowMoreEvent']">+</a>
+
                 </div>
               </div>
             </div>
