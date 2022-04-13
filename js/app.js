@@ -268,7 +268,7 @@ function startVueHome(){
                 placeHour: '10:00 Sala E4.5',
                 tags: 'p5.s',
                 authors: 'Adriana Sá, André Rangel',
-                url: 'placeholder.jpg',
+                url: 'adriana.png',
                 text: ``
               },
               {
