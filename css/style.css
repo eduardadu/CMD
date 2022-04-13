@@ -447,7 +447,19 @@ g{
   background-color: white;
   text-transform: uppercase;
 }
-.knowMore:hover{
+.knowMoreEvent{
+  cursor:pointer;
+  border: 1px solid black;
+  padding: 0.24rem;
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: 2rem;
+  font-size:1.2rem;
+  background-color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+.knowMore:hover, .knowMoreEvent:hover{
   background-color: var(--highlight-color);
 }
 

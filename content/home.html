@@ -25,7 +25,12 @@
 
 
 <script>
+
   var a = setTimeout(function(){
+    if(connector.language=="EN"){
       startVueHome();
+    }else{
+      startVueHomePT();
+    }
   },1400);
 </script>

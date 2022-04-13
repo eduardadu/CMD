@@ -164,7 +164,7 @@ class View{
       logo.classList.remove("tB");
     }else if(e=="big"){
       logoCont.classList.add("tcB");
-      logoCont.classList.remove("tS");
+      logoCont.classList.remove("tcS");
 
       logo.classList.add("tB");
       logo.classList.remove("tS");

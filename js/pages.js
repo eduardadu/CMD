@@ -9,7 +9,7 @@ class Pages{
       "plan.html": "plano.html"
     };
 
-    this.listEN = ["home", "goals", "model",  "plan",  "events", "admission"];
+    this.listEN = ["home", "goals", "model",  "plan",  "events", "admission"];    //map from pt pages to en
     this.listPT = ["home", "objectivos", "modelo", "plano", "eventos", "admissão"];
   }
 
@@ -34,7 +34,7 @@ class Pages{
         });
         break;
       case "goals":
-      case "objectivos":
+      case "objetivos":
         $('#content').load("content/"+ "goals" + ".html", function(){
           t.checkView();
           view.startLogo("little");
@@ -76,10 +76,10 @@ class Pages{
     }
   }
 
+
   checkLanguage(t, str){
     if(this.listEN.includes(str)){
       t.setLanguage("EN");
-
     }else{
       t.setLanguage("PT");
     }

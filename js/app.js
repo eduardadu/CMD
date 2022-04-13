@@ -198,7 +198,7 @@ function startVueHome(){
     methods: {},
     mounted(){
       connector.addHyps();
-      
+
       view.expandInfo();
     }
   });
@@ -306,7 +306,7 @@ function startVueHome(){
                   <div class="imgEventCont">
                     <img class="imgEvent" :src="'content/events/photos/' + imageEvent ">
                   </div>
-                  <a :class="[ 'knowMore']">+</a>
+                  <a :class="[ 'knowMoreEvent']">+</a>
                 </div>
               </div>
             </div>
@@ -415,7 +415,7 @@ function startVueEvents(){
                      <div class="imgEventCont">
                        <img class="imgEvent" :src="'content/events/photos/' + imageEvent ">
                      </div>
-                     <a :class="[ 'knowMore']">+</a>
+                     <a :class="[ 'knowMoreEvent']">+</a>
                    </div>
                  </div>
                </div>
