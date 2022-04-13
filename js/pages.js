@@ -26,6 +26,7 @@ class Pages{
         $('#content').load("content/home.html", function(){
           t.checkView();
           t.startVue();
+
           view.expandMenu();
           view.expandInfo();
           t.changeLanguage();

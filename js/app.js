@@ -1,6 +1,7 @@
 var app;
 var content;
 var appEvents;
+var appHome;
 
 
 function startVue(){
@@ -12,15 +13,12 @@ function startVue(){
          currentPage: 'home',
          checkChanges: 0,
        }
-
     }
    });
-
 
   //----------------------------------------------------------------------------------------------- INSTITUTE NAME
   //-----------------------------------------------------------------------------------------------
   //-----------------------------------------------------------------------------------------------
-
   app.component('institute', {
     template: `
       <a href="https://www.uc.pt/en/iii" id="institute">{{name}}</a>`,
@@ -95,8 +93,6 @@ function startVue(){
 
 
 
-
-
   app.component('menu-item-mobile',{
     template:`<a href="{{url}}" :class="[childClass , 'topMobItem']" @click.prevent>{{modelValue}}</a>`,
     props: ['label', 'url', 'childClass' , 'modelValue'],
@@ -110,12 +106,31 @@ function startVue(){
     }
   });
 
+  app.mount("#topbar");
+}
+
+
+//-----------------------------------------------------------------------------HOME
+//-----------------------------------------------------------------------------HOME
+//-----------------------------------------------------------------------------HOME
+
+function startVueHome(){
+
+  appHome = Vue.createApp({
+     data() {
+       return {
+         language: 'EN',
+         checkChanges: 0,
+       }
+    }
+   });
+
 
 //----------------------------------------------------------------------------------------------- HOME ITENS
 //-----------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------
 
-  app.component('home-sections',{
+  appHome.component('home-sections',{
     template:`
     <home-section-item v-for="(input, i) in inputs"
     :key="i"
@@ -183,12 +198,12 @@ function startVue(){
     methods: {},
     mounted(){
       connector.addHyps();
+      
       view.expandInfo();
     }
   });
 
-
-  app.component('home-section-item',{ //#9FCAEA
+  appHome.component('home-section-item',{
     template:`
       <div class="infoCont">
         <div class="infoS">
@@ -198,7 +213,6 @@ function startVue(){
           <div class="infoDesc">
             <div class="infoDescBorder">
               <div class="desc"   v-html="textVal">
-
               </div>
                 <a  :class="[page , 'knowMore']" target="_blank">+</a>
             </div>
@@ -216,14 +230,11 @@ function startVue(){
     }
   });
 
-
-
-
     //----------------------------------------------------------------------------------------------- HOME ITENS
     //-----------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------
 
-      app.component('home-events',{
+      appHome.component('home-events',{
         template:`
         <home-event-item v-for="(input, i) in inputs"
         :key="i"
@@ -276,12 +287,11 @@ function startVue(){
         methods: {},
         mounted(){
           connector.addHyps();
-
+          view.expandInfo();
         }
       });
 
-
-      app.component('home-event-item',{ //#9FCAEA
+      appHome.component('home-event-item',{ //#9FCAEA
         template:`
           <div class="infoCont">
             <div class="infoS">
@@ -289,7 +299,6 @@ function startVue(){
                 <div class="titleNumber"> {{modelValue}}</div>
                 <div class="placeHour"> {{placeHour}}</div>
             </div>
-
             <div class="infoDesc">
               <div class="infoDescBorder" style="background-color:#65C1CC">
                 <div class="desc">
@@ -301,7 +310,6 @@ function startVue(){
                 </div>
               </div>
             </div>
-
           </div>
         `,
 
@@ -312,20 +320,13 @@ function startVue(){
         },
         methods: {},
         mounted(){
-          view.expandInfo();
         }
       });
-
-
-
-
-    //----------------------------------------------------------------------------------------------- EVENTS
-    //-----------------------------------------------------------------------------------------------
-    //-----------------------------------------------------------------------------------------------
-
-  app.mount("#app");
+  appHome.mount("#homeCont");
 }
-
+//----------------------------------------------------------------------------------------------- EVENTS
+//-----------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------
 
 
 function startVueEvents(){
@@ -340,7 +341,7 @@ function startVueEvents(){
     }
    });
 
-         app.component('home-events',{
+         appEvents.component('home-events',{
            template:`
            <home-event-item v-for="(input, i) in inputs"
            :key="i"
@@ -398,7 +399,7 @@ function startVueEvents(){
          });
 
 
-         app.component('home-event-item',{ //#9FCAEA
+         appEvents.component('home-event-item',{ //#9FCAEA
            template:`
              <div class="infoCont">
                <div class="infoS">
@@ -428,8 +429,9 @@ function startVueEvents(){
            methods: {},
            mounted(){
              view.expandInfo();
+
            }
          });
 
-  app.mount("#events");
+  appEvents.mount("#events");
 }

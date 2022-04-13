@@ -1,25 +1,31 @@
 
-<component :is="'script'">
-  document.title="PhD in Computational Media Design";
-</component>
+<div id="homeCont" v-cloak>
+  <component :is="'script'">
+    document.title="PhD in Computational Media Design";
+  </component>
 
+  <div id="pageContainer"></div>
 
-<div id="pageContainer"></div>
-
-<div class="info">
-  <home-sections></home-sections>
-</div>
-
-
-
-<div id="titleEvents" class="titleCont tcB " style="z-index:40">
-  <div class="titleNumber" style="display:block; width:100%; margin-bottom:2rem;">Events</div>
-  <div  class="titletalks tB">
-    <img id="titleImg" src="assets/title_black_talks.svg">
+  <div class="info">
+    <home-sections></home-sections>
   </div>
+
+  <div id="titleEvents" class="titleCont tcB " style="z-index:40">
+    <div class="titleNumber" style="display:block; width:100%; margin-bottom:2rem;">Events</div>
+    <div  class="titletalks tB">
+      <img id="titleImg" src="assets/title_black_talks.svg">
+    </div>
+  </div>
+
+  <div class="info">
+    <home-events></home-events>
+  </div>
+
 </div>
 
 
-<div class="info">
-  <home-events></home-events>
-</div>
+<script>
+  var a = setTimeout(function(){
+      startVueHome();
+  },1400);
+</script>

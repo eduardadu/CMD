@@ -87,20 +87,24 @@ class View{
   expandInfo(){
     var list = document.querySelectorAll(".infoS");
     list.forEach((item, index) => {
-      item.addEventListener("click",function(){
-        var exp= item.nextElementSibling;
-        if(exp.classList.contains("full")){   //check if its already open
-          exp.classList.remove("full");
-        }else{
-          exp.classList.add("full");
+      if(item.classList.contains("clickable")==false){
+        item.classList.add("clickable");
+        item.addEventListener("click",function(){
 
-          for(var i=0; i<list.length;i++){    //hide the rest when one is open
-            if(i!= index){
-              list[i].nextElementSibling.classList.remove("full");
+          var exp= item.nextElementSibling;
+          if(exp.classList.contains("full")){   //check if its already open
+            exp.classList.remove("full");
+          }else{
+            exp.classList.add("full");
+
+            for(var i=0; i<list.length;i++){    //hide the rest when one is open
+              if(i!= index){
+                list[i].nextElementSibling.classList.remove("full");
+              }
             }
           }
-        }
-      });
+        });
+      }
     });
   }
 
