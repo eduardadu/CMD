@@ -124,8 +124,8 @@ class View{
         }
       });
     }
-    if(document.querySelector("#burger").classList.contains("clickable")==false) {
-      ocument.querySelector("#burger2").classList.add("clickable");
+    if(document.querySelector("#burger2").classList.contains("clickable")==false) {
+      document.querySelector("#burger2").classList.add("clickable");
       document.querySelector("#burger2").addEventListener("click",function(){
         var exp= document.querySelector("#webExtend");
         var exp2= document.querySelector("#mobileExtend2");
