@@ -64,6 +64,7 @@ class View{
     //appear only after calcs done
     var enter= setTimeout(function(){
         document.querySelector("#cmd").style.opacity="1";
+        document.querySelector("main").style.opacity="1";
     },400);
 
   }

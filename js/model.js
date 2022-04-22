@@ -12,6 +12,9 @@ let groupList = [];
 class Cell{
   constructor(e){
     this.ref=e;
+    this.x= e.attr('cx');
+    this.y=e.attr('cy');
+
     this.addX= parseFloat((Math.random()*3)-1.5);
     this.addY= parseFloat((Math.random()*3)-1.5);
     this.a=0;
@@ -23,8 +26,6 @@ class Cell{
     this.noiseX=  Math.random()* this.range - this.range/2;
     this.noiseY = Math.random()* this.range - this.range/2;
 
-    this.scrollX = 0;
-    this.scrollY = 0;
   }
 
   noise(){
@@ -133,4 +134,6 @@ function initSVG(){
    let g= $( this);
    floatersList.push( new Cell(g));
  });
+
+ transformToCanvas();
 }

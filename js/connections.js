@@ -13,6 +13,7 @@ class PageConnect{
     this.vueInit=false;
     var img = document.querySelector('#bgImage');
     document.querySelector("#cmd").style.opacity="0";
+    document.querySelector("main").style.opacity="0";
 
 
     this.pg= new Pages();
