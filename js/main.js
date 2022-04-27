@@ -21,9 +21,9 @@ function setup(){
 }
 
 function draw(){
-  for(var i=0; i<floaters.length ; i++){
+  /*for(var i=0; i<floaters.length ; i++){
     floaters[i].updateCircle();
-  }
+  }*/
 }
 
 
