@@ -119,7 +119,7 @@
   top:10rem;
 }
 .mobiletopbar .topMobCont{
-  top:25rem;
+  top:22rem;
 }
 .topMobItem{
   font-size:1.4rem;
@@ -366,6 +366,9 @@ https://stackoverflow.com/questions/65828562/hi-i-want-to-change-from-hamburgur-
     width:100%;
     max-width:18rem;
   }
+  .logomobilenav{
+    margin-top: 7rem;
+  }
 }
 
 @media (min-width:320px)  {
@@ -379,6 +382,9 @@ https://stackoverflow.com/questions/65828562/hi-i-want-to-change-from-hamburgur-
   .logomobilenav img{
     width:100%;
     max-width:18rem;
+  }
+  .logomobilenav{
+    margin-top: 7rem;
   }
 }
 @media screen and(min-width:480px)  {

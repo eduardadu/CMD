@@ -500,6 +500,9 @@ g{
   .tB{
     max-width:15rem;
   }
+  .tcB{
+    padding-top: 7rem;
+  }
   .desc{
     font-size:1rem;
     line-height:1.3rem;
@@ -529,11 +532,14 @@ g{
   .tB{
     max-width:18rem;
   }
-
+  .tcB{
+    padding-top: 7rem;
+  }
   .desc{
     font-size:1rem;
     line-height:1.3rem;
   }
+
   .infoCont{
     margin-bottom:2rem;
   }
@@ -554,6 +560,9 @@ g{
 /* smartphones, Android phones, landscape iPhone */
   .tB{
     max-width:25rem;
+  }
+  .tcB{
+    padding-top: 10rem;
   }
   .desc{
     font-size:1rem;
