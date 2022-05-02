@@ -24,8 +24,10 @@ function setup(){
 
 function draw(){
   clear();
+  fill(255);
+  noStroke();
   if(groupFloaters!= undefined){
-    //groupFloaters.drawCircles();
+    groupFloaters.drawCircles();
   }
 
 }
@@ -39,17 +41,28 @@ class Floater{
   constructor(x,y){
     this.x = x;
     this.y = y;
+    this.actualX = 0;
+    this.actualY = 0;
+    this.addX = parseFloat( (Math.random()*3)-1.5) ;
+    this.addY = parseFloat( (Math.random()*3)-1.5) ;
     this.width;
     this.height;
     this.speed;
     this.radius = 20;
+
+    this.targetX = 0;
+    this.targetY =0 ;
   }
 
-  updateCircle(){
-    fill(255);
-    noStroke();
-    var perX = this.winx * 0.8 ;
-    ellipse(this.x, this.y, this.radius, this.radius);
+  drawCircle(){
+    let y = float(float(this.actualY) + float(this.y)) ;
+    let x = float(float(this.x) + float(this.actualX)) ;
+    ellipse(x , y, this.radius, this.radius);
+  }
+
+  updateCircle(e){
+    this.actualX = this.addX * e;
+    this.actualY = this.addY * e;
   }
 }
 
@@ -73,9 +86,15 @@ class FloatersGroup{
       translate(this.transX, this.transY);
       scale(this.scale, this.scale);
       for(var i=0; i<floaters.length ; i++){
-        this.floaters[i].updateCircle();
+        this.floaters[i].drawCircle();
       }
     pop();
+  }
+
+  updateCircles(e){
+    for(var i=0; i<floaters.length ; i++){
+      this.floaters[i].updateCircle(e);
+    }
   }
 
   updateSettings(){

@@ -194,16 +194,11 @@ class View{
       var t = this;
       document.addEventListener('scroll', function(e) {
         lastKnownScrollPosition = window.scrollY;
-
-        
-            cellList.forEach(function(element){
+          /*  cellList.forEach(function(element){
               element.updateSmooth(lastKnownScrollPosition);
               }
-            );
-
-
-
-
+            ); */
+        groupFloaters.updateCircles(lastKnownScrollPosition);    
       });
     }
 

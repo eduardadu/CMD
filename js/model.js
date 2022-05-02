@@ -17,8 +17,7 @@ class Cell{
 
     this.addX= parseFloat((Math.random()*3)-1.5);
     this.addY= parseFloat((Math.random()*3)-1.5);
-    this.a=0;
-    this.b=0;
+
 
     this.range= 25;
     this.rangeBig= 15;
@@ -33,10 +32,12 @@ class Cell{
     var b= Math.random()* this.range - this.range/2;
     this.ref.attr("transform","translate("+ a +", " + b + ")");
     this.ref.attr("opacity","0.8");
+
   }
 
 
   updateSmooth(e){
+
     var a= this.addX * e + this.noiseX ;
     var b= this.addY *e + this.noiseY ;
     this.ref.attr("transform","translate("+ a +", " + b + ")");
