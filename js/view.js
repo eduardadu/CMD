@@ -20,6 +20,8 @@ class View{
     function reportWindowSize(){
       t.resizeSVG();
       t.mobileCursor();
+      resizeCanvas(windowWidth, windowHeight);
+      groupFloaters.updateSettings();
       if(document.documentElement.scrollHeight/document.documentElement.clientWidth > document.querySelector("#bgImage").height/document.querySelector("#bgImage").width){
         document.querySelector("#bgImage").style.height = document.querySelector("#content").scrollHeight;
         document.querySelector("#bgImage").style.width = "auto";
@@ -52,7 +54,6 @@ class View{
       marginY = -((y*facY)-this.ogY)/2;
       $( "#cmd " ).attr("viewBox", marginX + " " + marginY + " "+ (x*facY) + " " + (y*facY));
     }else{
-
       let aux2= (this.ogX*facX) * y /x;
       marginX = -((x*facX)-this.ogX)/2;
       marginY = -((y*facX)-this.ogY)/2;
@@ -60,13 +61,11 @@ class View{
     }
     $( "#cmd " ).attr("width",  x);
     $( "#cmd " ).attr("height", y);
-
     //appear only after calcs done
     var enter= setTimeout(function(){
         document.querySelector("#cmd").style.opacity="1";
         document.querySelector("main").style.opacity="1";
     },400);
-
   }
 
 
@@ -100,7 +99,7 @@ class View{
 
             for(var i=0; i<list.length;i++){    //hide the rest when one is open
               if(i!= index){
-                list[i].nextElementSibling.classList.remove("full");
+                //list[i].nextElementSibling.classList.remove("full");
               }
             }
           }
