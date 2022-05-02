@@ -25,7 +25,7 @@ function setup(){
 function draw(){
   clear();
   if(groupFloaters!= undefined){
-    groupFloaters.drawCircles();
+    //groupFloaters.drawCircles();
   }
 
 }

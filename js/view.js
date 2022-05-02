@@ -42,12 +42,10 @@ class View{
     var marginX= 0;                                                             //margin for svg
     var marginY= 0;                                                             //margin for svg
 
-
     var pretX= x * perc;
     var facX = this.ogX/pretX;
     var pretY= y * perc;
     var facY = this.ogY/pretY;
-
 
     if(x>y){
       marginX = -((x*facY)-this.ogX)/2;
@@ -175,7 +173,7 @@ class View{
     }
   }
 
-  scrollAnimation(){
+/*  scrollAnimation(){
     var t = this;
     document.addEventListener('scroll', function(e) {
       lastKnownScrollPosition = window.scrollY;
@@ -190,8 +188,24 @@ class View{
         ticking = true;
       }
     });
-  }
+  } */
 
+  scrollAnimation(){
+      var t = this;
+      document.addEventListener('scroll', function(e) {
+        lastKnownScrollPosition = window.scrollY;
+
+        
+            cellList.forEach(function(element){
+              element.updateSmooth(lastKnownScrollPosition);
+              }
+            );
+
+
+
+
+      });
+    }
 
   expandInfoPage(){
     var list = document.querySelectorAll(".infoPTitle");
